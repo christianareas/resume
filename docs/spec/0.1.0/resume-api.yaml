@@ -56,7 +56,7 @@ paths:
                   description: The candidate’s email address.
                 phoneCountryCode:
                   type: integer
-                  description: The candidate’s phone number’s country code.
+                  description: The candidate’s phone country code.
                 phoneNumber:
                   type: integer
                   description: The candidate’s phone number.
@@ -93,44 +93,11 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  candidateId:
-                    type: string
-                    format: uuid
-                    description: The candidate’s unique identifer.
-                  firstName:
-                    type: string
-                    description: The candidate’s first name.
-                  lastName:
-                    type: string
-                    description: The candidate’s last name.
-                  email:
-                    type: string
-                    format: email
-                    description: The candidate’s email address.
-                  phoneCountryCode:
-                    type: integer
-                    description: The candidate’s phone number’s country code.
-                  phoneNumber:
-                    type: integer
-                    description: The candidate’s phone number.
-                  website:
-                    type: string
-                    format: uri
-                    description: The candidate’s website.
-                  linkedIn:
-                    type: string
-                    format: uri
-                    description: The candidate’s LinkedIn.
-                  gitHub:
-                    type: string
-                    format: uri
-                    description: The candidate’s GitHub.
+                $ref: "#/components/schemas/Candidate"
               examples:
                 candidateResponseExample:
                   value:
-                    candidateId: "b501ec8b0be811ecbb550242ac110003"
+                    candidateId: "5a5c5a84-5f20-4690-8b96-fb5f23cb1c5d"
                     firstName: "Christian"
                     lastName: "Areas"
                     email: "me@areas.me"
@@ -139,7 +106,7 @@ paths:
                     website: "https://areas.me"
                     linkedIn: "https://www.linkedin.com/in/christianareas/"
                     gitHub: "https://github.com/christianareas"
-                
+
   /candidate/{candidateId}:
     # GET /candidate/{candidateId} (getCandidate)
     get:
@@ -163,9 +130,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Candidate"
-              examples:
-                candidateResponseExample:
-                  $ref: "#/components/examples/candidateResponseExample"
         "404":
           description: Not found
 
@@ -191,9 +155,6 @@ paths:
           application/json:
             schema:
               $ref: "#/components/schemas/Candidate"
-            examples:
-              updateCandidateRequestExample:
-                $ref: "#/components/examples/updateCandidateRequestExample"
         required: true
       responses:
         "200":
@@ -227,9 +188,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Candidate"
-              examples:
-                candidateResponseExample:
-                  $ref: "#/components/examples/candidateResponseExample"
         "404":
           description: Not found
 
@@ -265,10 +223,10 @@ components:
         email:
           type: string
           format: email
-          description: The candidate’s email adress.
+          description: The candidate’s email address.
         phoneCountryCode:
           type: integer
-          description: The candidate’s phone number’s country code.
+          description: The candidate’s phone country code.
         phoneNumber:
           type: integer
           description: The candidate’s phone number.
@@ -284,41 +242,43 @@ components:
           type: string
           format: uri
           description: The candidate’s GitHub.
-    #
-    # Who
-    #
-    Who:
-      type: object
-      properties:
-        candidateId:
-          type: string
-        whoId:
-          type: string
-        whoSummary:
-          type: string
-  examples:
-    createCandidateRequestExample:
-      value:
-        firstName: "Christian"
-        lastName: "Areas"
-        email: "me@areas.me"
-        phoneCountryCode: 1
-        phoneNumber: 4088029811
-        website: "https://areas.me"
-        linkedIn: "https://www.linkedin.com/in/christianareas/"
-        gitHub: "https://github.com/christianareas"
-    updateCandidateRequestExample:
-      value:
-        email: "christianareas@gmail.com"
-        gitHub: "https://github.com/areas-apis"
-    candidateResponseExample:
-      value:
-        candidateId: "b501ec8b0be811ecbb550242ac110003"
-        firstName: "Christian"
-        lastName: "Areas"
-        email: "me@areas.me"
-        phoneCountryCode: 1
-        phoneNumber: 4088029811
-        website: "https://areas.me"
-        linkedIn: "https://www.linkedin.com/in/christianareas/"
-        gitHub: "https://github.com/christianareas"
+
+    # #
+    # # Who
+    # #
+    # Who:
+    #   type: object
+    #   properties:
+    #     candidateId:
+    #       type: string
+    #     whoId:
+    #       type: string
+    #     whoSummary:
+    #       type: string
+
+  # examples:
+  #   createCandidateRequestExample:
+  #     value:
+  #       firstName: "Christian"
+  #       lastName: "Areas"
+  #       email: "me@areas.me"
+  #       phoneCountryCode: 1
+  #       phoneNumber: 4088029811
+  #       website: "https://areas.me"
+  #       linkedIn: "https://www.linkedin.com/in/christianareas/"
+  #       gitHub: "https://github.com/christianareas"
+  #   updateCandidateRequestExample:
+  #     value:
+  #       email: "christianareas@gmail.com"
+  #       gitHub: "https://github.com/areas-apis"
+  #   candidateResponseExample:
+  #     value:
+  #       candidateId: "b501ec8b0be811ecbb550242ac110003"
+  #       firstName: "Christian"
+  #       lastName: "Areas"
+  #       email: "me@areas.me"
+  #       phoneCountryCode: 1
+  #       phoneNumber: 4088029811
+  #       website: "https://areas.me"
+  #       linkedIn: "https://www.linkedin.com/in/christianareas/"
+  #       gitHub: "https://github.com/christianareas"
