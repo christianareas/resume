@@ -28,7 +28,7 @@ paths:
   #
   # Candidate
   #
-  /candidate/:
+  /candidate:
     # POST /candidate (createCandidate)
     post:
       tags:
@@ -88,7 +88,7 @@ paths:
                   gitHub: "https://github.com/christianareas"
         required: true
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
@@ -157,7 +157,7 @@ paths:
           schema:
             type: string
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
@@ -166,7 +166,7 @@ paths:
               examples:
                 candidateResponseExample:
                   $ref: "#/components/examples/candidateResponseExample"
-        404:
+        "404":
           description: Not found
 
     # PATCH /candidate/{candidateId} (updateCandidate)
@@ -196,13 +196,13 @@ paths:
                 $ref: "#/components/examples/updateCandidateRequestExample"
         required: true
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/Candidate"
-        404:
+        "404":
           description: Not found
 
     # DELETE /candidate/{candidateId} (deleteCandidate)
@@ -221,7 +221,7 @@ paths:
           schema:
             type: string
       responses:
-        200:
+        "200":
           description: OK
           content:
             application/json:
@@ -230,7 +230,7 @@ paths:
               examples:
                 candidateResponseExample:
                   $ref: "#/components/examples/candidateResponseExample"
-        404:
+        "404":
           description: Not found
 
   #
