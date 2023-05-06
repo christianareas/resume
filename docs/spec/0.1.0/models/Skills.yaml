@@ -1,5 +1,7 @@
 # Skills model.
 type: array
+description: |
+  The `Skills` model represents the candidate’s skills, and gives the candidate an opportunity to highlight their skills.
 items:
   type: object
   required:

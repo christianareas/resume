@@ -1,5 +1,7 @@
 # Experience model.
 type: array
+description: |
+  The `Experience` model represents the candidate’s experience, and gives the candidate an opportunity to showcase their roles and accomplishments.
 items:
   type: object
   required:

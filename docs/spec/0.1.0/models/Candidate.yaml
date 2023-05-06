@@ -1,5 +1,7 @@
 #  Candidate model.
 type: object
+description: |
+  The `Candidate` model represents a candidate, and includes the candidate’s basic information, such as their name, email address, phone number, and links to their website and professional profiles.
 required:
   - candidateId
   - firstName

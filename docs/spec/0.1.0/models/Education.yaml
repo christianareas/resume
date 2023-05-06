@@ -1,5 +1,9 @@
 # Education model.
 type: array
+description: |
+  The `Education` model represents the candidate’s education, and gives the candidate an opportunity to spotlight their education.
+  
+  Interesting note: Mark Twain once said, “I have never let my schooling interfere with my education.” 😉
 items:
   type: object
   required:

@@ -1,5 +1,7 @@
 # Who model.
 type: object
+description: |
+  The `Who` model represents the candidate’s “Who”, and is meant to give recruiters and potential employers a succinct summary of the candidate.
 required:
   - candidateId
   - whoId
@@ -10,7 +12,6 @@ properties:
     format: uuid
     description: The candidate’s unique identifier.
     example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
-    required: true
   whoId:
     type: string
     format: uuid
@@ -19,6 +20,6 @@ properties:
   who:
     type: string
     format: string
-    description: The candidate’s “Who” — usually a few sentences that summarize the candidate.
+    description: The candidate’s “who” — usually a few sentences that summarize the candidate.
     example: A writer who loves language and technology. Honest, transparent, and easy to work with. Runs marathons and builds mechanical keyboards during off hours.
 
