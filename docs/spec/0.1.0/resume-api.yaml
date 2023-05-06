@@ -1,4 +1,5 @@
 openapi: 3.1.0
+
 info:
   title: Resume API
   summary: 'The Resume API is your resume’s source of truth. Use it to store your resume and retrieve it for a variety of use cases. For example, you can use this service to display your resume on your website, or make it available as a PDF — all from a single source.'
@@ -11,15 +12,18 @@ info:
     name: GNU General Public License v3.0
     identifier: GPL-3.0
   version: 0.1.0
+
 servers:
   - url: 'http://localhost:3000/api'
     description: Local
+
 tags:
   - name: candidate
   - name: who
   - name: experience
   - name: skills
   - name: education
+
 paths:
   /candidate:
     post:
@@ -31,54 +35,11 @@ paths:
         Create a candidate in the system.
       requestBody:
         description: 'An object that represents a candidate. It includes the candidate’s details, such as their name, email, phone number, and links to their social media profiles.'
+        required: true
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                firstName:
-                  type: string
-                  description: The candidate’s first name.
-                lastName:
-                  type: string
-                  description: The candidate’s last name.
-                email:
-                  type: string
-                  format: email
-                  description: The candidate’s email address.
-                phoneCountryCode:
-                  type: integer
-                  description: The candidate’s phone country code.
-                phoneNumber:
-                  type: integer
-                  description: The candidate’s phone number.
-                website:
-                  type: string
-                  format: uri
-                  description: The candidate’s website.
-                linkedIn:
-                  type: string
-                  format: uri
-                  description: The candidate’s LinkedIn.
-                gitHub:
-                  type: string
-                  format: uri
-                  description: The candidate’s GitHub.
-              required:
-                - firstName
-                - lastName
-                - email
-            examples:
-              createCandidateRequestExample:
-                value:
-                  firstName: Christian
-                  lastName: Areas
-                  email: me@areas.me
-                  phoneCountryCode: 1
-                  phoneNumber: 4088029811
-                  linkedIn: 'https://www.linkedin.com/in/christianareas/'
-                  gitHub: 'https://github.com/christianareas'
-        required: true
+              $ref: ./models/Candidate.yaml
       responses:
         '200':
           description: OK
@@ -86,18 +47,7 @@ paths:
             application/json:
               schema:
                 $ref: ./models/Candidate.yaml
-              examples:
-                candidateResponseExample:
-                  value:
-                    candidateId: 5a5c5a84-5f20-4690-8b96-fb5f23cb1c5d
-                    firstName: Christian
-                    lastName: Areas
-                    email: me@areas.me
-                    phoneCountryCode: 1
-                    phoneNumber: 4088029811
-                    website: 'https://areas.me'
-                    linkedIn: 'https://www.linkedin.com/in/christianareas/'
-                    gitHub: 'https://github.com/christianareas'
+  
   '/candidate/{candidateId}':
     get:
       tags:
@@ -176,6 +126,7 @@ paths:
                 $ref: '#/components/schemas/Candidate'
         '404':
           description: Not found
+
 components:
   schemas:
     Candidate:
