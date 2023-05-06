@@ -1,8 +1,7 @@
 openapi: 3.1.0
-
 info:
   title: Resume API
-  summary: The Resume API is your resume’s source of truth. Use it to store your resume and retrieve it for a variety of use cases. For example, you can use this service to display your resume on your website, or make it available as a PDF — all from a single source.
+  summary: 'The Resume API is your resume’s source of truth. Use it to store your resume and retrieve it for a variety of use cases. For example, you can use this service to display your resume on your website, or make it available as a PDF — all from a single source.'
   description: |
     to-do
   contact:
@@ -12,24 +11,17 @@ info:
     name: GNU General Public License v3.0
     identifier: GPL-3.0
   version: 0.1.0
-
 servers:
-  - url: http://localhost:3000/api
+  - url: 'http://localhost:3000/api'
     description: Local
-
 tags:
   - name: candidate
   - name: who
   - name: experience
   - name: skills
   - name: education
-
 paths:
-  #
-  # Candidate
-  #
   /candidate:
-    # POST /candidate (createCandidate)
     post:
       tags:
         - candidate
@@ -38,7 +30,7 @@ paths:
       description: |
         Create a candidate in the system.
       requestBody:
-        description: An object that represents a candidate. It includes the candidate’s details, such as their name, email, phone number, and links to their social media profiles.
+        description: 'An object that represents a candidate. It includes the candidate’s details, such as their name, email, phone number, and links to their social media profiles.'
         content:
           application/json:
             schema:
@@ -79,36 +71,34 @@ paths:
             examples:
               createCandidateRequestExample:
                 value:
-                  firstName: "Christian"
-                  lastName: "Areas"
-                  email: "me@areas.me"
+                  firstName: Christian
+                  lastName: Areas
+                  email: me@areas.me
                   phoneCountryCode: 1
                   phoneNumber: 4088029811
-                  linkedIn: "https://www.linkedin.com/in/christianareas/"
-                  gitHub: "https://github.com/christianareas"
+                  linkedIn: 'https://www.linkedin.com/in/christianareas/'
+                  gitHub: 'https://github.com/christianareas'
         required: true
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Candidate"
+                $ref: ./models/Candidate.yaml
               examples:
                 candidateResponseExample:
                   value:
-                    candidateId: "5a5c5a84-5f20-4690-8b96-fb5f23cb1c5d"
-                    firstName: "Christian"
-                    lastName: "Areas"
-                    email: "me@areas.me"
+                    candidateId: 5a5c5a84-5f20-4690-8b96-fb5f23cb1c5d
+                    firstName: Christian
+                    lastName: Areas
+                    email: me@areas.me
                     phoneCountryCode: 1
                     phoneNumber: 4088029811
-                    website: "https://areas.me"
-                    linkedIn: "https://www.linkedin.com/in/christianareas/"
-                    gitHub: "https://github.com/christianareas"
-
-  /candidate/{candidateId}:
-    # GET /candidate/{candidateId} (getCandidate)
+                    website: 'https://areas.me'
+                    linkedIn: 'https://www.linkedin.com/in/christianareas/'
+                    gitHub: 'https://github.com/christianareas'
+  '/candidate/{candidateId}':
     get:
       tags:
         - candidate
@@ -124,16 +114,14 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Candidate"
-        "404":
+                $ref: '#/components/schemas/Candidate'
+        '404':
           description: Not found
-
-    # PATCH /candidate/{candidateId} (updateCandidate)
     patch:
       tags:
         - candidate
@@ -154,19 +142,17 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Candidate"
+              $ref: '#/components/schemas/Candidate'
         required: true
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Candidate"
-        "404":
+                $ref: '#/components/schemas/Candidate'
+        '404':
           description: Not found
-
-    # DELETE /candidate/{candidateId} (deleteCandidate)
     delete:
       tags:
         - candidate
@@ -182,103 +168,23 @@ paths:
           schema:
             type: string
       responses:
-        "200":
+        '200':
           description: OK
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Candidate"
-        "404":
+                $ref: '#/components/schemas/Candidate'
+        '404':
           description: Not found
-
-  #
-  # Who
-  #
-  # /candidate/{candidateId}/who:
-  # /candidate/{candidateId}/experience:
-  # /candidate/{candidateId}/experience/{experienceId}:
-  # /candidate/{candidateId}/skills:
-  # /candidate/{candidateId}/skills/{skillId}:
-  # /candidate/{candidateId}/education:
-  # /candidate/{candidateId}/experience/{experienceId}:
-
 components:
   schemas:
-    #
-    # Candidate
-    #
     Candidate:
-      type: object
-      properties:
-        candidateId:
-          type: string
-          format: uuid
-          description: The candidate’s unique identifer.
-        firstName:
-          type: string
-          description: The candidate’s first name.
-        lastName:
-          type: string
-          description: The candidate’s last name.
-        email:
-          type: string
-          format: email
-          description: The candidate’s email address.
-        phoneCountryCode:
-          type: integer
-          description: The candidate’s phone country code.
-        phoneNumber:
-          type: integer
-          description: The candidate’s phone number.
-        website:
-          type: string
-          format: uri
-          description: The candidate’s website.
-        linkedIn:
-          type: string
-          format: uri
-          description: The candidate’s LinkedIn.
-        gitHub:
-          type: string
-          format: uri
-          description: The candidate’s GitHub.
-
-    # #
-    # # Who
-    # #
-    # Who:
-    #   type: object
-    #   properties:
-    #     candidateId:
-    #       type: string
-    #     whoId:
-    #       type: string
-    #     whoSummary:
-    #       type: string
-
-  # examples:
-  #   createCandidateRequestExample:
-  #     value:
-  #       firstName: "Christian"
-  #       lastName: "Areas"
-  #       email: "me@areas.me"
-  #       phoneCountryCode: 1
-  #       phoneNumber: 4088029811
-  #       website: "https://areas.me"
-  #       linkedIn: "https://www.linkedin.com/in/christianareas/"
-  #       gitHub: "https://github.com/christianareas"
-  #   updateCandidateRequestExample:
-  #     value:
-  #       email: "christianareas@gmail.com"
-  #       gitHub: "https://github.com/areas-apis"
-  #   candidateResponseExample:
-  #     value:
-  #       candidateId: "b501ec8b0be811ecbb550242ac110003"
-  #       firstName: "Christian"
-  #       lastName: "Areas"
-  #       email: "me@areas.me"
-  #       phoneCountryCode: 1
-  #       phoneNumber: 4088029811
-  #       website: "https://areas.me"
-  #       linkedIn: "https://www.linkedin.com/in/christianareas/"
-  #       gitHub: "https://github.com/christianareas"
+      $ref: ./models/Candidate.yaml
+    Who:
+      $ref: ./schemas/Who.yaml
+    Experience:
+      $ref: ./schemas/Experience.yaml
+    Skills:
+      $ref: ./schemas/Skills.yaml
+    Education:
+      $ref: ./schemas/Education.yaml
