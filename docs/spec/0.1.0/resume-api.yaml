@@ -17,7 +17,7 @@ servers:
     description: Local
 
 tags:
-  - name: candidate
+  - name: Candidate
   - name: who
   - name: experience
   - name: skills
@@ -28,7 +28,7 @@ paths:
     # POST /candidate (createCandidate)
     post:
       tags:
-        - candidate
+        - Candidate
       operationId: createCandidate
       summary: Create a Candidate
       description: |
@@ -46,7 +46,7 @@ paths:
     # GET /candidate/{candidateId} (getCandidate)
     get:
       tags:
-        - candidate
+        - Candidate
       operationId: getCandidate
       summary: Get a Candidate
       description: |
@@ -63,7 +63,7 @@ paths:
     # PATCH /candidate/{candidateId} (updateCandidate)
     patch:
       tags:
-        - candidate
+        - Candidate
       operationId: updateCandidate
       summary: Update a Candidate
       description: |
@@ -82,7 +82,7 @@ paths:
     # DELETE /candidate/{candidateId} (deleteCandidate)
     delete:
       tags:
-        - candidate
+        - Candidate
       operationId: deleteCandidate
       summary: Delete a Candidate
       description: |
