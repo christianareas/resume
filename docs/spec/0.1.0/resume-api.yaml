@@ -2,9 +2,8 @@ openapi: 3.1.0
 
 info:
   title: Resume API
-  summary: "The Resume API is your resume’s source of truth. Use it to store your resume and retrieve it for a variety of use cases. For example, you can use this service to display your resume on your website, or make it available as a PDF — all from a single source."
   description: |
-    to-do
+    The Resume API is your resume’s source of truth. Use it to store your resume and retrieve it for a variety of use cases. For example, you can use this service to display your resume on your website, or make it available as a PDF — all from a single source.
   contact:
     name: Christian Areas
     email: me@areas.me
@@ -14,7 +13,7 @@ info:
   version: 0.1.0
 
 servers:
-  - url: http://localhost:3000/api
+  - url: 'http://localhost:3000/api'
     description: Local
 
 tags:
@@ -25,7 +24,8 @@ tags:
   - name: education
 
 paths:
-  /candidate:
+  '/candidate':
+    # POST /candidate (createCandidate)
     post:
       tags:
         - candidate
@@ -34,16 +34,16 @@ paths:
       description: |
         Create a candidate in the system.
       requestBody:
-        $ref: "#/components/requestBodies/createCandidate"
+        $ref: '#/components/requestBodies/createCandidate'
       responses:
-        "201":
-          $ref: "#/components/responses/candidateCreated"
-        "400":
-          $ref: "#/components/responses/candidateBadRequest"
-        "409":
-          $ref: "#/components/responses/candidateAlreadyExists"
-
-  "/candidate/{candidateId}":
+        '201':
+          $ref: '#/components/responses/candidateCreated'
+        '400':
+          $ref: '#/components/responses/candidateInfoMissingIncorrect'
+        '409':
+          $ref: '#/components/responses/candidateAlreadyExists'
+  '/candidate/{candidateId}':
+    # GET /candidate/{candidateId} (getCandidate)
     get:
       tags:
         - candidate
@@ -52,14 +52,15 @@ paths:
       description: |
         Get a candidate from the system.
       parameters:
-        - $ref: "#/components/parameters/candidateId"
+        - $ref: '#/components/parameters/candidateId'
       responses:
-        "200":
-          $ref: "#/components/responses/candidate"
-        "400":
-          $ref: "#/components/responses/candidateBadRequest"
-        "404":
-          $ref: "#/components/responses/candidateNotFound"
+        '200':
+          $ref: '#/components/responses/candidate'
+        '400':
+          $ref: '#/components/responses/candidateInfoMissingIncorrect'
+        '404':
+          $ref: '#/components/responses/candidateNotFound'
+    # PATCH /candidate/{candidateId} (updateCandidate)
     patch:
       tags:
         - candidate
@@ -68,16 +69,17 @@ paths:
       description: |
         Update a candidate in the system.
       parameters:
-        - $ref: "#/components/parameters/candidateId"
+        - $ref: '#/components/parameters/candidateId'
       requestBody:
-        $ref: "#/components/requestBodies/updateCandidate"
+        $ref: '#/components/requestBodies/updateCandidate'
       responses:
-        "200":
-          $ref: "#/components/responses/candidate"
-        "400":
-          $ref: "#/components/responses/candidateBadRequest"
-        "404":
-          $ref: "#/components/responses/candidateNotFound"
+        '200':
+          $ref: '#/components/responses/candidate'
+        '400':
+          $ref: '#/components/responses/candidateInfoMissingIncorrect'
+        '404':
+          $ref: '#/components/responses/candidateNotFound'
+    # DELETE /candidate/{candidateId} (deleteCandidate)
     delete:
       tags:
         - candidate
@@ -86,30 +88,18 @@ paths:
       description: |
         Delete a candidate from the system.
       parameters:
-        - $ref: "#/components/parameters/candidateId"
+        - $ref: '#/components/parameters/candidateId'
       responses:
-        "200":
-          $ref: "#/components/responses/candidate"
-        "400":
-          $ref: "#/components/responses/candidateBadRequest"
-        "404":
-          $ref: "#/components/responses/candidateNotFound"
+        '200':
+          $ref: '#/components/responses/candidate'
+        '400':
+          $ref: '#/components/responses/candidateInfoMissingIncorrect'
+        '404':
+          $ref: '#/components/responses/candidateNotFound'
 
 components:
-  schemas:
-    Candidate:
-      $ref: "./models/Candidate.yaml"
-    Who:
-      $ref: "./models/Who.yaml"
-    Experience:
-      $ref: "./models/Experience.yaml"
-    Skills:
-      $ref: "./models/Skills.yaml"
-    Education:
-      $ref: "./models/Education.yaml"
-
   parameters:
-    candidateId:  
+    candidateId:
       name: candidateId
       in: path
       description: The candidate’s unique identifier.
@@ -120,20 +110,18 @@ components:
         example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
 
   requestBodies:
+    # POST
     createCandidate:
-      # description: |
-      #   to-do
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/Candidate/oneOf/1"
+            $ref: './models/Candidate.yaml#/oneOf/1'
+    # PATCH
     updateCandidate:
-      # description: |
-      #   to-do
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/Candidate/oneOf/2"
+            $ref: './models/Candidate.yaml#/oneOf/2'
 
   responses:
     # 200
@@ -142,22 +130,20 @@ components:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/Candidate/oneOf/0"
+            $ref: './models/Candidate.yaml#/oneOf/0'
     # 201
     candidateCreated:
       description: Created
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/Candidate/oneOf/0"
+            $ref: './models/Candidate.yaml#/oneOf/0'
     # 400
-    candidateBadRequest:
-      description: Candidate bad request
+    candidateInfoMissingIncorrect:
+      description: Candidate information missing or incorrect
     # 404
     candidateNotFound:
       description: Candidate not found
     # 409
     candidateAlreadyExists:
       description: Candidate already exists
-    
-    

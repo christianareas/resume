@@ -1,4 +1,4 @@
-#  Candidate model.
+# Candidate model.
 definitions:
   candidate:
     type: object
