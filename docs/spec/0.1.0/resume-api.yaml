@@ -2,7 +2,7 @@ openapi: 3.1.0
 
 info:
   title: Resume API
-  summary: 'The Resume API is your resume’s source of truth. Use it to store your resume and retrieve it for a variety of use cases. For example, you can use this service to display your resume on your website, or make it available as a PDF — all from a single source.'
+  summary: "The Resume API is your resume’s source of truth. Use it to store your resume and retrieve it for a variety of use cases. For example, you can use this service to display your resume on your website, or make it available as a PDF — all from a single source."
   description: |
     to-do
   contact:
@@ -14,7 +14,7 @@ info:
   version: 0.1.0
 
 servers:
-  - url: 'http://localhost:3000/api'
+  - url: http://localhost:3000/api
     description: Local
 
 tags:
@@ -34,21 +34,16 @@ paths:
       description: |
         Create a candidate in the system.
       requestBody:
-        description: 'An object that represents a candidate. It includes the candidate’s details, such as their name, email, phone number, and links to their social media profiles.'
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: ./models/Candidate.yaml
+        $ref: "#/components/requestBodies/createCandidate"
       responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: ./models/Candidate.yaml
-  
-  '/candidate/{candidateId}':
+        "201":
+          $ref: "#/components/responses/candidateCreated"
+        "400":
+          description: Bad Request
+        "409":
+          description: Conflict
+
+  "/candidate/{candidateId}":
     get:
       tags:
         - candidate
@@ -64,13 +59,9 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Candidate'
-        '404':
+        "200":
+          $ref: "#/components/responses/candidate"
+        "404":
           description: Not found
     patch:
       tags:
@@ -92,16 +83,12 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Candidate'
+              $ref: "#/components/schemas/Candidate"
         required: true
       responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Candidate'
-        '404':
+        "200":
+          $ref: "#/components/responses/candidate"
+        "404":
           description: Not found
     delete:
       tags:
@@ -118,24 +105,43 @@ paths:
           schema:
             type: string
       responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Candidate'
-        '404':
+        "200":
+          $ref: "#/components/responses/candidate"
+        "404":
           description: Not found
 
 components:
   schemas:
     Candidate:
-      $ref: ./models/Candidate.yaml
+      $ref: "./models/Candidate.yaml"
     Who:
-      $ref: ./schemas/Who.yaml
+      $ref: "./models/Who.yaml"
     Experience:
-      $ref: ./schemas/Experience.yaml
+      $ref: "./models/Experience.yaml"
     Skills:
-      $ref: ./schemas/Skills.yaml
+      $ref: "./models/Skills.yaml"
     Education:
-      $ref: ./schemas/Education.yaml
+      $ref: "./models/Education.yaml"
+
+  requestBodies:
+    createCandidate:
+      # description: |
+      #   to-do
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Candidate/oneOf/1"
+
+  responses:
+    candidateCreated:
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Candidate/oneOf/0"
+    candidate:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Candidate/oneOf/0"
