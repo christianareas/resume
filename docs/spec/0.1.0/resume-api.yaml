@@ -39,76 +39,61 @@ paths:
         "201":
           $ref: "#/components/responses/candidateCreated"
         "400":
-          description: Bad Request
+          $ref: "#/components/responses/candidateBadRequest"
         "409":
-          description: Conflict
+          $ref: "#/components/responses/candidateAlreadyExists"
 
   "/candidate/{candidateId}":
     get:
       tags:
         - candidate
       operationId: getCandidate
-      summary: to-do
+      summary: Get a Candidate
       description: |
-        to-do
+        Get a candidate from the system.
       parameters:
-        - name: candidateId
-          in: path
-          description: candidateId
-          required: true
-          schema:
-            type: string
+        - $ref: "#/components/parameters/candidateId"
       responses:
         "200":
           $ref: "#/components/responses/candidate"
+        "400":
+          $ref: "#/components/responses/candidateBadRequest"
         "404":
-          description: Not found
+          $ref: "#/components/responses/candidateNotFound"
     patch:
       tags:
         - candidate
       operationId: updateCandidate
-      summary: to-do
+      summary: Update a Candidate
       description: |
-        to-do
+        Update a candidate in the system.
       parameters:
-        - name: candidateId
-          in: path
-          description: candidateId
-          required: true
-          schema:
-            type: string
+        - $ref: "#/components/parameters/candidateId"
       requestBody:
-        description: |
-          to-do
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/Candidate"
-        required: true
+        $ref: "#/components/requestBodies/updateCandidate"
       responses:
         "200":
           $ref: "#/components/responses/candidate"
+        "400":
+          $ref: "#/components/responses/candidateBadRequest"
         "404":
-          description: Not found
+          $ref: "#/components/responses/candidateNotFound"
     delete:
       tags:
         - candidate
       operationId: deleteCandidate
-      summary: to-do
+      summary: Delete a Candidate
       description: |
-        to-do
+        Delete a candidate from the system.
       parameters:
-        - name: candidateId
-          in: path
-          description: candidateId
-          required: true
-          schema:
-            type: string
+        - $ref: "#/components/parameters/candidateId"
       responses:
         "200":
           $ref: "#/components/responses/candidate"
+        "400":
+          $ref: "#/components/responses/candidateBadRequest"
         "404":
-          description: Not found
+          $ref: "#/components/responses/candidateNotFound"
 
 components:
   schemas:
@@ -123,6 +108,17 @@ components:
     Education:
       $ref: "./models/Education.yaml"
 
+  parameters:
+    candidateId:  
+      name: candidateId
+      in: path
+      description: The candidate’s unique identifier.
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
+
   requestBodies:
     createCandidate:
       # description: |
@@ -131,17 +127,37 @@ components:
         application/json:
           schema:
             $ref: "#/components/schemas/Candidate/oneOf/1"
-
-  responses:
-    candidateCreated:
-      description: Created
+    updateCandidate:
+      # description: |
+      #   to-do
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/Candidate/oneOf/0"
+            $ref: "#/components/schemas/Candidate/oneOf/2"
+
+  responses:
+    # 200
     candidate:
       description: OK
       content:
         application/json:
           schema:
             $ref: "#/components/schemas/Candidate/oneOf/0"
+    # 201
+    candidateCreated:
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Candidate/oneOf/0"
+    # 400
+    candidateBadRequest:
+      description: Candidate bad request
+    # 404
+    candidateNotFound:
+      description: Candidate not found
+    # 409
+    candidateAlreadyExists:
+      description: Candidate already exists
+    
+    

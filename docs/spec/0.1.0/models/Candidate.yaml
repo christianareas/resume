@@ -91,3 +91,23 @@ oneOf:
       $ref: "#/definitions/candidate/properties/linkedIn"
     gitHub:
       $ref: "#/definitions/candidate/properties/gitHub"
+
+- title: UpdateCandidate
+  type: object
+  properties:
+    firstName:
+      $ref: "#/definitions/candidate/properties/firstName"
+    lastName:
+      $ref: "#/definitions/candidate/properties/lastName"
+    email:
+      $ref: "#/definitions/candidate/properties/email"
+    phoneCountryCode:
+      $ref: "#/definitions/candidate/properties/phoneCountryCode"
+    phoneNumber:
+      $ref: "#/definitions/candidate/properties/phoneNumber"
+    website:
+      $ref: "#/definitions/candidate/properties/website"
+    linkedIn:
+      $ref: "#/definitions/candidate/properties/linkedIn"
+    gitHub:
+      $ref: "#/definitions/candidate/properties/gitHub"
