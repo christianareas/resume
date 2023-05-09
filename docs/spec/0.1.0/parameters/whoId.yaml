@@ -1,0 +1,8 @@
+name: whoId
+in: path
+description: The who’s unique identifier.
+required: true
+schema:
+  type: string
+  format: uuid
+  example: fcf47884-9c4c-487d-947f-9449f588a383

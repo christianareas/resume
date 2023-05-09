@@ -94,50 +94,15 @@ components:
 
   parameters:
     candidateId:
-      name: candidateId
-      in: path
-      description: The candidate’s unique identifier.
-      required: true
-      schema:
-        type: string
-        format: uuid
-        example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
+      $ref: './parameters/candidateId.yaml'
     whoId:
-      name: whoId
-      in: path
-      description: The who’s unique identifier.
-      required: true
-      schema:
-        type: string
-        format: uuid
-        example: fcf47884-9c4c-487d-947f-9449f588a383
+      $ref: './parameters/whoId.yaml'
     experienceId:
-      name: experienceId
-      in: path
-      description: The experience’s unique identifier.
-      required: true
-      schema:
-        type: string
-        format: uuid
-        example: 637f9a15-ea20-4597-990b-d67bd20db1c1
+      $ref: './parameters/experienceId.yaml'
     skillId:
-      name: skillId
-      in: path
-      description: The skill’s unique identifier.
-      required: true
-      schema:
-        type: string
-        format: uuid
-        example: 97d3165d-e1dd-4955-972c-95ebf04dd091
+      $ref: './parameters/skillId.yaml'
     educationId:
-      name: educationId
-      in: path
-      description: The education’s unique identifier.
-      required: true
-      schema:
-        type: string
-        format: uuid
-        example: f61e2435-caf4-4ec8-901f-2b0760de9d2c
+      $ref: './parameters/educationId.yaml'
 
   requestBodies:
     # Candidate POST
