@@ -43,14 +43,14 @@ definitions:
                 format: uuid
                 description: The accomplishment’s unique identifier.
                 example: 7f4d6d8b-56c4-40a7-9c75-9d48f34a5161
-              sortOrder:
-                type: integer
-                description: The accomplishment’s sort order. `0` is first. If omitted, the order defaults to alphabetic.
-                example: 0
               accomplishment:
                 type: string
                 description: The candidate’s accomplishment.
                 example: Functioned as the sole technical writer for Apple Pay server engineering.
+              sortOrder:
+                type: integer
+                description: The accomplishment’s sort order. `0` is first. If omitted, the order defaults to alphabetic.
+                example: 0
 
 oneOf:
 - title: Experience
@@ -75,10 +75,10 @@ oneOf:
         properties:
           accomplishmentId:
             $ref: "#/definitions/experience/items/properties/accomplishments/items/properties/accomplishmentId"
-          sortOrder:
-            $ref: "#/definitions/experience/items/properties/accomplishments/items/properties/sortOrder"
           accomplishment:
             $ref: "#/definitions/experience/items/properties/accomplishments/items/properties/accomplishment"
+          sortOrder:
+            $ref: "#/definitions/experience/items/properties/accomplishments/items/properties/sortOrder"
 
 - title: CreateExperience
   type: object
@@ -102,10 +102,10 @@ oneOf:
         required:
           - accomplishment
         properties:
-          sortOrder:
-            $ref: "#/definitions/experience/items/properties/accomplishments/items/properties/sortOrder"
           accomplishment:
             $ref: "#/definitions/experience/items/properties/accomplishments/items/properties/accomplishment"
+          sortOrder:
+            $ref: "#/definitions/experience/items/properties/accomplishments/items/properties/sortOrder"
 
 - title: UpdateExperience
   type: object
@@ -127,10 +127,10 @@ oneOf:
         properties:
           accomplishmentId:
             $ref: "#/definitions/experience/items/properties/accomplishments/items/properties/accomplishmentId"
-          sortOrder:
-            $ref: "#/definitions/experience/items/properties/accomplishments/items/properties/sortOrder"
           accomplishment:
             $ref: "#/definitions/experience/items/properties/accomplishments/items/properties/accomplishment"
+          sortOrder:
+            $ref: "#/definitions/experience/items/properties/accomplishments/items/properties/sortOrder"
 
 # description: |
 #   The `Experience` model represents the candidate’s experience, and gives the candidate an opportunity to showcase their roles and accomplishments.
