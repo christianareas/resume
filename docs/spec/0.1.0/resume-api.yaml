@@ -29,401 +29,55 @@ tags:
   - name: Education
 
 paths:
-  #
-  # Candidate
-  #
   '/candidate':
     # POST /candidate (createCandidate)
-    post:
-      tags:
-        - Candidate
-      operationId: createCandidate
-      summary: Create a Candidate
-      description: |
-        Create a candidate in the system.
-      requestBody:
-        $ref: '#/components/requestBodies/createCandidate'
-      responses:
-        '201':
-          $ref: '#/components/responses/candidateCreated'
-        '400':
-          $ref: '#/components/responses/candidateInfoMissingIncorrect'
-        '409':
-          $ref: '#/components/responses/candidateAlreadyExists'
+    $ref: './paths/candidate.yaml'
+
   '/candidate/{candidateId}':
     # GET /candidate/{candidateId} (getCandidate)
-    get:
-      tags:
-        - Candidate
-      operationId: getCandidate
-      summary: Get a Candidate
-      description: |
-        Get a candidate from the system.
-      parameters:
-        - $ref: '#/components/parameters/candidateId'
-      responses:
-        '200':
-          $ref: '#/components/responses/candidate'
-        '400':
-          $ref: '#/components/responses/candidateInfoMissingIncorrect'
-        '404':
-          $ref: '#/components/responses/candidateNotFound'
     # PATCH /candidate/{candidateId} (updateCandidate)
-    patch:
-      tags:
-        - Candidate
-      operationId: updateCandidate
-      summary: Update a Candidate
-      description: |
-        Update a candidate in the system.
-      parameters:
-        - $ref: '#/components/parameters/candidateId'
-      requestBody:
-        $ref: '#/components/requestBodies/updateCandidate'
-      responses:
-        '200':
-          $ref: '#/components/responses/candidate'
-        '400':
-          $ref: '#/components/responses/candidateInfoMissingIncorrect'
-        '404':
-          $ref: '#/components/responses/candidateNotFound'
     # DELETE /candidate/{candidateId} (deleteCandidate)
-    delete:
-      tags:
-        - Candidate
-      operationId: deleteCandidate
-      summary: Delete a Candidate
-      description: |
-        Delete a candidate from the system.
-      parameters:
-        - $ref: '#/components/parameters/candidateId'
-      responses:
-        '200':
-          $ref: '#/components/responses/candidate'
-        '400':
-          $ref: '#/components/responses/candidateInfoMissingIncorrect'
-        '404':
-          $ref: '#/components/responses/candidateNotFound'
-  #
-  # Who
-  #
+    $ref: './paths/candidateId.yaml'
+
   '/candidate/{candidateId}/who':
     # POST /candidate/{candidateId}/who (createWho)
-    post:
-      tags:
-        - Who
-      operationId: createWho
-      summary: Create a Candidate’s Who
-      description: |
-        Create a candidate’s who in the system.
-      parameters:
-        - $ref: '#/components/parameters/candidateId'
-      requestBody:
-        $ref: '#/components/requestBodies/createWho'
-      responses:
-        '201':
-          $ref: '#/components/responses/whoCreated'
-        '400':
-          $ref: '#/components/responses/whoInfoMissingIncorrect'
-        '409':
-          $ref: '#/components/responses/whoAlreadyExists'
+    $ref: './paths/who.yaml'
+
   '/candidate/{candidateId}/who/{whoId}':
     # GET /candidate/{candidateId}/who/{whoId} (getWho)
-    get:
-      tags:
-        - Who
-      operationId: getWho
-      summary: Get a Candidate’s Who
-      description: |
-        Get a candidate’s who from the system.
-      parameters:
-        - $ref: '#/components/parameters/candidateId'
-        - $ref: '#/components/parameters/whoId'
-      responses:
-        '200':
-          $ref: '#/components/responses/who'
-        '400':
-          $ref: '#/components/responses/whoInfoMissingIncorrect'
-        '404':
-          $ref: '#/components/responses/whoNotFound'
     # PATCH /candidate/{candidateId}/who/{whoId} (updateWho)
-    patch:
-      tags:
-        - Who
-      operationId: updateWho
-      summary: Update a Candidate’s Who
-      description: |
-        Update a candidate’s who in the system.
-      parameters:
-        - $ref: '#/components/parameters/candidateId'
-        - $ref: '#/components/parameters/whoId'
-      requestBody:
-        $ref: '#/components/requestBodies/updateWho'
-      responses:
-        '200':
-          $ref: '#/components/responses/who'
-        '400':
-          $ref: '#/components/responses/whoInfoMissingIncorrect'
-        '404':
-          $ref: '#/components/responses/whoNotFound'
     # DELETE /candidate/{candidateId}/who/{whoId} (deleteWho)
-    delete:
-      tags:
-        - Who
-      operationId: deleteWho
-      summary: Delete a Candidate’s Who
-      description: |
-        Delete a candidate’s who from the system.
-      parameters:
-        - $ref: '#/components/parameters/candidateId'
-        - $ref: '#/components/parameters/whoId'
-      responses:
-        '200':
-          $ref: '#/components/responses/who'
-        '400':
-          $ref: '#/components/responses/whoInfoMissingIncorrect'
-        '404':
-          $ref: '#/components/responses/whoNotFound'
-  #
-  # Experience
-  #
+    $ref: './paths/whoId.yaml'
+
   '/candidate/{candidateId}/experience':
     # POST /candidate/{candidateId}/experience (createExperience)
-    post:
-      tags:
-        - Experience
-      operationId: createExperience
-      summary: Create a Candidate’s Experience
-      description: |
-        Create a candidate’s experience in the system.
-      parameters:
-        - $ref: '#/components/parameters/candidateId'
-      requestBody:
-        $ref: '#/components/requestBodies/createExperience'
-      responses:
-        '201':
-          $ref: '#/components/responses/experienceCreated'
-        '400':
-          $ref: '#/components/responses/experienceInfoMissingIncorrect'
-        '409':
-          $ref: '#/components/responses/experienceAlreadyExists'
+    $ref: './paths/experience.yaml'
+
   '/candidate/{candidateId}/experience/{experienceId}':
     # GET /candidate/{candidateId}/experience/{experienceId} (getExperience)
-    get:
-      tags:
-        - Experience
-      operationId: getExperience
-      summary: Get a Candidate’s Experience
-      description: |
-        Get a candidate’s experience from the system.
-      parameters:
-        - $ref: '#/components/parameters/candidateId'
-        - $ref: '#/components/parameters/experienceId'
-      responses:
-        '200':
-          $ref: '#/components/responses/experience'
-        '400':
-          $ref: '#/components/responses/experienceInfoMissingIncorrect'
-        '404':
-          $ref: '#/components/responses/experienceNotFound'
     # PATCH /candidate/{candidateId}/experience/{experienceId} (updateExperience)
-    patch:
-      tags:
-        - Experience
-      operationId: updateExperience
-      summary: Update a Candidate’s Experience
-      description: |
-        Update a candidate’s experience in the system.
-      parameters:
-        - $ref: '#/components/parameters/candidateId'
-        - $ref: '#/components/parameters/experienceId'
-      requestBody:
-        $ref: '#/components/requestBodies/updateExperience'
-      responses:
-        '200':
-          $ref: '#/components/responses/experience'
-        '400':
-          $ref: '#/components/responses/experienceInfoMissingIncorrect'
-        '404':
-          $ref: '#/components/responses/experienceNotFound'
     # DELETE /candidate/{candidateId}/experience/{experienceId} (deleteExperience)
-    delete:
-      tags:
-        - Experience
-      operationId: deleteExperience
-      summary: Delete a Candidate’s Experience
-      description: |
-        Delete a candidate’s experience from the system.
-      parameters:
-        - $ref: '#/components/parameters/candidateId'
-        - $ref: '#/components/parameters/experienceId'
-      responses:
-        '200':
-          $ref: '#/components/responses/experience'
-        '400':
-          $ref: '#/components/responses/experienceInfoMissingIncorrect'
-        '404':
-          $ref: '#/components/responses/experienceNotFound'
-  #
-  # Skill
-  #
+    $ref: './paths/experienceId.yaml'
+
   '/candidate/{candidateId}/skill':
     # POST /candidate/{candidateId}/skill (createSkill)
-    post:
-      tags:
-        - Skill
-      operationId: createSkill
-      summary: Create a Candidate’s Skill
-      description: |
-        Create a candidate’s skill in the system.
-      parameters:
-        - $ref: '#/components/parameters/candidateId'
-      requestBody:
-        $ref: '#/components/requestBodies/createSkill'
-      responses:
-        '201':
-          $ref: '#/components/responses/skillCreated'
-        '400':
-          $ref: '#/components/responses/skillInfoMissingIncorrect'
-        '409':
-          $ref: '#/components/responses/skillAlreadyExists'
+    $ref: './paths/skill.yaml'
+
   '/candidate/{candidateId}/skill/{skillId}':
     # GET /candidate/{candidateId}/skill/{skillId} (getSkill)
-    get:
-      tags:
-        - Skill
-      operationId: getSkill
-      summary: Get a Candidate’s Skill
-      description: |
-        Get a candidate’s skill from the system.
-      parameters:
-        - $ref: '#/components/parameters/candidateId'
-        - $ref: '#/components/parameters/skillId'
-      responses:
-        '200':
-          $ref: '#/components/responses/skill'
-        '400':
-          $ref: '#/components/responses/skillInfoMissingIncorrect'
-        '404':
-          $ref: '#/components/responses/skillNotFound'
     # PATCH /candidate/{candidateId}/skill/{skillId} (updateSkill)
-    patch:
-      tags:
-        - Skill
-      operationId: updateSkill
-      summary: Update a Candidate’s Skill
-      description: |
-        Update a candidate’s skill in the system.
-      parameters:
-        - $ref: '#/components/parameters/candidateId'
-        - $ref: '#/components/parameters/skillId'
-      requestBody:
-        $ref: '#/components/requestBodies/updateSkill'
-      responses:
-        '200':
-          $ref: '#/components/responses/skill'
-        '400':
-          $ref: '#/components/responses/skillInfoMissingIncorrect'
-        '404':
-          $ref: '#/components/responses/skillNotFound'
     # DELETE /candidate/{candidateId}/skill/{skillId} (deleteSkill)
-    delete:
-      tags:
-        - Skill
-      operationId: deleteSkill
-      summary: Delete a Candidate’s Skill
-      description: |
-        Delete a candidate’s skill from the system.
-      parameters:
-        - $ref: '#/components/parameters/candidateId'
-        - $ref: '#/components/parameters/skillId'
-      responses:
-        '200':
-          $ref: '#/components/responses/skill'
-        '400':
-          $ref: '#/components/responses/skillInfoMissingIncorrect'
-        '404':
-          $ref: '#/components/responses/skillNotFound'
-  #
-  # Education
-  #
+    $ref: './paths/skillId.yaml'
+
   '/candidate/{candidateId}/education':
     # POST /candidate/{candidateId}/education (createEducation)
-    post:
-      tags:
-        - Education
-      operationId: createEducation
-      summary: Create a Candidate’s Education
-      description: |
-        Create a candidate’s education in the system.
-      parameters:
-        - $ref: '#/components/parameters/candidateId'
-      requestBody:
-        $ref: '#/components/requestBodies/createEducation'
-      responses:
-        '201':
-          $ref: '#/components/responses/educationCreated'
-        '400':
-          $ref: '#/components/responses/educationInfoMissingIncorrect'
-        '409':
-          $ref: '#/components/responses/educationAlreadyExists'
+    $ref: './paths/education.yaml'
+
   '/candidate/{candidateId}/education/{educationId}':
     # GET /candidate/{candidateId}/education/{educationId} (getEducation)
-    get:
-      tags:
-        - Education
-      operationId: getEducation
-      summary: Get a Candidate’s Education
-      description: |
-        Get a candidate’s education from the system.
-      parameters:
-        - $ref: '#/components/parameters/candidateId'
-        - $ref: '#/components/parameters/educationId'
-      responses:
-        '200':
-          $ref: '#/components/responses/education'
-        '400':
-          $ref: '#/components/responses/educationInfoMissingIncorrect'
-        '404':
-          $ref: '#/components/responses/educationNotFound'
     # PATCH /candidate/{candidateId}/education/{educationId} (updateEducation)
-    patch:
-      tags:
-        - Education
-      operationId: updateEducation
-      summary: Update a Candidate’s Education
-      description: |
-        Update a candidate’s education in the system.
-      parameters:
-        - $ref: '#/components/parameters/candidateId'
-        - $ref: '#/components/parameters/educationId'
-      requestBody:
-        $ref: '#/components/requestBodies/updateEducation'
-      responses:
-        '200':
-          $ref: '#/components/responses/education'
-        '400':
-          $ref: '#/components/responses/educationInfoMissingIncorrect'
-        '404':
-          $ref: '#/components/responses/educationNotFound'
     # DELETE /candidate/{candidateId}/education/{educationId} (deleteEducation)
-    delete:
-      tags:
-        - Education
-      operationId: deleteEducation
-      summary: Delete a Candidate’s Education
-      description: |
-        Delete a candidate’s education from the system.
-      parameters:
-        - $ref: '#/components/parameters/candidateId'
-        - $ref: '#/components/parameters/educationId'
-      responses:
-        '200':
-          $ref: '#/components/responses/education'
-        '400':
-          $ref: '#/components/responses/educationInfoMissingIncorrect'
-        '404':
-          $ref: '#/components/responses/educationNotFound'
+    $ref: './paths/educationId.yaml'
 
 components:
   schemas:

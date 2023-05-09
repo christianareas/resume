@@ -1,0 +1,19 @@
+# POST /candidate/{candidateId}/who (createWho)
+post:
+  tags:
+    - Who
+  operationId: createWho
+  summary: Create a Candidate’s Who
+  description: |
+    Create a candidate’s who in the system.
+  parameters:
+    - $ref: '../resume-api.yaml#/components/parameters/candidateId'
+  requestBody:
+    $ref: '../resume-api.yaml#/components/requestBodies/createWho'
+  responses:
+    '201':
+      $ref: '../resume-api.yaml#/components/responses/whoCreated'
+    '400':
+      $ref: '../resume-api.yaml#/components/responses/whoInfoMissingIncorrect'
+    '409':
+      $ref: '../resume-api.yaml#/components/responses/whoAlreadyExists'
