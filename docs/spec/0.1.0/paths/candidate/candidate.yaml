@@ -1,0 +1,17 @@
+# POST /candidate (createCandidate)
+post:
+  tags:
+    - Candidate
+  operationId: createCandidate
+  summary: Create a Candidate
+  description: |
+    Create a candidate in the system.
+  requestBody:
+    $ref: '../../resume-api.yaml#/components/requestBodies/createCandidate'
+  responses:
+    '201':
+      $ref: '../../resume-api.yaml#/components/responses/candidateCreated'
+    '400':
+      $ref: '../../resume-api.yaml#/components/responses/candidateInfoMissingIncorrect'
+    '409':
+      $ref: '../../resume-api.yaml#/components/responses/candidateAlreadyExists'

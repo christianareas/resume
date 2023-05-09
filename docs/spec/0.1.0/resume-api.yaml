@@ -13,11 +13,11 @@ info:
   version: 0.1.0
 
 servers:
-  - url: 'http://localhost:3000/api'
+  - url: 'http://localhost:3000/api/v0'
     description: Local
-  - url: 'https://resume-stage.areas.me/api'
+  - url: 'https://resume-stage.areas.me/api/v0'
     description: Stage
-  - url: 'https://resume.areas.me/api'
+  - url: 'https://resume.areas.me/api/v0'
     description: Production
 
 tags:
@@ -31,53 +31,53 @@ tags:
 paths:
   '/candidate':
     # POST /candidate (createCandidate)
-    $ref: './paths/candidate.yaml'
+    $ref: './paths/candidate/candidate.yaml'
 
   '/candidate/{candidateId}':
     # GET /candidate/{candidateId} (getCandidate)
     # PATCH /candidate/{candidateId} (updateCandidate)
     # DELETE /candidate/{candidateId} (deleteCandidate)
-    $ref: './paths/candidateId.yaml'
+    $ref: './paths/candidate/candidateId.yaml'
 
   '/candidate/{candidateId}/who':
     # POST /candidate/{candidateId}/who (createWho)
-    $ref: './paths/who.yaml'
+    $ref: './paths/who/who.yaml'
 
   '/candidate/{candidateId}/who/{whoId}':
     # GET /candidate/{candidateId}/who/{whoId} (getWho)
     # PATCH /candidate/{candidateId}/who/{whoId} (updateWho)
     # DELETE /candidate/{candidateId}/who/{whoId} (deleteWho)
-    $ref: './paths/whoId.yaml'
+    $ref: './paths/who/whoId.yaml'
 
   '/candidate/{candidateId}/experience':
     # POST /candidate/{candidateId}/experience (createExperience)
-    $ref: './paths/experience.yaml'
+    $ref: './paths/experience/experience.yaml'
 
   '/candidate/{candidateId}/experience/{experienceId}':
     # GET /candidate/{candidateId}/experience/{experienceId} (getExperience)
     # PATCH /candidate/{candidateId}/experience/{experienceId} (updateExperience)
     # DELETE /candidate/{candidateId}/experience/{experienceId} (deleteExperience)
-    $ref: './paths/experienceId.yaml'
+    $ref: './paths/experience/experienceId.yaml'
 
   '/candidate/{candidateId}/skill':
     # POST /candidate/{candidateId}/skill (createSkill)
-    $ref: './paths/skill.yaml'
+    $ref: './paths/skill/skill.yaml'
 
   '/candidate/{candidateId}/skill/{skillId}':
     # GET /candidate/{candidateId}/skill/{skillId} (getSkill)
     # PATCH /candidate/{candidateId}/skill/{skillId} (updateSkill)
     # DELETE /candidate/{candidateId}/skill/{skillId} (deleteSkill)
-    $ref: './paths/skillId.yaml'
+    $ref: './paths/skill/skillId.yaml'
 
   '/candidate/{candidateId}/education':
     # POST /candidate/{candidateId}/education (createEducation)
-    $ref: './paths/education.yaml'
+    $ref: './paths/education/education.yaml'
 
   '/candidate/{candidateId}/education/{educationId}':
     # GET /candidate/{candidateId}/education/{educationId} (getEducation)
     # PATCH /candidate/{candidateId}/education/{educationId} (updateEducation)
     # DELETE /candidate/{candidateId}/education/{educationId} (deleteEducation)
-    $ref: './paths/educationId.yaml'
+    $ref: './paths/education/educationId.yaml'
 
 components:
   schemas:

@@ -1,0 +1,58 @@
+# GET /candidate/{candidateId}/experience/{experienceId} (getExperience)
+get:
+  tags:
+    - Experience
+  operationId: getExperience
+  summary: Get a Candidate’s Experience
+  description: |
+    Get a candidate’s experience from the system.
+  parameters:
+    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
+    - $ref: '../../resume-api.yaml#/components/parameters/experienceId'
+  responses:
+    '200':
+      $ref: '../../resume-api.yaml#/components/responses/experience'
+    '400':
+      $ref: '../../resume-api.yaml#/components/responses/experienceInfoMissingIncorrect'
+    '404':
+      $ref: '../../resume-api.yaml#/components/responses/experienceNotFound'
+
+# PATCH /candidate/{candidateId}/experience/{experienceId} (updateExperience)
+patch:
+  tags:
+    - Experience
+  operationId: updateExperience
+  summary: Update a Candidate’s Experience
+  description: |
+    Update a candidate’s experience in the system.
+  parameters:
+    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
+    - $ref: '../../resume-api.yaml#/components/parameters/experienceId'
+  requestBody:
+    $ref: '../../resume-api.yaml#/components/requestBodies/updateExperience'
+  responses:
+    '200':
+      $ref: '../../resume-api.yaml#/components/responses/experience'
+    '400':
+      $ref: '../../resume-api.yaml#/components/responses/experienceInfoMissingIncorrect'
+    '404':
+      $ref: '../../resume-api.yaml#/components/responses/experienceNotFound'
+
+# DELETE /candidate/{candidateId}/experience/{experienceId} (deleteExperience)
+delete:
+  tags:
+    - Experience
+  operationId: deleteExperience
+  summary: Delete a Candidate’s Experience
+  description: |
+    Delete a candidate’s experience from the system.
+  parameters:
+    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
+    - $ref: '../../resume-api.yaml#/components/parameters/experienceId'
+  responses:
+    '200':
+      $ref: '../../resume-api.yaml#/components/responses/experience'
+    '400':
+      $ref: '../../resume-api.yaml#/components/responses/experienceInfoMissingIncorrect'
+    '404':
+      $ref: '../../resume-api.yaml#/components/responses/experienceNotFound'

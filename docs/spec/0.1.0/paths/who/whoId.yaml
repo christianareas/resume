@@ -1,0 +1,58 @@
+# GET /candidate/{candidateId}/who/{whoId} (getWho)
+get:
+  tags:
+    - Who
+  operationId: getWho
+  summary: Get a Candidate’s Who
+  description: |
+    Get a candidate’s who from the system.
+  parameters:
+    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
+    - $ref: '../../resume-api.yaml#/components/parameters/whoId'
+  responses:
+    '200':
+      $ref: '../../resume-api.yaml#/components/responses/who'
+    '400':
+      $ref: '../../resume-api.yaml#/components/responses/whoInfoMissingIncorrect'
+    '404':
+      $ref: '../../resume-api.yaml#/components/responses/whoNotFound'
+
+# PATCH /candidate/{candidateId}/who/{whoId} (updateWho)
+patch:
+  tags:
+    - Who
+  operationId: updateWho
+  summary: Update a Candidate’s Who
+  description: |
+    Update a candidate’s who in the system.
+  parameters:
+    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
+    - $ref: '../../resume-api.yaml#/components/parameters/whoId'
+  requestBody:
+    $ref: '../../resume-api.yaml#/components/requestBodies/updateWho'
+  responses:
+    '200':
+      $ref: '../../resume-api.yaml#/components/responses/who'
+    '400':
+      $ref: '../../resume-api.yaml#/components/responses/whoInfoMissingIncorrect'
+    '404':
+      $ref: '../../resume-api.yaml#/components/responses/whoNotFound'
+
+# DELETE /candidate/{candidateId}/who/{whoId} (deleteWho)
+delete:
+  tags:
+    - Who
+  operationId: deleteWho
+  summary: Delete a Candidate’s Who
+  description: |
+    Delete a candidate’s who from the system.
+  parameters:
+    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
+    - $ref: '../../resume-api.yaml#/components/parameters/whoId'
+  responses:
+    '200':
+      $ref: '../../resume-api.yaml#/components/responses/who'
+    '400':
+      $ref: '../../resume-api.yaml#/components/responses/whoInfoMissingIncorrect'
+    '404':
+      $ref: '../../resume-api.yaml#/components/responses/whoNotFound'
