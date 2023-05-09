@@ -1,0 +1,113 @@
+# Candidate model.
+definitions:
+  candidate:
+    type: object
+    properties:
+      candidateId:
+        type: string
+        format: uuid
+        description: The candidate’s unique identifier.
+        example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
+      firstName:
+        type: string
+        description: The candidate’s first name.
+        example: Christian
+      lastName:
+        type: string
+        description: The candidate’s last name.
+        example: Areas
+      email:
+        type: string
+        format: email
+        description: The candidate’s email address.
+        example: me@areas.me
+      phoneCountryCode:
+        type: integer
+        description: The candidate’s phone country code.
+        example: 1
+      phoneNumber:
+        type: integer
+        description: The candidate’s phone number.
+        example: 4088029811
+      website:
+        type: string
+        format: uri
+        description: The candidate’s website.
+        example: https://areas.me
+      linkedIn:
+        type: string
+        format: uri
+        description: The candidate’s LinkedIn URL.
+        example: https://www.linkedin.com/in/christianareas/
+      gitHub:
+        type: string
+        format: uri
+        description: The candidate’s GitHub URL.
+        example: https://github.com/christianareas
+
+oneOf:
+- title: Candidate
+  type: object
+  properties:
+    candidateId:
+      $ref: "#/definitions/candidate/properties/candidateId"
+    firstName:
+      $ref: "#/definitions/candidate/properties/firstName"
+    lastName:
+      $ref: "#/definitions/candidate/properties/lastName"
+    email:
+      $ref: "#/definitions/candidate/properties/email"
+    phoneCountryCode:
+      $ref: "#/definitions/candidate/properties/phoneCountryCode"
+    phoneNumber:
+      $ref: "#/definitions/candidate/properties/phoneNumber"
+    website:
+      $ref: "#/definitions/candidate/properties/website"
+    linkedIn:
+      $ref: "#/definitions/candidate/properties/linkedIn"
+    gitHub:
+      $ref: "#/definitions/candidate/properties/gitHub"
+
+- title: CreateCandidate
+  type: object
+  required:
+    - firstName
+    - lastName
+    - email
+  properties:
+    firstName:
+      $ref: "#/definitions/candidate/properties/firstName"
+    lastName:
+      $ref: "#/definitions/candidate/properties/lastName"
+    email:
+      $ref: "#/definitions/candidate/properties/email"
+    phoneCountryCode:
+      $ref: "#/definitions/candidate/properties/phoneCountryCode"
+    phoneNumber:
+      $ref: "#/definitions/candidate/properties/phoneNumber"
+    website:
+      $ref: "#/definitions/candidate/properties/website"
+    linkedIn:
+      $ref: "#/definitions/candidate/properties/linkedIn"
+    gitHub:
+      $ref: "#/definitions/candidate/properties/gitHub"
+
+- title: UpdateCandidate
+  type: object
+  properties:
+    firstName:
+      $ref: "#/definitions/candidate/properties/firstName"
+    lastName:
+      $ref: "#/definitions/candidate/properties/lastName"
+    email:
+      $ref: "#/definitions/candidate/properties/email"
+    phoneCountryCode:
+      $ref: "#/definitions/candidate/properties/phoneCountryCode"
+    phoneNumber:
+      $ref: "#/definitions/candidate/properties/phoneNumber"
+    website:
+      $ref: "#/definitions/candidate/properties/website"
+    linkedIn:
+      $ref: "#/definitions/candidate/properties/linkedIn"
+    gitHub:
+      $ref: "#/definitions/candidate/properties/gitHub"
