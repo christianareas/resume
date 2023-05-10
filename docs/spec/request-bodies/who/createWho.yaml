@@ -1,0 +1,4 @@
+content:
+  application/json:
+    schema:
+      $ref: '../../models/Who.yaml#/oneOf/1'

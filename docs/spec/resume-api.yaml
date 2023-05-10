@@ -105,66 +105,26 @@ components:
       $ref: './parameters/educationId.yaml'
 
   requestBodies:
-    # Candidate POST
     createCandidate:
-      content:
-        application/json:
-          schema:
-            $ref: './models/Candidate.yaml#/oneOf/1'
-    # Candidate PATCH
+      $ref: './request-bodies/candidate/createCandidate.yaml'
     updateCandidate:
-      content:
-        application/json:
-          schema:
-            $ref: './models/Candidate.yaml#/oneOf/2'
-    # Who POST
+      $ref: './request-bodies/candidate/updateCandidate.yaml'
     createWho:
-      content:
-        application/json:
-          schema:
-            $ref: './models/Who.yaml#/oneOf/1'
-    # Who PATCH
+      $ref: './request-bodies/who/createWho.yaml'
     updateWho:
-      content:
-        application/json:
-          schema:
-            $ref: './models/Who.yaml#/oneOf/2'
-    # Experience POST
+      $ref: './request-bodies/who/updateWho.yaml'
     createExperience:
-      content:
-        application/json:
-          schema:
-            $ref: './models/Experience.yaml#/oneOf/1'
-    # Experience PATCH
+      $ref: './request-bodies/experience/createExperience.yaml'
     updateExperience:
-      content:
-        application/json:
-          schema:
-            $ref: './models/Experience.yaml#/oneOf/2'
-    # Skill POST
+      $ref: './request-bodies/experience/updateExperience.yaml'
     createSkill:
-      content:
-        application/json:
-          schema:
-            $ref: './models/Skill.yaml#/oneOf/1'
-    # Skill PATCH
+      $ref: './request-bodies/skill/createSkill.yaml'
     updateSkill:
-      content:
-        application/json:
-          schema:
-            $ref: './models/Skill.yaml#/oneOf/2'
-    # Education POST
+      $ref: './request-bodies/skill/updateSkill.yaml'
     createEducation:
-      content:
-        application/json:
-          schema:
-            $ref: './models/Education.yaml#/oneOf/1'
-    # Education PATCH
+      $ref: './request-bodies/education/createEducation.yaml'
     updateEducation:
-      content:
-        application/json:
-          schema:
-            $ref: './models/Education.yaml#/oneOf/2'
+      $ref: './request-bodies/education/updateEducation.yaml'
 
   responses:
     # Candidate 200
