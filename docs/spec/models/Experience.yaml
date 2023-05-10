@@ -25,12 +25,12 @@ oneOf:
       type: string
       format: date
       description: The candidate’s start date.
-      example: 2015-07-27
+      example: '2015-07-27'
     endDate:
       type: string
       format: date
       description: The candidate’s end date.
-      example: 2022-04-29
+      example: '2022-04-29'
     accomplishments:
       type: array
       items:

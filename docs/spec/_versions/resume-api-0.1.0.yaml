@@ -386,405 +386,6 @@ paths:
         '404':
           $ref: '#/components/responses/educationNotFound'
 components:
-  schemas:
-    Candidate:
-      oneOf:
-      - title: Candidate
-        type: object
-        properties:
-          candidateId:
-            type: string
-            format: uuid
-            description: The candidate’s unique identifier.
-            example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
-          firstName:
-            type: string
-            description: The candidate’s first name.
-            example: Christian
-          lastName:
-            type: string
-            description: The candidate’s last name.
-            example: Areas
-          email:
-            type: string
-            format: email
-            description: The candidate’s email address.
-            example: me@areas.me
-          phoneCountryCode:
-            type: integer
-            description: The candidate’s phone country code.
-            example: 1
-          phoneNumber:
-            type: integer
-            description: The candidate’s phone number.
-            example: 4088029811
-          website:
-            type: string
-            format: uri
-            description: The candidate’s website.
-            example: 'https://areas.me'
-          linkedIn:
-            type: string
-            format: uri
-            description: The candidate’s LinkedIn URL.
-            example: 'https://www.linkedin.com/in/christianareas/'
-          gitHub:
-            type: string
-            format: uri
-            description: The candidate’s GitHub URL.
-            example: 'https://github.com/christianareas'
-      - title: CreateCandidate
-        type: object
-        required:
-          - firstName
-          - lastName
-          - email
-        properties:
-          firstName:
-            $ref: '#/components/schemas/Candidate/oneOf/0/properties/firstName'
-          lastName:
-            $ref: '#/components/schemas/Candidate/oneOf/0/properties/lastName'
-          email:
-            $ref: '#/components/schemas/Candidate/oneOf/0/properties/email'
-          phoneCountryCode:
-            $ref: '#/components/schemas/Candidate/oneOf/0/properties/phoneCountryCode'
-          phoneNumber:
-            $ref: '#/components/schemas/Candidate/oneOf/0/properties/phoneNumber'
-          website:
-            $ref: '#/components/schemas/Candidate/oneOf/0/properties/website'
-          linkedIn:
-            $ref: '#/components/schemas/Candidate/oneOf/0/properties/linkedIn'
-          gitHub:
-            $ref: '#/components/schemas/Candidate/oneOf/0/properties/gitHub'
-      - title: UpdateCandidate
-        type: object
-        properties:
-          firstName:
-            $ref: '#/components/schemas/Candidate/oneOf/0/properties/firstName'
-          lastName:
-            $ref: '#/components/schemas/Candidate/oneOf/0/properties/lastName'
-          email:
-            $ref: '#/components/schemas/Candidate/oneOf/0/properties/email'
-          phoneCountryCode:
-            $ref: '#/components/schemas/Candidate/oneOf/0/properties/phoneCountryCode'
-          phoneNumber:
-            $ref: '#/components/schemas/Candidate/oneOf/0/properties/phoneNumber'
-          website:
-            $ref: '#/components/schemas/Candidate/oneOf/0/properties/website'
-          linkedIn:
-            $ref: '#/components/schemas/Candidate/oneOf/0/properties/linkedIn'
-          gitHub:
-            $ref: '#/components/schemas/Candidate/oneOf/0/properties/gitHub'
-    Who:
-      definitions:
-        who:
-          type: object
-          properties:
-            candidateId:
-              type: string
-              format: uuid
-              description: The candidate’s unique identifier.
-              example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
-            whoId:
-              type: string
-              format: uuid
-              description: The who’s unique identifier.
-              example: fcf47884-9c4c-487d-947f-9449f588a383
-            who:
-              type: string
-              format: string
-              description: The candidate’s “who” — usually a few sentences that summarize the candidate.
-              example: 'A writer who loves language and technology. Honest, transparent, and easy to work with. Runs marathons and builds mechanical keyboards during off hours.'
-      oneOf:
-        - title: Who
-          type: object
-          properties:
-            candidateId:
-              $ref: '#/components/schemas/Who/definitions/who/properties/candidateId'
-            whoId:
-              $ref: '#/components/schemas/Who/definitions/who/properties/whoId'
-            who:
-              $ref: '#/components/schemas/Who/definitions/who/properties/who'
-        - title: CreateWho
-          type: object
-          required:
-            - who
-          properties:
-            who:
-              $ref: '#/components/schemas/Who/definitions/who/properties/who'
-        - title: UpdateWho
-          type: object
-          properties:
-            who:
-              $ref: '#/components/schemas/Who/definitions/who/properties/who'
-    Experience:
-      definitions:
-        experience:
-          type: array
-          items:
-            type: object
-            properties:
-              candidateId:
-                type: string
-                format: uuid
-                description: The candidate’s unique identifier.
-                example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
-              experienceId:
-                type: string
-                format: uuid
-                description: The experience’s unique identifier.
-                example: 637f9a15-ea20-4597-990b-d67bd20db1c1
-              company:
-                type: string
-                description: The company the candidate worked for.
-                example: Apple
-              role:
-                type: string
-                description: The candidate’s role.
-                example: 'Senior Technical Writer, Apple Pay'
-              startDate:
-                type: string
-                format: date
-                description: The candidate’s start date.
-                example: 2015-07-27
-              endDate:
-                type: string
-                format: date
-                description: The candidate’s end date.
-                example: 2022-04-29
-              accomplishments:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    accomplishmentId:
-                      type: string
-                      format: uuid
-                      description: The accomplishment’s unique identifier.
-                      example: 7f4d6d8b-56c4-40a7-9c75-9d48f34a5161
-                    accomplishment:
-                      type: string
-                      description: The candidate’s accomplishment.
-                      example: Functioned as the sole technical writer for Apple Pay server engineering.
-                    sortOrder:
-                      type: integer
-                      description: 'The accomplishment’s sort order. `0` is first. If omitted, the order defaults to alphabetic.'
-                      example: 0
-      oneOf:
-        - title: Experience
-          type: object
-          properties:
-            candidateId:
-              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/candidateId'
-            experienceId:
-              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/experienceId'
-            company:
-              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/company'
-            role:
-              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/role'
-            startDate:
-              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/startDate'
-            endDate:
-              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/endDate'
-            accomplishments:
-              type: array
-              items:
-                type: object
-                properties:
-                  accomplishmentId:
-                    $ref: '#/components/schemas/Experience/definitions/experience/items/properties/accomplishments/items/properties/accomplishmentId'
-                  accomplishment:
-                    $ref: '#/components/schemas/Experience/definitions/experience/items/properties/accomplishments/items/properties/accomplishment'
-                  sortOrder:
-                    $ref: '#/components/schemas/Experience/definitions/experience/items/properties/accomplishments/items/properties/sortOrder'
-        - title: CreateExperience
-          type: object
-          required:
-            - company
-            - role
-            - startDate
-          properties:
-            company:
-              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/company'
-            role:
-              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/role'
-            startDate:
-              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/startDate'
-            endDate:
-              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/endDate'
-            accomplishments:
-              type: array
-              items:
-                type: object
-                required:
-                  - accomplishment
-                properties:
-                  accomplishment:
-                    $ref: '#/components/schemas/Experience/definitions/experience/items/properties/accomplishments/items/properties/accomplishment'
-                  sortOrder:
-                    $ref: '#/components/schemas/Experience/definitions/experience/items/properties/accomplishments/items/properties/sortOrder'
-        - title: UpdateExperience
-          type: object
-          properties:
-            company:
-              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/company'
-            role:
-              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/role'
-            startDate:
-              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/startDate'
-            endDate:
-              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/endDate'
-            accomplishments:
-              type: array
-              items:
-                type: object
-                required:
-                  - accomplishment
-                properties:
-                  accomplishmentId:
-                    $ref: '#/components/schemas/Experience/definitions/experience/items/properties/accomplishments/items/properties/accomplishmentId'
-                  accomplishment:
-                    $ref: '#/components/schemas/Experience/definitions/experience/items/properties/accomplishments/items/properties/accomplishment'
-                  sortOrder:
-                    $ref: '#/components/schemas/Experience/definitions/experience/items/properties/accomplishments/items/properties/sortOrder'
-    Skill:
-      definitions:
-        skill:
-          type: array
-          items:
-            type: object
-            properties:
-              candidateId:
-                type: string
-                format: uuid
-                description: The candidate’s unique identifier.
-                example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
-              skillId:
-                type: string
-                format: uuid
-                description: The skill’s unique identifier.
-                example: 97d3165d-e1dd-4955-972c-95ebf04dd091
-              skillType:
-                type: string
-                description: The skill’s type. This gives candidates a way to further organize their skill by type.
-                example: technical
-              skill:
-                type: string
-                description: The candidate’s skill.
-                example: OpenAPI
-              sortOrder:
-                type: integer
-                description: 'The skill’s sort order. `0` is first. If omitted, the order defaults to alphabetic.'
-                example: 0
-      oneOf:
-        - title: Skill
-          type: object
-          properties:
-            candidateId:
-              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/candidateId'
-            skillId:
-              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/skillId'
-            skillType:
-              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/skillType'
-            skill:
-              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/skill'
-            sortOrder:
-              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/sortOrder'
-        - title: CreateSkill
-          type: object
-          required:
-            - skill
-          properties:
-            skillType:
-              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/skillType'
-            skill:
-              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/skill'
-            sortOrder:
-              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/sortOrder'
-        - title: UpdateSkill
-          type: object
-          properties:
-            skillType:
-              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/skillType'
-            skill:
-              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/skill'
-            sortOrder:
-              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/sortOrder'
-    Education:
-      definitions:
-        education:
-          type: array
-          items:
-            type: object
-            properties:
-              candidateId:
-                type: string
-                format: uuid
-                description: The candidate’s unique identifier.
-                example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
-              educationId:
-                type: string
-                format: uuid
-                description: The candidate’s unique identifier.
-                example: f61e2435-caf4-4ec8-901f-2b0760de9d2c
-              institution:
-                type: string
-                description: The institution the candidate attended.
-                example: 'University of California, Berkeley'
-              degree:
-                type: string
-                description: The candidate’s degree.
-                example: 'Bachelor of Arts, English and Premed'
-              startDate:
-                type: string
-                format: date
-                description: The candidate’s start date.
-              endDate:
-                type: string
-                format: date
-                description: The candidate’s end date.
-      oneOf:
-        - title: Education
-          type: object
-          properties:
-            candidateId:
-              $ref: '#/components/schemas/Education/definitions/education/items/properties/candidateId'
-            educationId:
-              $ref: '#/components/schemas/Education/definitions/education/items/properties/educationId'
-            institution:
-              $ref: '#/components/schemas/Education/definitions/education/items/properties/institution'
-            degree:
-              $ref: '#/components/schemas/Education/definitions/education/items/properties/degree'
-            startDate:
-              $ref: '#/components/schemas/Education/definitions/education/items/properties/startDate'
-            endDate:
-              $ref: '#/components/schemas/Education/definitions/education/items/properties/endDate'
-        - title: CreateEducation
-          type: object
-          required:
-            - institution
-            - degree
-            - startDate
-          properties:
-            institution:
-              $ref: '#/components/schemas/Education/definitions/education/items/properties/institution'
-            degree:
-              $ref: '#/components/schemas/Education/definitions/education/items/properties/degree'
-            startDate:
-              $ref: '#/components/schemas/Education/definitions/education/items/properties/startDate'
-            endDate:
-              $ref: '#/components/schemas/Education/definitions/education/items/properties/endDate'
-        - title: UpdateEducation
-          type: object
-          properties:
-            institution:
-              $ref: '#/components/schemas/Education/definitions/education/items/properties/institution'
-            degree:
-              $ref: '#/components/schemas/Education/definitions/education/items/properties/degree'
-            startDate:
-              $ref: '#/components/schemas/Education/definitions/education/items/properties/startDate'
-            endDate:
-              $ref: '#/components/schemas/Education/definitions/education/items/properties/endDate'
   parameters:
     candidateId:
       name: candidateId
@@ -836,65 +437,248 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Candidate/oneOf/1'
+            title: CreateCandidate
+            type: object
+            required:
+              - firstName
+              - lastName
+              - email
+            properties:
+              firstName:
+                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/firstName'
+              lastName:
+                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/lastName'
+              email:
+                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/email'
+              phoneCountryCode:
+                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/phoneCountryCode'
+              phoneNumber:
+                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/phoneNumber'
+              website:
+                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/website'
+              linkedIn:
+                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/linkedIn'
+              gitHub:
+                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/gitHub'
     updateCandidate:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Candidate/oneOf/2'
+            title: UpdateCandidate
+            type: object
+            properties:
+              firstName:
+                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/firstName'
+              lastName:
+                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/lastName'
+              email:
+                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/email'
+              phoneCountryCode:
+                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/phoneCountryCode'
+              phoneNumber:
+                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/phoneNumber'
+              website:
+                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/website'
+              linkedIn:
+                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/linkedIn'
+              gitHub:
+                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/gitHub'
     createWho:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Who/oneOf/1'
+            title: CreateWho
+            type: object
+            required:
+              - who
+            properties:
+              who:
+                $ref: '#/components/responses/who/content/application~1json/schema/properties/who'
     updateWho:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Who/oneOf/2'
+            title: UpdateWho
+            type: object
+            properties:
+              who:
+                $ref: '#/components/responses/who/content/application~1json/schema/properties/who'
     createExperience:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Experience/oneOf/1'
+            title: CreateExperience
+            type: object
+            required:
+              - company
+              - role
+              - startDate
+            properties:
+              company:
+                $ref: '#/components/responses/experience/content/application~1json/schema/properties/company'
+              role:
+                $ref: '#/components/responses/experience/content/application~1json/schema/properties/role'
+              startDate:
+                $ref: '#/components/responses/experience/content/application~1json/schema/properties/startDate'
+              endDate:
+                $ref: '#/components/responses/experience/content/application~1json/schema/properties/endDate'
+              accomplishments:
+                type: array
+                items:
+                  type: object
+                  required:
+                    - accomplishment
+                  properties:
+                    accomplishment:
+                      $ref: '#/components/responses/experience/content/application~1json/schema/properties/accomplishments/items/properties/accomplishment'
+                    sortOrder:
+                      $ref: '#/components/responses/experience/content/application~1json/schema/properties/accomplishments/items/properties/sortOrder'
     updateExperience:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Experience/oneOf/2'
+            title: UpdateExperience
+            type: object
+            properties:
+              company:
+                $ref: '#/components/responses/experience/content/application~1json/schema/properties/company'
+              role:
+                $ref: '#/components/responses/experience/content/application~1json/schema/properties/role'
+              startDate:
+                $ref: '#/components/responses/experience/content/application~1json/schema/properties/startDate'
+              endDate:
+                $ref: '#/components/responses/experience/content/application~1json/schema/properties/endDate'
+              accomplishments:
+                type: array
+                items:
+                  type: object
+                  required:
+                    - accomplishment
+                  properties:
+                    accomplishmentId:
+                      $ref: '#/components/responses/experience/content/application~1json/schema/properties/accomplishments/items/properties/accomplishmentId'
+                    accomplishment:
+                      $ref: '#/components/responses/experience/content/application~1json/schema/properties/accomplishments/items/properties/accomplishment'
+                    sortOrder:
+                      $ref: '#/components/responses/experience/content/application~1json/schema/properties/accomplishments/items/properties/sortOrder'
     createSkill:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Skill/oneOf/1'
+            title: CreateSkill
+            type: object
+            required:
+              - skill
+            properties:
+              skillType:
+                $ref: '#/components/responses/skill/content/application~1json/schema/properties/skillType'
+              skill:
+                $ref: '#/components/responses/skill/content/application~1json/schema/properties/skill'
+              sortOrder:
+                $ref: '#/components/responses/skill/content/application~1json/schema/properties/sortOrder'
     updateSkill:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Skill/oneOf/2'
+            title: UpdateSkill
+            type: object
+            properties:
+              skillType:
+                $ref: '#/components/responses/skill/content/application~1json/schema/properties/skillType'
+              skill:
+                $ref: '#/components/responses/skill/content/application~1json/schema/properties/skill'
+              sortOrder:
+                $ref: '#/components/responses/skill/content/application~1json/schema/properties/sortOrder'
     createEducation:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Education/oneOf/1'
+            title: CreateEducation
+            type: object
+            required:
+              - institution
+              - degree
+              - startDate
+            properties:
+              institution:
+                $ref: '#/components/responses/education/content/application~1json/schema/properties/institution'
+              degree:
+                $ref: '#/components/responses/education/content/application~1json/schema/properties/degree'
+              startDate:
+                $ref: '#/components/responses/education/content/application~1json/schema/properties/startDate'
+              endDate:
+                $ref: '#/components/responses/education/content/application~1json/schema/properties/endDate'
     updateEducation:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Education/oneOf/2'
+            title: UpdateEducation
+            type: object
+            properties:
+              institution:
+                $ref: '#/components/responses/education/content/application~1json/schema/properties/institution'
+              degree:
+                $ref: '#/components/responses/education/content/application~1json/schema/properties/degree'
+              startDate:
+                $ref: '#/components/responses/education/content/application~1json/schema/properties/startDate'
+              endDate:
+                $ref: '#/components/responses/education/content/application~1json/schema/properties/endDate'
   responses:
     candidate:
       description: OK
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Candidate/oneOf/0'
+            title: Candidate
+            type: object
+            properties:
+              candidateId:
+                type: string
+                format: uuid
+                description: The candidate’s unique identifier.
+                example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
+              firstName:
+                type: string
+                description: The candidate’s first name.
+                example: Christian
+              lastName:
+                type: string
+                description: The candidate’s last name.
+                example: Areas
+              email:
+                type: string
+                format: email
+                description: The candidate’s email address.
+                example: me@areas.me
+              phoneCountryCode:
+                type: integer
+                description: The candidate’s phone country code.
+                example: 1
+              phoneNumber:
+                type: integer
+                description: The candidate’s phone number.
+                example: 4088029811
+              website:
+                type: string
+                format: uri
+                description: The candidate’s website.
+                example: 'https://areas.me'
+              linkedIn:
+                type: string
+                format: uri
+                description: The candidate’s LinkedIn URL.
+                example: 'https://www.linkedin.com/in/christianareas/'
+              gitHub:
+                type: string
+                format: uri
+                description: The candidate’s GitHub URL.
+                example: 'https://github.com/christianareas'
     candidateCreated:
       description: Created
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Candidate/oneOf/0'
+            $ref: '#/components/responses/candidate/content/application~1json/schema'
     candidateInfoMissingIncorrect:
       description: Candidate information missing or incorrect
     candidateNotFound:
@@ -906,13 +690,30 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Who/oneOf/0'
+            title: Who
+            type: object
+            properties:
+              candidateId:
+                type: string
+                format: uuid
+                description: The candidate’s unique identifier.
+                example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
+              whoId:
+                type: string
+                format: uuid
+                description: The who’s unique identifier.
+                example: fcf47884-9c4c-487d-947f-9449f588a383
+              who:
+                type: string
+                format: string
+                description: The candidate’s “who” — usually a few sentences that summarize the candidate.
+                example: 'A writer who loves language and technology. Honest, transparent, and easy to work with. Runs marathons and builds mechanical keyboards during off hours.'
     whoCreated:
       description: Created
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Who/oneOf/0'
+            $ref: '#/components/responses/who/content/application~1json/schema'
     whoInfoMissingIncorrect:
       description: Who information missing or incorrect
     whoNotFound:
@@ -924,13 +725,61 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Experience/oneOf/0'
+            title: Experience
+            type: object
+            properties:
+              candidateId:
+                type: string
+                format: uuid
+                description: The candidate’s unique identifier.
+                example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
+              experienceId:
+                type: string
+                format: uuid
+                description: The experience’s unique identifier.
+                example: 637f9a15-ea20-4597-990b-d67bd20db1c1
+              company:
+                type: string
+                description: The company the candidate worked for.
+                example: Apple
+              role:
+                type: string
+                description: The candidate’s role.
+                example: 'Senior Technical Writer, Apple Pay'
+              startDate:
+                type: string
+                format: date
+                description: The candidate’s start date.
+                example: '2015-07-27'
+              endDate:
+                type: string
+                format: date
+                description: The candidate’s end date.
+                example: '2022-04-29'
+              accomplishments:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    accomplishmentId:
+                      type: string
+                      format: uuid
+                      description: The accomplishment’s unique identifier.
+                      example: 7f4d6d8b-56c4-40a7-9c75-9d48f34a5161
+                    accomplishment:
+                      type: string
+                      description: The candidate’s accomplishment.
+                      example: Functioned as the sole technical writer for Apple Pay server engineering.
+                    sortOrder:
+                      type: integer
+                      description: 'The accomplishment’s sort order. `0` is first. If omitted, the order defaults to alphabetic.'
+                      example: 0
     experienceCreated:
       description: Created
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Experience/oneOf/0'
+            $ref: '#/components/responses/experience/content/application~1json/schema'
     experienceInfoMissingIncorrect:
       description: Experience information missing or incorrect
     experienceNotFound:
@@ -942,13 +791,37 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Skill/oneOf/0'
+            title: Skill
+            type: object
+            properties:
+              candidateId:
+                type: string
+                format: uuid
+                description: The candidate’s unique identifier.
+                example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
+              skillId:
+                type: string
+                format: uuid
+                description: The skill’s unique identifier.
+                example: 97d3165d-e1dd-4955-972c-95ebf04dd091
+              skillType:
+                type: string
+                description: The skill’s type. This gives candidates a way to further organize their skill by type.
+                example: technical
+              skill:
+                type: string
+                description: The candidate’s skill.
+                example: OpenAPI
+              sortOrder:
+                type: integer
+                description: 'The skill’s sort order. `0` is first. If omitted, the order defaults to alphabetic.'
+                example: 0
     skillCreated:
       description: Created
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Skill/oneOf/0'
+            $ref: '#/components/responses/skill/content/application~1json/schema'
     skillInfoMissingIncorrect:
       description: Skill information missing or incorrect
     skillNotFound:
@@ -960,13 +833,41 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Education/oneOf/0'
+            title: Education
+            type: object
+            properties:
+              candidateId:
+                type: string
+                format: uuid
+                description: The candidate’s unique identifier.
+                example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
+              educationId:
+                type: string
+                format: uuid
+                description: The candidate’s unique identifier.
+                example: f61e2435-caf4-4ec8-901f-2b0760de9d2c
+              institution:
+                type: string
+                description: The institution the candidate attended.
+                example: 'University of California, Berkeley'
+              degree:
+                type: string
+                description: The candidate’s degree.
+                example: 'Bachelor of Arts, English and Premed'
+              startDate:
+                type: string
+                format: date
+                description: The candidate’s start date.
+              endDate:
+                type: string
+                format: date
+                description: The candidate’s end date.
     educationCreated:
       description: Created
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Education/oneOf/0'
+            $ref: '#/components/responses/education/content/application~1json/schema'
     educationInfoMissingIncorrect:
       description: Education information missing or incorrect
     educationNotFound:

@@ -80,17 +80,17 @@ paths:
     $ref: './paths/education/educationId.yaml'
 
 components:
-  schemas:
-    Candidate:
-      $ref: './models/Candidate.yaml'
-    Who:
-      $ref: './models/Who.yaml'
-    Experience:
-      $ref: './models/Experience.yaml'
-    Skill:
-      $ref: './models/Skill.yaml'
-    Education:
-      $ref: './models/Education.yaml'
+  # schemas:
+  #   Candidate:
+  #     $ref: './models/Candidate.yaml'
+  #   Who:
+  #     $ref: './models/Who.yaml'
+  #   Experience:
+  #     $ref: './models/Experience.yaml'
+  #   Skill:
+  #     $ref: './models/Skill.yaml'
+  #   Education:
+  #     $ref: './models/Education.yaml'
 
   parameters:
     candidateId:
