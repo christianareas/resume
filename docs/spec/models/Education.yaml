@@ -1,0 +1,64 @@
+# Education model.
+oneOf:
+- title: Education
+  type: object
+  properties:
+    candidateId:
+      type: string
+      format: uuid
+      description: The candidate’s unique identifier.
+      example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
+    educationId:
+      type: string
+      format: uuid
+      description: The candidate’s unique identifier.
+      example: f61e2435-caf4-4ec8-901f-2b0760de9d2c
+    institution:
+      type: string
+      description: The institution the candidate attended.
+      example: University of California, Berkeley
+    degree:
+      type: string
+      description: The candidate’s degree.
+      example: Bachelor of Arts, English and Premed
+    startDate:
+      type: string
+      format: date
+      description: The candidate’s start date.
+    endDate:
+      type: string
+      format: date
+      description: The candidate’s end date.
+
+- title: CreateEducation
+  type: object
+  required:
+    - institution
+    - degree
+    - startDate
+  properties:
+    institution:
+      $ref: '#/oneOf/0/properties/institution'
+    degree:
+      $ref: '#/oneOf/0/properties/degree'
+    startDate:
+      $ref: '#/oneOf/0/properties/startDate'
+    endDate:
+      $ref: '#/oneOf/0/properties/endDate'
+
+- title: UpdateEducation
+  type: object
+  properties:
+    institution:
+      $ref: '#/oneOf/0/properties/institution'
+    degree:
+      $ref: '#/oneOf/0/properties/degree'
+    startDate:
+      $ref: '#/oneOf/0/properties/startDate'
+    endDate:
+      $ref: '#/oneOf/0/properties/endDate'
+
+# description: |
+#   The `Education` model represents the candidate’s education, and gives the candidate an opportunity to spotlight their education.
+  
+#   Interesting note: Mark Twain once said, “I have never let my schooling interfere with my education.” 😉

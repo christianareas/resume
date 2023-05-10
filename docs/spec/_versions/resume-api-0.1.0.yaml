@@ -1,0 +1,975 @@
+openapi: 3.1.0
+info:
+  title: Resume API
+  description: |
+    The Resume API is your resume’s source of truth. Use it to store your resume and retrieve it for a variety of use cases. For example, you can use this service to display your resume on your website, or make it available as a PDF — all from a single source.
+  contact:
+    name: Christian Areas
+    email: me@areas.me
+  license:
+    name: GNU General Public License v3.0
+    identifier: GPL-3.0
+  version: 0.1.0
+servers:
+  - url: 'http://localhost:3000/api/v0'
+    description: Local
+  - url: 'https://resume-stage.areas.me/api/v0'
+    description: Stage
+  - url: 'https://resume.areas.me/api/v0'
+    description: Production
+tags:
+  - name: Resume
+  - name: Candidate
+  - name: Who
+  - name: Experience
+  - name: Skill
+  - name: Education
+paths:
+  /candidate:
+    post:
+      tags:
+        - Candidate
+      operationId: createCandidate
+      summary: Create a Candidate
+      description: |
+        Create a candidate in the system.
+      requestBody:
+        $ref: '#/components/requestBodies/createCandidate'
+      responses:
+        '201':
+          $ref: '#/components/responses/candidateCreated'
+        '400':
+          $ref: '#/components/responses/candidateInfoMissingIncorrect'
+        '409':
+          $ref: '#/components/responses/candidateAlreadyExists'
+  '/candidate/{candidateId}':
+    get:
+      tags:
+        - Candidate
+      operationId: getCandidate
+      summary: Get a Candidate
+      description: |
+        Get a candidate from the system.
+      parameters:
+        - $ref: '#/components/parameters/candidateId'
+      responses:
+        '200':
+          $ref: '#/components/responses/candidate'
+        '400':
+          $ref: '#/components/responses/candidateInfoMissingIncorrect'
+        '404':
+          $ref: '#/components/responses/candidateNotFound'
+    patch:
+      tags:
+        - Candidate
+      operationId: updateCandidate
+      summary: Update a Candidate
+      description: |
+        Update a candidate in the system.
+      parameters:
+        - $ref: '#/components/parameters/candidateId'
+      requestBody:
+        $ref: '#/components/requestBodies/updateCandidate'
+      responses:
+        '200':
+          $ref: '#/components/responses/candidate'
+        '400':
+          $ref: '#/components/responses/candidateInfoMissingIncorrect'
+        '404':
+          $ref: '#/components/responses/candidateNotFound'
+    delete:
+      tags:
+        - Candidate
+      operationId: deleteCandidate
+      summary: Delete a Candidate
+      description: |
+        Delete a candidate from the system.
+      parameters:
+        - $ref: '#/components/parameters/candidateId'
+      responses:
+        '200':
+          $ref: '#/components/responses/candidate'
+        '400':
+          $ref: '#/components/responses/candidateInfoMissingIncorrect'
+        '404':
+          $ref: '#/components/responses/candidateNotFound'
+  '/candidate/{candidateId}/who':
+    post:
+      tags:
+        - Who
+      operationId: createWho
+      summary: Create a Candidate’s Who
+      description: |
+        Create a candidate’s who in the system.
+      parameters:
+        - $ref: '#/components/parameters/candidateId'
+      requestBody:
+        $ref: '#/components/requestBodies/createWho'
+      responses:
+        '201':
+          $ref: '#/components/responses/whoCreated'
+        '400':
+          $ref: '#/components/responses/whoInfoMissingIncorrect'
+        '409':
+          $ref: '#/components/responses/whoAlreadyExists'
+  '/candidate/{candidateId}/who/{whoId}':
+    get:
+      tags:
+        - Who
+      operationId: getWho
+      summary: Get a Candidate’s Who
+      description: |
+        Get a candidate’s who from the system.
+      parameters:
+        - $ref: '#/components/parameters/candidateId'
+        - $ref: '#/components/parameters/whoId'
+      responses:
+        '200':
+          $ref: '#/components/responses/who'
+        '400':
+          $ref: '#/components/responses/whoInfoMissingIncorrect'
+        '404':
+          $ref: '#/components/responses/whoNotFound'
+    patch:
+      tags:
+        - Who
+      operationId: updateWho
+      summary: Update a Candidate’s Who
+      description: |
+        Update a candidate’s who in the system.
+      parameters:
+        - $ref: '#/components/parameters/candidateId'
+        - $ref: '#/components/parameters/whoId'
+      requestBody:
+        $ref: '#/components/requestBodies/updateWho'
+      responses:
+        '200':
+          $ref: '#/components/responses/who'
+        '400':
+          $ref: '#/components/responses/whoInfoMissingIncorrect'
+        '404':
+          $ref: '#/components/responses/whoNotFound'
+    delete:
+      tags:
+        - Who
+      operationId: deleteWho
+      summary: Delete a Candidate’s Who
+      description: |
+        Delete a candidate’s who from the system.
+      parameters:
+        - $ref: '#/components/parameters/candidateId'
+        - $ref: '#/components/parameters/whoId'
+      responses:
+        '200':
+          $ref: '#/components/responses/who'
+        '400':
+          $ref: '#/components/responses/whoInfoMissingIncorrect'
+        '404':
+          $ref: '#/components/responses/whoNotFound'
+  '/candidate/{candidateId}/experience':
+    post:
+      tags:
+        - Experience
+      operationId: createExperience
+      summary: Create a Candidate’s Experience
+      description: |
+        Create a candidate’s experience in the system.
+      parameters:
+        - $ref: '#/components/parameters/candidateId'
+      requestBody:
+        $ref: '#/components/requestBodies/createExperience'
+      responses:
+        '201':
+          $ref: '#/components/responses/experienceCreated'
+        '400':
+          $ref: '#/components/responses/experienceInfoMissingIncorrect'
+        '409':
+          $ref: '#/components/responses/experienceAlreadyExists'
+  '/candidate/{candidateId}/experience/{experienceId}':
+    get:
+      tags:
+        - Experience
+      operationId: getExperience
+      summary: Get a Candidate’s Experience
+      description: |
+        Get a candidate’s experience from the system.
+      parameters:
+        - $ref: '#/components/parameters/candidateId'
+        - $ref: '#/components/parameters/experienceId'
+      responses:
+        '200':
+          $ref: '#/components/responses/experience'
+        '400':
+          $ref: '#/components/responses/experienceInfoMissingIncorrect'
+        '404':
+          $ref: '#/components/responses/experienceNotFound'
+    patch:
+      tags:
+        - Experience
+      operationId: updateExperience
+      summary: Update a Candidate’s Experience
+      description: |
+        Update a candidate’s experience in the system.
+      parameters:
+        - $ref: '#/components/parameters/candidateId'
+        - $ref: '#/components/parameters/experienceId'
+      requestBody:
+        $ref: '#/components/requestBodies/updateExperience'
+      responses:
+        '200':
+          $ref: '#/components/responses/experience'
+        '400':
+          $ref: '#/components/responses/experienceInfoMissingIncorrect'
+        '404':
+          $ref: '#/components/responses/experienceNotFound'
+    delete:
+      tags:
+        - Experience
+      operationId: deleteExperience
+      summary: Delete a Candidate’s Experience
+      description: |
+        Delete a candidate’s experience from the system.
+      parameters:
+        - $ref: '#/components/parameters/candidateId'
+        - $ref: '#/components/parameters/experienceId'
+      responses:
+        '200':
+          $ref: '#/components/responses/experience'
+        '400':
+          $ref: '#/components/responses/experienceInfoMissingIncorrect'
+        '404':
+          $ref: '#/components/responses/experienceNotFound'
+  '/candidate/{candidateId}/skill':
+    post:
+      tags:
+        - Skill
+      operationId: createSkill
+      summary: Create a Candidate’s Skill
+      description: |
+        Create a candidate’s skill in the system.
+      parameters:
+        - $ref: '#/components/parameters/candidateId'
+      requestBody:
+        $ref: '#/components/requestBodies/createSkill'
+      responses:
+        '201':
+          $ref: '#/components/responses/skillCreated'
+        '400':
+          $ref: '#/components/responses/skillInfoMissingIncorrect'
+        '409':
+          $ref: '#/components/responses/skillAlreadyExists'
+  '/candidate/{candidateId}/skill/{skillId}':
+    get:
+      tags:
+        - Skill
+      operationId: getSkill
+      summary: Get a Candidate’s Skill
+      description: |
+        Get a candidate’s skill from the system.
+      parameters:
+        - $ref: '#/components/parameters/candidateId'
+        - $ref: '#/components/parameters/skillId'
+      responses:
+        '200':
+          $ref: '#/components/responses/skill'
+        '400':
+          $ref: '#/components/responses/skillInfoMissingIncorrect'
+        '404':
+          $ref: '#/components/responses/skillNotFound'
+    patch:
+      tags:
+        - Skill
+      operationId: updateSkill
+      summary: Update a Candidate’s Skill
+      description: |
+        Update a candidate’s skill in the system.
+      parameters:
+        - $ref: '#/components/parameters/candidateId'
+        - $ref: '#/components/parameters/skillId'
+      requestBody:
+        $ref: '#/components/requestBodies/updateSkill'
+      responses:
+        '200':
+          $ref: '#/components/responses/skill'
+        '400':
+          $ref: '#/components/responses/skillInfoMissingIncorrect'
+        '404':
+          $ref: '#/components/responses/skillNotFound'
+    delete:
+      tags:
+        - Skill
+      operationId: deleteSkill
+      summary: Delete a Candidate’s Skill
+      description: |
+        Delete a candidate’s skill from the system.
+      parameters:
+        - $ref: '#/components/parameters/candidateId'
+        - $ref: '#/components/parameters/skillId'
+      responses:
+        '200':
+          $ref: '#/components/responses/skill'
+        '400':
+          $ref: '#/components/responses/skillInfoMissingIncorrect'
+        '404':
+          $ref: '#/components/responses/skillNotFound'
+  '/candidate/{candidateId}/education':
+    post:
+      tags:
+        - Education
+      operationId: createEducation
+      summary: Create a Candidate’s Education
+      description: |
+        Create a candidate’s education in the system.
+      parameters:
+        - $ref: '#/components/parameters/candidateId'
+      requestBody:
+        $ref: '#/components/requestBodies/createEducation'
+      responses:
+        '201':
+          $ref: '#/components/responses/educationCreated'
+        '400':
+          $ref: '#/components/responses/educationInfoMissingIncorrect'
+        '409':
+          $ref: '#/components/responses/educationAlreadyExists'
+  '/candidate/{candidateId}/education/{educationId}':
+    get:
+      tags:
+        - Education
+      operationId: getEducation
+      summary: Get a Candidate’s Education
+      description: |
+        Get a candidate’s education from the system.
+      parameters:
+        - $ref: '#/components/parameters/candidateId'
+        - $ref: '#/components/parameters/educationId'
+      responses:
+        '200':
+          $ref: '#/components/responses/education'
+        '400':
+          $ref: '#/components/responses/educationInfoMissingIncorrect'
+        '404':
+          $ref: '#/components/responses/educationNotFound'
+    patch:
+      tags:
+        - Education
+      operationId: updateEducation
+      summary: Update a Candidate’s Education
+      description: |
+        Update a candidate’s education in the system.
+      parameters:
+        - $ref: '#/components/parameters/candidateId'
+        - $ref: '#/components/parameters/educationId'
+      requestBody:
+        $ref: '#/components/requestBodies/updateEducation'
+      responses:
+        '200':
+          $ref: '#/components/responses/education'
+        '400':
+          $ref: '#/components/responses/educationInfoMissingIncorrect'
+        '404':
+          $ref: '#/components/responses/educationNotFound'
+    delete:
+      tags:
+        - Education
+      operationId: deleteEducation
+      summary: Delete a Candidate’s Education
+      description: |
+        Delete a candidate’s education from the system.
+      parameters:
+        - $ref: '#/components/parameters/candidateId'
+        - $ref: '#/components/parameters/educationId'
+      responses:
+        '200':
+          $ref: '#/components/responses/education'
+        '400':
+          $ref: '#/components/responses/educationInfoMissingIncorrect'
+        '404':
+          $ref: '#/components/responses/educationNotFound'
+components:
+  schemas:
+    Candidate:
+      oneOf:
+      - title: Candidate
+        type: object
+        properties:
+          candidateId:
+            type: string
+            format: uuid
+            description: The candidate’s unique identifier.
+            example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
+          firstName:
+            type: string
+            description: The candidate’s first name.
+            example: Christian
+          lastName:
+            type: string
+            description: The candidate’s last name.
+            example: Areas
+          email:
+            type: string
+            format: email
+            description: The candidate’s email address.
+            example: me@areas.me
+          phoneCountryCode:
+            type: integer
+            description: The candidate’s phone country code.
+            example: 1
+          phoneNumber:
+            type: integer
+            description: The candidate’s phone number.
+            example: 4088029811
+          website:
+            type: string
+            format: uri
+            description: The candidate’s website.
+            example: 'https://areas.me'
+          linkedIn:
+            type: string
+            format: uri
+            description: The candidate’s LinkedIn URL.
+            example: 'https://www.linkedin.com/in/christianareas/'
+          gitHub:
+            type: string
+            format: uri
+            description: The candidate’s GitHub URL.
+            example: 'https://github.com/christianareas'
+      - title: CreateCandidate
+        type: object
+        required:
+          - firstName
+          - lastName
+          - email
+        properties:
+          firstName:
+            $ref: '#/components/schemas/Candidate/oneOf/0/properties/firstName'
+          lastName:
+            $ref: '#/components/schemas/Candidate/oneOf/0/properties/lastName'
+          email:
+            $ref: '#/components/schemas/Candidate/oneOf/0/properties/email'
+          phoneCountryCode:
+            $ref: '#/components/schemas/Candidate/oneOf/0/properties/phoneCountryCode'
+          phoneNumber:
+            $ref: '#/components/schemas/Candidate/oneOf/0/properties/phoneNumber'
+          website:
+            $ref: '#/components/schemas/Candidate/oneOf/0/properties/website'
+          linkedIn:
+            $ref: '#/components/schemas/Candidate/oneOf/0/properties/linkedIn'
+          gitHub:
+            $ref: '#/components/schemas/Candidate/oneOf/0/properties/gitHub'
+      - title: UpdateCandidate
+        type: object
+        properties:
+          firstName:
+            $ref: '#/components/schemas/Candidate/oneOf/0/properties/firstName'
+          lastName:
+            $ref: '#/components/schemas/Candidate/oneOf/0/properties/lastName'
+          email:
+            $ref: '#/components/schemas/Candidate/oneOf/0/properties/email'
+          phoneCountryCode:
+            $ref: '#/components/schemas/Candidate/oneOf/0/properties/phoneCountryCode'
+          phoneNumber:
+            $ref: '#/components/schemas/Candidate/oneOf/0/properties/phoneNumber'
+          website:
+            $ref: '#/components/schemas/Candidate/oneOf/0/properties/website'
+          linkedIn:
+            $ref: '#/components/schemas/Candidate/oneOf/0/properties/linkedIn'
+          gitHub:
+            $ref: '#/components/schemas/Candidate/oneOf/0/properties/gitHub'
+    Who:
+      definitions:
+        who:
+          type: object
+          properties:
+            candidateId:
+              type: string
+              format: uuid
+              description: The candidate’s unique identifier.
+              example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
+            whoId:
+              type: string
+              format: uuid
+              description: The who’s unique identifier.
+              example: fcf47884-9c4c-487d-947f-9449f588a383
+            who:
+              type: string
+              format: string
+              description: The candidate’s “who” — usually a few sentences that summarize the candidate.
+              example: 'A writer who loves language and technology. Honest, transparent, and easy to work with. Runs marathons and builds mechanical keyboards during off hours.'
+      oneOf:
+        - title: Who
+          type: object
+          properties:
+            candidateId:
+              $ref: '#/components/schemas/Who/definitions/who/properties/candidateId'
+            whoId:
+              $ref: '#/components/schemas/Who/definitions/who/properties/whoId'
+            who:
+              $ref: '#/components/schemas/Who/definitions/who/properties/who'
+        - title: CreateWho
+          type: object
+          required:
+            - who
+          properties:
+            who:
+              $ref: '#/components/schemas/Who/definitions/who/properties/who'
+        - title: UpdateWho
+          type: object
+          properties:
+            who:
+              $ref: '#/components/schemas/Who/definitions/who/properties/who'
+    Experience:
+      definitions:
+        experience:
+          type: array
+          items:
+            type: object
+            properties:
+              candidateId:
+                type: string
+                format: uuid
+                description: The candidate’s unique identifier.
+                example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
+              experienceId:
+                type: string
+                format: uuid
+                description: The experience’s unique identifier.
+                example: 637f9a15-ea20-4597-990b-d67bd20db1c1
+              company:
+                type: string
+                description: The company the candidate worked for.
+                example: Apple
+              role:
+                type: string
+                description: The candidate’s role.
+                example: 'Senior Technical Writer, Apple Pay'
+              startDate:
+                type: string
+                format: date
+                description: The candidate’s start date.
+                example: 2015-07-27
+              endDate:
+                type: string
+                format: date
+                description: The candidate’s end date.
+                example: 2022-04-29
+              accomplishments:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    accomplishmentId:
+                      type: string
+                      format: uuid
+                      description: The accomplishment’s unique identifier.
+                      example: 7f4d6d8b-56c4-40a7-9c75-9d48f34a5161
+                    accomplishment:
+                      type: string
+                      description: The candidate’s accomplishment.
+                      example: Functioned as the sole technical writer for Apple Pay server engineering.
+                    sortOrder:
+                      type: integer
+                      description: 'The accomplishment’s sort order. `0` is first. If omitted, the order defaults to alphabetic.'
+                      example: 0
+      oneOf:
+        - title: Experience
+          type: object
+          properties:
+            candidateId:
+              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/candidateId'
+            experienceId:
+              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/experienceId'
+            company:
+              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/company'
+            role:
+              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/role'
+            startDate:
+              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/startDate'
+            endDate:
+              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/endDate'
+            accomplishments:
+              type: array
+              items:
+                type: object
+                properties:
+                  accomplishmentId:
+                    $ref: '#/components/schemas/Experience/definitions/experience/items/properties/accomplishments/items/properties/accomplishmentId'
+                  accomplishment:
+                    $ref: '#/components/schemas/Experience/definitions/experience/items/properties/accomplishments/items/properties/accomplishment'
+                  sortOrder:
+                    $ref: '#/components/schemas/Experience/definitions/experience/items/properties/accomplishments/items/properties/sortOrder'
+        - title: CreateExperience
+          type: object
+          required:
+            - company
+            - role
+            - startDate
+          properties:
+            company:
+              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/company'
+            role:
+              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/role'
+            startDate:
+              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/startDate'
+            endDate:
+              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/endDate'
+            accomplishments:
+              type: array
+              items:
+                type: object
+                required:
+                  - accomplishment
+                properties:
+                  accomplishment:
+                    $ref: '#/components/schemas/Experience/definitions/experience/items/properties/accomplishments/items/properties/accomplishment'
+                  sortOrder:
+                    $ref: '#/components/schemas/Experience/definitions/experience/items/properties/accomplishments/items/properties/sortOrder'
+        - title: UpdateExperience
+          type: object
+          properties:
+            company:
+              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/company'
+            role:
+              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/role'
+            startDate:
+              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/startDate'
+            endDate:
+              $ref: '#/components/schemas/Experience/definitions/experience/items/properties/endDate'
+            accomplishments:
+              type: array
+              items:
+                type: object
+                required:
+                  - accomplishment
+                properties:
+                  accomplishmentId:
+                    $ref: '#/components/schemas/Experience/definitions/experience/items/properties/accomplishments/items/properties/accomplishmentId'
+                  accomplishment:
+                    $ref: '#/components/schemas/Experience/definitions/experience/items/properties/accomplishments/items/properties/accomplishment'
+                  sortOrder:
+                    $ref: '#/components/schemas/Experience/definitions/experience/items/properties/accomplishments/items/properties/sortOrder'
+    Skill:
+      definitions:
+        skill:
+          type: array
+          items:
+            type: object
+            properties:
+              candidateId:
+                type: string
+                format: uuid
+                description: The candidate’s unique identifier.
+                example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
+              skillId:
+                type: string
+                format: uuid
+                description: The skill’s unique identifier.
+                example: 97d3165d-e1dd-4955-972c-95ebf04dd091
+              skillType:
+                type: string
+                description: The skill’s type. This gives candidates a way to further organize their skill by type.
+                example: technical
+              skill:
+                type: string
+                description: The candidate’s skill.
+                example: OpenAPI
+              sortOrder:
+                type: integer
+                description: 'The skill’s sort order. `0` is first. If omitted, the order defaults to alphabetic.'
+                example: 0
+      oneOf:
+        - title: Skill
+          type: object
+          properties:
+            candidateId:
+              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/candidateId'
+            skillId:
+              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/skillId'
+            skillType:
+              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/skillType'
+            skill:
+              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/skill'
+            sortOrder:
+              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/sortOrder'
+        - title: CreateSkill
+          type: object
+          required:
+            - skill
+          properties:
+            skillType:
+              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/skillType'
+            skill:
+              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/skill'
+            sortOrder:
+              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/sortOrder'
+        - title: UpdateSkill
+          type: object
+          properties:
+            skillType:
+              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/skillType'
+            skill:
+              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/skill'
+            sortOrder:
+              $ref: '#/components/schemas/Skill/definitions/skill/items/properties/sortOrder'
+    Education:
+      definitions:
+        education:
+          type: array
+          items:
+            type: object
+            properties:
+              candidateId:
+                type: string
+                format: uuid
+                description: The candidate’s unique identifier.
+                example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
+              educationId:
+                type: string
+                format: uuid
+                description: The candidate’s unique identifier.
+                example: f61e2435-caf4-4ec8-901f-2b0760de9d2c
+              institution:
+                type: string
+                description: The institution the candidate attended.
+                example: 'University of California, Berkeley'
+              degree:
+                type: string
+                description: The candidate’s degree.
+                example: 'Bachelor of Arts, English and Premed'
+              startDate:
+                type: string
+                format: date
+                description: The candidate’s start date.
+              endDate:
+                type: string
+                format: date
+                description: The candidate’s end date.
+      oneOf:
+        - title: Education
+          type: object
+          properties:
+            candidateId:
+              $ref: '#/components/schemas/Education/definitions/education/items/properties/candidateId'
+            educationId:
+              $ref: '#/components/schemas/Education/definitions/education/items/properties/educationId'
+            institution:
+              $ref: '#/components/schemas/Education/definitions/education/items/properties/institution'
+            degree:
+              $ref: '#/components/schemas/Education/definitions/education/items/properties/degree'
+            startDate:
+              $ref: '#/components/schemas/Education/definitions/education/items/properties/startDate'
+            endDate:
+              $ref: '#/components/schemas/Education/definitions/education/items/properties/endDate'
+        - title: CreateEducation
+          type: object
+          required:
+            - institution
+            - degree
+            - startDate
+          properties:
+            institution:
+              $ref: '#/components/schemas/Education/definitions/education/items/properties/institution'
+            degree:
+              $ref: '#/components/schemas/Education/definitions/education/items/properties/degree'
+            startDate:
+              $ref: '#/components/schemas/Education/definitions/education/items/properties/startDate'
+            endDate:
+              $ref: '#/components/schemas/Education/definitions/education/items/properties/endDate'
+        - title: UpdateEducation
+          type: object
+          properties:
+            institution:
+              $ref: '#/components/schemas/Education/definitions/education/items/properties/institution'
+            degree:
+              $ref: '#/components/schemas/Education/definitions/education/items/properties/degree'
+            startDate:
+              $ref: '#/components/schemas/Education/definitions/education/items/properties/startDate'
+            endDate:
+              $ref: '#/components/schemas/Education/definitions/education/items/properties/endDate'
+  parameters:
+    candidateId:
+      name: candidateId
+      in: path
+      description: The candidate’s unique identifier.
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
+    whoId:
+      name: whoId
+      in: path
+      description: The who’s unique identifier.
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: fcf47884-9c4c-487d-947f-9449f588a383
+    experienceId:
+      name: experienceId
+      in: path
+      description: The experience’s unique identifier.
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: 637f9a15-ea20-4597-990b-d67bd20db1c1
+    skillId:
+      name: skillId
+      in: path
+      description: The skill’s unique identifier.
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: 97d3165d-e1dd-4955-972c-95ebf04dd091
+    educationId:
+      name: educationId
+      in: path
+      description: The education’s unique identifier.
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: f61e2435-caf4-4ec8-901f-2b0760de9d2c
+  requestBodies:
+    createCandidate:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Candidate/oneOf/1'
+    updateCandidate:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Candidate/oneOf/2'
+    createWho:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Who/oneOf/1'
+    updateWho:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Who/oneOf/2'
+    createExperience:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Experience/oneOf/1'
+    updateExperience:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Experience/oneOf/2'
+    createSkill:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Skill/oneOf/1'
+    updateSkill:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Skill/oneOf/2'
+    createEducation:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Education/oneOf/1'
+    updateEducation:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Education/oneOf/2'
+  responses:
+    candidate:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Candidate/oneOf/0'
+    candidateCreated:
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Candidate/oneOf/0'
+    candidateInfoMissingIncorrect:
+      description: Candidate information missing or incorrect
+    candidateNotFound:
+      description: Candidate not found
+    candidateAlreadyExists:
+      description: Candidate already exists
+    who:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Who/oneOf/0'
+    whoCreated:
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Who/oneOf/0'
+    whoInfoMissingIncorrect:
+      description: Who information missing or incorrect
+    whoNotFound:
+      description: Who not found
+    whoAlreadyExists:
+      description: Who already exists
+    experience:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Experience/oneOf/0'
+    experienceCreated:
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Experience/oneOf/0'
+    experienceInfoMissingIncorrect:
+      description: Experience information missing or incorrect
+    experienceNotFound:
+      description: Experience not found
+    experienceAlreadyExists:
+      description: Experience already exists
+    skill:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Skill/oneOf/0'
+    skillCreated:
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Skill/oneOf/0'
+    skillInfoMissingIncorrect:
+      description: Skill information missing or incorrect
+    skillNotFound:
+      description: Skill not found
+    skillAlreadyExists:
+      description: Skill already exists
+    education:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Education/oneOf/0'
+    educationCreated:
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Education/oneOf/0'
+    educationInfoMissingIncorrect:
+      description: Education information missing or incorrect
+    educationNotFound:
+      description: Education not found
+    educationAlreadyExists:
+      description: Education already exists
