@@ -12,8 +12,8 @@ post:
     $ref: '../../resume-api.yaml#/components/requestBodies/createSkill'
   responses:
     '201':
-      $ref: '../../resume-api.yaml#/components/responses/skillCreated'
+      $ref: '../../resume-api.yaml#/components/responses/skill201'
     '400':
-      $ref: '../../resume-api.yaml#/components/responses/skillInfoMissingIncorrect'
+      $ref: '../../resume-api.yaml#/components/responses/skill400'
     '409':
-      $ref: '../../resume-api.yaml#/components/responses/skillAlreadyExists'
+      $ref: '../../resume-api.yaml#/components/responses/skill409'

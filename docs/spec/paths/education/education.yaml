@@ -12,8 +12,8 @@ post:
     $ref: '../../resume-api.yaml#/components/requestBodies/createEducation'
   responses:
     '201':
-      $ref: '../../resume-api.yaml#/components/responses/educationCreated'
+      $ref: '../../resume-api.yaml#/components/responses/education201'
     '400':
-      $ref: '../../resume-api.yaml#/components/responses/educationInfoMissingIncorrect'
+      $ref: '../../resume-api.yaml#/components/responses/education400'
     '409':
-      $ref: '../../resume-api.yaml#/components/responses/educationAlreadyExists'
+      $ref: '../../resume-api.yaml#/components/responses/education409'

@@ -109,136 +109,79 @@ components:
       $ref: './request-bodies/candidate/createCandidate.yaml'
     updateCandidate:
       $ref: './request-bodies/candidate/updateCandidate.yaml'
+
     createWho:
       $ref: './request-bodies/who/createWho.yaml'
     updateWho:
       $ref: './request-bodies/who/updateWho.yaml'
+    
     createExperience:
       $ref: './request-bodies/experience/createExperience.yaml'
     updateExperience:
       $ref: './request-bodies/experience/updateExperience.yaml'
+    
     createSkill:
       $ref: './request-bodies/skill/createSkill.yaml'
     updateSkill:
       $ref: './request-bodies/skill/updateSkill.yaml'
+    
     createEducation:
       $ref: './request-bodies/education/createEducation.yaml'
     updateEducation:
       $ref: './request-bodies/education/updateEducation.yaml'
 
   responses:
-    # Candidate 200
-    candidate:
-      description: OK
-      content:
-        application/json:
-          schema:
-            $ref: './models/Candidate.yaml#/oneOf/0'
-    # Candidate 201
-    candidateCreated:
-      description: Created
-      content:
-        application/json:
-          schema:
-            $ref: './models/Candidate.yaml#/oneOf/0'
-    # Candidate 400
-    candidateInfoMissingIncorrect:
-      description: Candidate information missing or incorrect
-    # Candidate 404
-    candidateNotFound:
-      description: Candidate not found
-    # Candidate 409
-    candidateAlreadyExists:
-      description: Candidate already exists
-    # Who 200
-    who:
-      description: OK
-      content:
-        application/json:
-          schema:
-            $ref: './models/Who.yaml#/oneOf/0'
-    # Who 201
-    whoCreated:
-      description: Created
-      content:
-        application/json:
-          schema:
-            $ref: './models/Who.yaml#/oneOf/0'
-    # Who 400
-    whoInfoMissingIncorrect:
-      description: Who information missing or incorrect
-    # Who 404
-    whoNotFound:
-      description: Who not found
-    # Who 409
-    whoAlreadyExists:
-      description: Who already exists
-    # Experience 200
-    experience:
-      description: OK
-      content:
-        application/json:
-          schema:
-            $ref: './models/Experience.yaml#/oneOf/0'
-    # Experience 201
-    experienceCreated:
-      description: Created
-      content:
-        application/json:
-          schema:
-            $ref: './models/Experience.yaml#/oneOf/0'
-    # Experience 400
-    experienceInfoMissingIncorrect:
-      description: Experience information missing or incorrect
-    # Experience 404
-    experienceNotFound:
-      description: Experience not found
-    # Experience 409
-    experienceAlreadyExists:
-      description: Experience already exists
-    # Skill 200
-    skill:
-      description: OK
-      content:
-        application/json:
-          schema:
-            $ref: './models/Skill.yaml#/oneOf/0'
-    # Skill 201
-    skillCreated:
-      description: Created
-      content:
-        application/json:
-          schema:
-            $ref: './models/Skill.yaml#/oneOf/0'
-    # Skill 400
-    skillInfoMissingIncorrect:
-      description: Skill information missing or incorrect
-    # Skill 404
-    skillNotFound:
-      description: Skill not found
-    # Skill 409
-    skillAlreadyExists:
-      description: Skill already exists
-    # Education 200
-    education:
-      description: OK
-      content:
-        application/json:
-          schema:
-            $ref: './models/Education.yaml#/oneOf/0'
-    # Education 201
-    educationCreated:
-      description: Created
-      content:
-        application/json:
-          schema:
-            $ref: './models/Education.yaml#/oneOf/0'
-    # Education 400
-    educationInfoMissingIncorrect:
-      description: Education information missing or incorrect
-    # Education 404
-    educationNotFound:
-      description: Education not found
-    # Education 409
-    educationAlreadyExists:
-      description: Education already exists
+    candidate200:
+      $ref: './responses/candidate/candidate200.yaml'
+    candidate201:
+     $ref: './responses/candidate/candidate201.yaml'
+    candidate400:
+      $ref: './responses/candidate/candidate400.yaml'
+    candidate404:
+      $ref: './responses/candidate/candidate404.yaml'
+    candidate409:
+      $ref: './responses/candidate/candidate409.yaml'
+    
+    who200:
+      $ref: './responses/who/who200.yaml'
+    who201:
+      $ref: './responses/who/who201.yaml'
+    who400:
+      $ref: './responses/who/who400.yaml'
+    who404:
+      $ref: './responses/who/who404.yaml'
+    who409:
+      $ref: './responses/who/who409.yaml'
+    
+    experience200:
+      $ref: './responses/experience/experience200.yaml'
+    experience201:
+      $ref: './responses/experience/experience201.yaml'
+    experience400:
+      $ref: './responses/experience/experience400.yaml'
+    experience404:
+      $ref: './responses/experience/experience404.yaml'
+    experience409:
+      $ref: './responses/experience/experience409.yaml'
+
+    skill200:
+      $ref: './responses/skill/skill200.yaml'
+    skill201:
+      $ref: './responses/skill/skill201.yaml'
+    skill400:
+      $ref: './responses/skill/skill400.yaml'
+    skill404:
+      $ref: './responses/skill/skill404.yaml'
+    skill409:
+      $ref: './responses/skill/skill409.yaml'
+
+    education200:
+      $ref: './responses/education/education200.yaml'
+    education201:
+      $ref: './responses/education/education201.yaml'
+    education400:
+      $ref: './responses/education/education400.yaml'
+    education404:
+      $ref: './responses/education/education404.yaml'
+    education409:
+      $ref: './responses/education/education409.yaml'

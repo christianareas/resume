@@ -12,8 +12,8 @@ post:
     $ref: '../../resume-api.yaml#/components/requestBodies/createWho'
   responses:
     '201':
-      $ref: '../../resume-api.yaml#/components/responses/whoCreated'
+      $ref: '../../resume-api.yaml#/components/responses/who201'
     '400':
-      $ref: '../../resume-api.yaml#/components/responses/whoInfoMissingIncorrect'
+      $ref: '../../resume-api.yaml#/components/responses/who400'
     '409':
-      $ref: '../../resume-api.yaml#/components/responses/whoAlreadyExists'
+      $ref: '../../resume-api.yaml#/components/responses/who409'

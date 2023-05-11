@@ -10,11 +10,11 @@ get:
     - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
   responses:
     '200':
-      $ref: '../../resume-api.yaml#/components/responses/candidate'
+      $ref: '../../resume-api.yaml#/components/responses/candidate200'
     '400':
-      $ref: '../../resume-api.yaml#/components/responses/candidateInfoMissingIncorrect'
+      $ref: '../../resume-api.yaml#/components/responses/candidate400'
     '404':
-      $ref: '../../resume-api.yaml#/components/responses/candidateNotFound'
+      $ref: '../../resume-api.yaml#/components/responses/candidate404'
 
 # PATCH /candidate/{candidateId} (updateCandidate)
 patch:
@@ -30,11 +30,11 @@ patch:
     $ref: '../../resume-api.yaml#/components/requestBodies/updateCandidate'
   responses:
     '200':
-      $ref: '../../resume-api.yaml#/components/responses/candidate'
+      $ref: '../../resume-api.yaml#/components/responses/candidate200'
     '400':
-      $ref: '../../resume-api.yaml#/components/responses/candidateInfoMissingIncorrect'
+      $ref: '../../resume-api.yaml#/components/responses/candidate400'
     '404':
-      $ref: '../../resume-api.yaml#/components/responses/candidateNotFound'
+      $ref: '../../resume-api.yaml#/components/responses/candidate404'
 
 # DELETE /candidate/{candidateId} (deleteCandidate)
 delete:
@@ -48,8 +48,8 @@ delete:
     - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
   responses:
     '200':
-      $ref: '../../resume-api.yaml#/components/responses/candidate'
+      $ref: '../../resume-api.yaml#/components/responses/candidate200'
     '400':
-      $ref: '../../resume-api.yaml#/components/responses/candidateInfoMissingIncorrect'
+      $ref: '../../resume-api.yaml#/components/responses/candidate400'
     '404':
-      $ref: '../../resume-api.yaml#/components/responses/candidateNotFound'
+      $ref: '../../resume-api.yaml#/components/responses/candidate404'

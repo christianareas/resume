@@ -12,8 +12,8 @@ post:
     $ref: '../../resume-api.yaml#/components/requestBodies/createExperience'
   responses:
     '201':
-      $ref: '../../resume-api.yaml#/components/responses/experienceCreated'
+      $ref: '../../resume-api.yaml#/components/responses/experience201'
     '400':
-      $ref: '../../resume-api.yaml#/components/responses/experienceInfoMissingIncorrect'
+      $ref: '../../resume-api.yaml#/components/responses/experience400'
     '409':
-      $ref: '../../resume-api.yaml#/components/responses/experienceAlreadyExists'
+      $ref: '../../resume-api.yaml#/components/responses/experience409'

@@ -10,8 +10,8 @@ post:
     $ref: '../../resume-api.yaml#/components/requestBodies/createCandidate'
   responses:
     '201':
-      $ref: '../../resume-api.yaml#/components/responses/candidateCreated'
+      $ref: '../../resume-api.yaml#/components/responses/candidate201'
     '400':
-      $ref: '../../resume-api.yaml#/components/responses/candidateInfoMissingIncorrect'
+      $ref: '../../resume-api.yaml#/components/responses/candidate400'
     '409':
-      $ref: '../../resume-api.yaml#/components/responses/candidateAlreadyExists'
+      $ref: '../../resume-api.yaml#/components/responses/candidate409'
