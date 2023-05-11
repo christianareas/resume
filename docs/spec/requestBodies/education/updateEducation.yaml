@@ -1,0 +1,4 @@
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/Education.yaml#/oneOf/2'

@@ -1,0 +1,90 @@
+# Candidate model.
+oneOf:
+- title: Candidate
+  type: object
+  properties:
+    candidateId:
+      type: string
+      format: uuid
+      description: The candidate’s unique identifier.
+      example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
+    firstName:
+      type: string
+      description: The candidate’s first name.
+      example: Christian
+    lastName:
+      type: string
+      description: The candidate’s last name.
+      example: Areas
+    email:
+      type: string
+      format: email
+      description: The candidate’s email address.
+      example: me@areas.me
+    phoneCountryCode:
+      type: integer
+      description: The candidate’s phone country code.
+      example: 1
+    phoneNumber:
+      type: integer
+      description: The candidate’s phone number.
+      example: 4088029811
+    website:
+      type: string
+      format: uri
+      description: The candidate’s website.
+      example: https://areas.me
+    linkedIn:
+      type: string
+      format: uri
+      description: The candidate’s LinkedIn URL.
+      example: https://www.linkedin.com/in/christianareas/
+    gitHub:
+      type: string
+      format: uri
+      description: The candidate’s GitHub URL.
+      example: https://github.com/christianareas
+
+- title: CreateCandidate
+  type: object
+  required:
+    - firstName
+    - lastName
+    - email
+  properties:
+    firstName:
+      $ref: "#/oneOf/0/properties/firstName"
+    lastName:
+      $ref: "#/oneOf/0/properties/lastName"
+    email:
+      $ref: "#/oneOf/0/properties/email"
+    phoneCountryCode:
+      $ref: "#/oneOf/0/properties/phoneCountryCode"
+    phoneNumber:
+      $ref: "#/oneOf/0/properties/phoneNumber"
+    website:
+      $ref: "#/oneOf/0/properties/website"
+    linkedIn:
+      $ref: "#/oneOf/0/properties/linkedIn"
+    gitHub:
+      $ref: "#/oneOf/0/properties/gitHub"
+
+- title: UpdateCandidate
+  type: object
+  properties:
+    firstName:
+      $ref: "#/oneOf/0/properties/firstName"
+    lastName:
+      $ref: "#/oneOf/0/properties/lastName"
+    email:
+      $ref: "#/oneOf/0/properties/email"
+    phoneCountryCode:
+      $ref: "#/oneOf/0/properties/phoneCountryCode"
+    phoneNumber:
+      $ref: "#/oneOf/0/properties/phoneNumber"
+    website:
+      $ref: "#/oneOf/0/properties/website"
+    linkedIn:
+      $ref: "#/oneOf/0/properties/linkedIn"
+    gitHub:
+      $ref: "#/oneOf/0/properties/gitHub"

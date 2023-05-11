@@ -1,0 +1,8 @@
+name: experienceId
+in: path
+description: The experience’s unique identifier.
+required: true
+schema:
+  type: string
+  format: uuid
+  example: 637f9a15-ea20-4597-990b-d67bd20db1c1

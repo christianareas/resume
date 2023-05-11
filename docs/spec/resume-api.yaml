@@ -1,0 +1,187 @@
+openapi: 3.1.0
+
+info:
+  title: Resume API
+  description: |
+    The Resume API is your resume’s source of truth. Use it to store your resume and retrieve it for a variety of use cases. For example, you can use this service to display your resume on your website, or make it available as a PDF — all from a single source.
+  contact:
+    name: Christian Areas
+    email: me@areas.me
+  license:
+    name: GNU General Public License v3.0
+    identifier: GPL-3.0
+  version: 0.1.0
+
+servers:
+  - url: 'http://localhost:3000/api/v0'
+    description: Local
+  - url: 'https://resume-stage.areas.me/api/v0'
+    description: Stage
+  - url: 'https://resume.areas.me/api/v0'
+    description: Production
+
+tags:
+  - name: Resume
+  - name: Candidate
+  - name: Who
+  - name: Experience
+  - name: Skill
+  - name: Education
+
+paths:
+  '/candidate':
+    # POST /candidate (createCandidate)
+    $ref: './paths/candidate/candidate.yaml'
+
+  '/candidate/{candidateId}':
+    # GET /candidate/{candidateId} (getCandidate)
+    # PATCH /candidate/{candidateId} (updateCandidate)
+    # DELETE /candidate/{candidateId} (deleteCandidate)
+    $ref: './paths/candidate/candidateId.yaml'
+
+  '/candidate/{candidateId}/who':
+    # POST /candidate/{candidateId}/who (createWho)
+    $ref: './paths/who/who.yaml'
+
+  '/candidate/{candidateId}/who/{whoId}':
+    # GET /candidate/{candidateId}/who/{whoId} (getWho)
+    # PATCH /candidate/{candidateId}/who/{whoId} (updateWho)
+    # DELETE /candidate/{candidateId}/who/{whoId} (deleteWho)
+    $ref: './paths/who/whoId.yaml'
+
+  '/candidate/{candidateId}/experience':
+    # POST /candidate/{candidateId}/experience (createExperience)
+    $ref: './paths/experience/experience.yaml'
+
+  '/candidate/{candidateId}/experience/{experienceId}':
+    # GET /candidate/{candidateId}/experience/{experienceId} (getExperience)
+    # PATCH /candidate/{candidateId}/experience/{experienceId} (updateExperience)
+    # DELETE /candidate/{candidateId}/experience/{experienceId} (deleteExperience)
+    $ref: './paths/experience/experienceId.yaml'
+
+  '/candidate/{candidateId}/skill':
+    # POST /candidate/{candidateId}/skill (createSkill)
+    $ref: './paths/skill/skill.yaml'
+
+  '/candidate/{candidateId}/skill/{skillId}':
+    # GET /candidate/{candidateId}/skill/{skillId} (getSkill)
+    # PATCH /candidate/{candidateId}/skill/{skillId} (updateSkill)
+    # DELETE /candidate/{candidateId}/skill/{skillId} (deleteSkill)
+    $ref: './paths/skill/skillId.yaml'
+
+  '/candidate/{candidateId}/education':
+    # POST /candidate/{candidateId}/education (createEducation)
+    $ref: './paths/education/education.yaml'
+
+  '/candidate/{candidateId}/education/{educationId}':
+    # GET /candidate/{candidateId}/education/{educationId} (getEducation)
+    # PATCH /candidate/{candidateId}/education/{educationId} (updateEducation)
+    # DELETE /candidate/{candidateId}/education/{educationId} (deleteEducation)
+    $ref: './paths/education/educationId.yaml'
+
+components:
+  schemas:
+    Candidate:
+      $ref: './schemas/Candidate.yaml'
+    Who:
+      $ref: './schemas/Who.yaml'
+    Experience:
+      $ref: './schemas/Experience.yaml'
+    Skill:
+      $ref: './schemas/Skill.yaml'
+    Education:
+      $ref: './schemas/Education.yaml'
+
+  parameters:
+    candidateId:
+      $ref: './parameters/candidateId.yaml'
+    whoId:
+      $ref: './parameters/whoId.yaml'
+    experienceId:
+      $ref: './parameters/experienceId.yaml'
+    skillId:
+      $ref: './parameters/skillId.yaml'
+    educationId:
+      $ref: './parameters/educationId.yaml'
+
+  requestBodies:
+    createCandidate:
+      $ref: './requestBodies/candidate/createCandidate.yaml'
+    updateCandidate:
+      $ref: './requestBodies/candidate/updateCandidate.yaml'
+
+    createWho:
+      $ref: './requestBodies/who/createWho.yaml'
+    updateWho:
+      $ref: './requestBodies/who/updateWho.yaml'
+    
+    createExperience:
+      $ref: './requestBodies/experience/createExperience.yaml'
+    updateExperience:
+      $ref: './requestBodies/experience/updateExperience.yaml'
+    
+    createSkill:
+      $ref: './requestBodies/skill/createSkill.yaml'
+    updateSkill:
+      $ref: './requestBodies/skill/updateSkill.yaml'
+    
+    createEducation:
+      $ref: './requestBodies/education/createEducation.yaml'
+    updateEducation:
+      $ref: './requestBodies/education/updateEducation.yaml'
+
+  responses:
+    candidate200:
+      $ref: './responses/candidate/candidate200.yaml'
+    candidate201:
+     $ref: './responses/candidate/candidate201.yaml'
+    candidate400:
+      $ref: './responses/candidate/candidate400.yaml'
+    candidate404:
+      $ref: './responses/candidate/candidate404.yaml'
+    candidate409:
+      $ref: './responses/candidate/candidate409.yaml'
+    
+    who200:
+      $ref: './responses/who/who200.yaml'
+    who201:
+      $ref: './responses/who/who201.yaml'
+    who400:
+      $ref: './responses/who/who400.yaml'
+    who404:
+      $ref: './responses/who/who404.yaml'
+    who409:
+      $ref: './responses/who/who409.yaml'
+    
+    experience200:
+      $ref: './responses/experience/experience200.yaml'
+    experience201:
+      $ref: './responses/experience/experience201.yaml'
+    experience400:
+      $ref: './responses/experience/experience400.yaml'
+    experience404:
+      $ref: './responses/experience/experience404.yaml'
+    experience409:
+      $ref: './responses/experience/experience409.yaml'
+
+    skill200:
+      $ref: './responses/skill/skill200.yaml'
+    skill201:
+      $ref: './responses/skill/skill201.yaml'
+    skill400:
+      $ref: './responses/skill/skill400.yaml'
+    skill404:
+      $ref: './responses/skill/skill404.yaml'
+    skill409:
+      $ref: './responses/skill/skill409.yaml'
+
+    education200:
+      $ref: './responses/education/education200.yaml'
+    education201:
+      $ref: './responses/education/education201.yaml'
+    education400:
+      $ref: './responses/education/education400.yaml'
+    education404:
+      $ref: './responses/education/education404.yaml'
+    education409:
+      $ref: './responses/education/education409.yaml'

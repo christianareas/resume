@@ -1,0 +1,5 @@
+description: Created
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/Who.yaml#/oneOf/0'
