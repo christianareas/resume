@@ -1,0 +1,4 @@
+content:
+  application/json:
+    schema:
+      $ref: '../../schemas/Candidate.yaml#/oneOf/1'

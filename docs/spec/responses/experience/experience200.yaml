@@ -2,4 +2,4 @@ description: OK
 content:
   application/json:
     schema:
-      $ref: '../../models/Experience.yaml#/oneOf/0'
+      $ref: '../../schemas/Experience.yaml#/oneOf/0'

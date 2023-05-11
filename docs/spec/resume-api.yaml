@@ -82,15 +82,15 @@ paths:
 components:
   # schemas:
   #   Candidate:
-  #     $ref: './models/Candidate.yaml'
+  #     $ref: './schemas/Candidate.yaml'
   #   Who:
-  #     $ref: './models/Who.yaml'
+  #     $ref: './schemas/Who.yaml'
   #   Experience:
-  #     $ref: './models/Experience.yaml'
+  #     $ref: './schemas/Experience.yaml'
   #   Skill:
-  #     $ref: './models/Skill.yaml'
+  #     $ref: './schemas/Skill.yaml'
   #   Education:
-  #     $ref: './models/Education.yaml'
+  #     $ref: './schemas/Education.yaml'
 
   parameters:
     candidateId:
@@ -106,29 +106,29 @@ components:
 
   requestBodies:
     createCandidate:
-      $ref: './request-bodies/candidate/createCandidate.yaml'
+      $ref: './requestBodies/candidate/createCandidate.yaml'
     updateCandidate:
-      $ref: './request-bodies/candidate/updateCandidate.yaml'
+      $ref: './requestBodies/candidate/updateCandidate.yaml'
 
     createWho:
-      $ref: './request-bodies/who/createWho.yaml'
+      $ref: './requestBodies/who/createWho.yaml'
     updateWho:
-      $ref: './request-bodies/who/updateWho.yaml'
+      $ref: './requestBodies/who/updateWho.yaml'
     
     createExperience:
-      $ref: './request-bodies/experience/createExperience.yaml'
+      $ref: './requestBodies/experience/createExperience.yaml'
     updateExperience:
-      $ref: './request-bodies/experience/updateExperience.yaml'
+      $ref: './requestBodies/experience/updateExperience.yaml'
     
     createSkill:
-      $ref: './request-bodies/skill/createSkill.yaml'
+      $ref: './requestBodies/skill/createSkill.yaml'
     updateSkill:
-      $ref: './request-bodies/skill/updateSkill.yaml'
+      $ref: './requestBodies/skill/updateSkill.yaml'
     
     createEducation:
-      $ref: './request-bodies/education/createEducation.yaml'
+      $ref: './requestBodies/education/createEducation.yaml'
     updateEducation:
-      $ref: './request-bodies/education/updateEducation.yaml'
+      $ref: './requestBodies/education/updateEducation.yaml'
 
   responses:
     candidate200:

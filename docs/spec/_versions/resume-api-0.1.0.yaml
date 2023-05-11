@@ -37,11 +37,11 @@ paths:
         $ref: '#/components/requestBodies/createCandidate'
       responses:
         '201':
-          $ref: '#/components/responses/candidateCreated'
+          $ref: '#/components/responses/candidate201'
         '400':
-          $ref: '#/components/responses/candidateInfoMissingIncorrect'
+          $ref: '#/components/responses/candidate400'
         '409':
-          $ref: '#/components/responses/candidateAlreadyExists'
+          $ref: '#/components/responses/candidate409'
   '/candidate/{candidateId}':
     get:
       tags:
@@ -54,11 +54,11 @@ paths:
         - $ref: '#/components/parameters/candidateId'
       responses:
         '200':
-          $ref: '#/components/responses/candidate'
+          $ref: '#/components/responses/candidate200'
         '400':
-          $ref: '#/components/responses/candidateInfoMissingIncorrect'
+          $ref: '#/components/responses/candidate400'
         '404':
-          $ref: '#/components/responses/candidateNotFound'
+          $ref: '#/components/responses/candidate404'
     patch:
       tags:
         - Candidate
@@ -72,11 +72,11 @@ paths:
         $ref: '#/components/requestBodies/updateCandidate'
       responses:
         '200':
-          $ref: '#/components/responses/candidate'
+          $ref: '#/components/responses/candidate200'
         '400':
-          $ref: '#/components/responses/candidateInfoMissingIncorrect'
+          $ref: '#/components/responses/candidate400'
         '404':
-          $ref: '#/components/responses/candidateNotFound'
+          $ref: '#/components/responses/candidate404'
     delete:
       tags:
         - Candidate
@@ -88,11 +88,11 @@ paths:
         - $ref: '#/components/parameters/candidateId'
       responses:
         '200':
-          $ref: '#/components/responses/candidate'
+          $ref: '#/components/responses/candidate200'
         '400':
-          $ref: '#/components/responses/candidateInfoMissingIncorrect'
+          $ref: '#/components/responses/candidate400'
         '404':
-          $ref: '#/components/responses/candidateNotFound'
+          $ref: '#/components/responses/candidate404'
   '/candidate/{candidateId}/who':
     post:
       tags:
@@ -107,11 +107,11 @@ paths:
         $ref: '#/components/requestBodies/createWho'
       responses:
         '201':
-          $ref: '#/components/responses/whoCreated'
+          $ref: '#/components/responses/who201'
         '400':
-          $ref: '#/components/responses/whoInfoMissingIncorrect'
+          $ref: '#/components/responses/who400'
         '409':
-          $ref: '#/components/responses/whoAlreadyExists'
+          $ref: '#/components/responses/who409'
   '/candidate/{candidateId}/who/{whoId}':
     get:
       tags:
@@ -125,11 +125,11 @@ paths:
         - $ref: '#/components/parameters/whoId'
       responses:
         '200':
-          $ref: '#/components/responses/who'
+          $ref: '#/components/responses/who200'
         '400':
-          $ref: '#/components/responses/whoInfoMissingIncorrect'
+          $ref: '#/components/responses/who400'
         '404':
-          $ref: '#/components/responses/whoNotFound'
+          $ref: '#/components/responses/who404'
     patch:
       tags:
         - Who
@@ -144,11 +144,11 @@ paths:
         $ref: '#/components/requestBodies/updateWho'
       responses:
         '200':
-          $ref: '#/components/responses/who'
+          $ref: '#/components/responses/who200'
         '400':
-          $ref: '#/components/responses/whoInfoMissingIncorrect'
+          $ref: '#/components/responses/who400'
         '404':
-          $ref: '#/components/responses/whoNotFound'
+          $ref: '#/components/responses/who404'
     delete:
       tags:
         - Who
@@ -161,11 +161,11 @@ paths:
         - $ref: '#/components/parameters/whoId'
       responses:
         '200':
-          $ref: '#/components/responses/who'
+          $ref: '#/components/responses/who200'
         '400':
-          $ref: '#/components/responses/whoInfoMissingIncorrect'
+          $ref: '#/components/responses/who400'
         '404':
-          $ref: '#/components/responses/whoNotFound'
+          $ref: '#/components/responses/who404'
   '/candidate/{candidateId}/experience':
     post:
       tags:
@@ -180,11 +180,11 @@ paths:
         $ref: '#/components/requestBodies/createExperience'
       responses:
         '201':
-          $ref: '#/components/responses/experienceCreated'
+          $ref: '#/components/responses/experience201'
         '400':
-          $ref: '#/components/responses/experienceInfoMissingIncorrect'
+          $ref: '#/components/responses/experience400'
         '409':
-          $ref: '#/components/responses/experienceAlreadyExists'
+          $ref: '#/components/responses/experience409'
   '/candidate/{candidateId}/experience/{experienceId}':
     get:
       tags:
@@ -198,11 +198,11 @@ paths:
         - $ref: '#/components/parameters/experienceId'
       responses:
         '200':
-          $ref: '#/components/responses/experience'
+          $ref: '#/components/responses/experience200'
         '400':
-          $ref: '#/components/responses/experienceInfoMissingIncorrect'
+          $ref: '#/components/responses/experience400'
         '404':
-          $ref: '#/components/responses/experienceNotFound'
+          $ref: '#/components/responses/experience404'
     patch:
       tags:
         - Experience
@@ -217,11 +217,11 @@ paths:
         $ref: '#/components/requestBodies/updateExperience'
       responses:
         '200':
-          $ref: '#/components/responses/experience'
+          $ref: '#/components/responses/experience200'
         '400':
-          $ref: '#/components/responses/experienceInfoMissingIncorrect'
+          $ref: '#/components/responses/experience400'
         '404':
-          $ref: '#/components/responses/experienceNotFound'
+          $ref: '#/components/responses/experience404'
     delete:
       tags:
         - Experience
@@ -234,11 +234,11 @@ paths:
         - $ref: '#/components/parameters/experienceId'
       responses:
         '200':
-          $ref: '#/components/responses/experience'
+          $ref: '#/components/responses/experience200'
         '400':
-          $ref: '#/components/responses/experienceInfoMissingIncorrect'
+          $ref: '#/components/responses/experience400'
         '404':
-          $ref: '#/components/responses/experienceNotFound'
+          $ref: '#/components/responses/experience404'
   '/candidate/{candidateId}/skill':
     post:
       tags:
@@ -253,11 +253,11 @@ paths:
         $ref: '#/components/requestBodies/createSkill'
       responses:
         '201':
-          $ref: '#/components/responses/skillCreated'
+          $ref: '#/components/responses/skill201'
         '400':
-          $ref: '#/components/responses/skillInfoMissingIncorrect'
+          $ref: '#/components/responses/skill400'
         '409':
-          $ref: '#/components/responses/skillAlreadyExists'
+          $ref: '#/components/responses/skill409'
   '/candidate/{candidateId}/skill/{skillId}':
     get:
       tags:
@@ -271,11 +271,11 @@ paths:
         - $ref: '#/components/parameters/skillId'
       responses:
         '200':
-          $ref: '#/components/responses/skill'
+          $ref: '#/components/responses/skill200'
         '400':
-          $ref: '#/components/responses/skillInfoMissingIncorrect'
+          $ref: '#/components/responses/skill400'
         '404':
-          $ref: '#/components/responses/skillNotFound'
+          $ref: '#/components/responses/skill404'
     patch:
       tags:
         - Skill
@@ -290,11 +290,11 @@ paths:
         $ref: '#/components/requestBodies/updateSkill'
       responses:
         '200':
-          $ref: '#/components/responses/skill'
+          $ref: '#/components/responses/skill200'
         '400':
-          $ref: '#/components/responses/skillInfoMissingIncorrect'
+          $ref: '#/components/responses/skill400'
         '404':
-          $ref: '#/components/responses/skillNotFound'
+          $ref: '#/components/responses/skill404'
     delete:
       tags:
         - Skill
@@ -307,11 +307,11 @@ paths:
         - $ref: '#/components/parameters/skillId'
       responses:
         '200':
-          $ref: '#/components/responses/skill'
+          $ref: '#/components/responses/skill200'
         '400':
-          $ref: '#/components/responses/skillInfoMissingIncorrect'
+          $ref: '#/components/responses/skill400'
         '404':
-          $ref: '#/components/responses/skillNotFound'
+          $ref: '#/components/responses/skill404'
   '/candidate/{candidateId}/education':
     post:
       tags:
@@ -326,11 +326,11 @@ paths:
         $ref: '#/components/requestBodies/createEducation'
       responses:
         '201':
-          $ref: '#/components/responses/educationCreated'
+          $ref: '#/components/responses/education201'
         '400':
-          $ref: '#/components/responses/educationInfoMissingIncorrect'
+          $ref: '#/components/responses/education400'
         '409':
-          $ref: '#/components/responses/educationAlreadyExists'
+          $ref: '#/components/responses/education409'
   '/candidate/{candidateId}/education/{educationId}':
     get:
       tags:
@@ -344,11 +344,11 @@ paths:
         - $ref: '#/components/parameters/educationId'
       responses:
         '200':
-          $ref: '#/components/responses/education'
+          $ref: '#/components/responses/education200'
         '400':
-          $ref: '#/components/responses/educationInfoMissingIncorrect'
+          $ref: '#/components/responses/education400'
         '404':
-          $ref: '#/components/responses/educationNotFound'
+          $ref: '#/components/responses/education404'
     patch:
       tags:
         - Education
@@ -363,11 +363,11 @@ paths:
         $ref: '#/components/requestBodies/updateEducation'
       responses:
         '200':
-          $ref: '#/components/responses/education'
+          $ref: '#/components/responses/education200'
         '400':
-          $ref: '#/components/responses/educationInfoMissingIncorrect'
+          $ref: '#/components/responses/education400'
         '404':
-          $ref: '#/components/responses/educationNotFound'
+          $ref: '#/components/responses/education404'
     delete:
       tags:
         - Education
@@ -380,11 +380,11 @@ paths:
         - $ref: '#/components/parameters/educationId'
       responses:
         '200':
-          $ref: '#/components/responses/education'
+          $ref: '#/components/responses/education200'
         '400':
-          $ref: '#/components/responses/educationInfoMissingIncorrect'
+          $ref: '#/components/responses/education400'
         '404':
-          $ref: '#/components/responses/educationNotFound'
+          $ref: '#/components/responses/education404'
 components:
   parameters:
     candidateId:
@@ -445,21 +445,21 @@ components:
               - email
             properties:
               firstName:
-                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/firstName'
+                $ref: '#/components/responses/candidate200/content/application~1json/schema/properties/firstName'
               lastName:
-                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/lastName'
+                $ref: '#/components/responses/candidate200/content/application~1json/schema/properties/lastName'
               email:
-                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/email'
+                $ref: '#/components/responses/candidate200/content/application~1json/schema/properties/email'
               phoneCountryCode:
-                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/phoneCountryCode'
+                $ref: '#/components/responses/candidate200/content/application~1json/schema/properties/phoneCountryCode'
               phoneNumber:
-                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/phoneNumber'
+                $ref: '#/components/responses/candidate200/content/application~1json/schema/properties/phoneNumber'
               website:
-                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/website'
+                $ref: '#/components/responses/candidate200/content/application~1json/schema/properties/website'
               linkedIn:
-                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/linkedIn'
+                $ref: '#/components/responses/candidate200/content/application~1json/schema/properties/linkedIn'
               gitHub:
-                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/gitHub'
+                $ref: '#/components/responses/candidate200/content/application~1json/schema/properties/gitHub'
     updateCandidate:
       content:
         application/json:
@@ -468,21 +468,21 @@ components:
             type: object
             properties:
               firstName:
-                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/firstName'
+                $ref: '#/components/responses/candidate200/content/application~1json/schema/properties/firstName'
               lastName:
-                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/lastName'
+                $ref: '#/components/responses/candidate200/content/application~1json/schema/properties/lastName'
               email:
-                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/email'
+                $ref: '#/components/responses/candidate200/content/application~1json/schema/properties/email'
               phoneCountryCode:
-                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/phoneCountryCode'
+                $ref: '#/components/responses/candidate200/content/application~1json/schema/properties/phoneCountryCode'
               phoneNumber:
-                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/phoneNumber'
+                $ref: '#/components/responses/candidate200/content/application~1json/schema/properties/phoneNumber'
               website:
-                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/website'
+                $ref: '#/components/responses/candidate200/content/application~1json/schema/properties/website'
               linkedIn:
-                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/linkedIn'
+                $ref: '#/components/responses/candidate200/content/application~1json/schema/properties/linkedIn'
               gitHub:
-                $ref: '#/components/responses/candidate/content/application~1json/schema/properties/gitHub'
+                $ref: '#/components/responses/candidate200/content/application~1json/schema/properties/gitHub'
     createWho:
       content:
         application/json:
@@ -493,7 +493,7 @@ components:
               - who
             properties:
               who:
-                $ref: '#/components/responses/who/content/application~1json/schema/properties/who'
+                $ref: '#/components/responses/who200/content/application~1json/schema/properties/who'
     updateWho:
       content:
         application/json:
@@ -502,7 +502,7 @@ components:
             type: object
             properties:
               who:
-                $ref: '#/components/responses/who/content/application~1json/schema/properties/who'
+                $ref: '#/components/responses/who200/content/application~1json/schema/properties/who'
     createExperience:
       content:
         application/json:
@@ -515,13 +515,13 @@ components:
               - startDate
             properties:
               company:
-                $ref: '#/components/responses/experience/content/application~1json/schema/properties/company'
+                $ref: '#/components/responses/experience200/content/application~1json/schema/properties/company'
               role:
-                $ref: '#/components/responses/experience/content/application~1json/schema/properties/role'
+                $ref: '#/components/responses/experience200/content/application~1json/schema/properties/role'
               startDate:
-                $ref: '#/components/responses/experience/content/application~1json/schema/properties/startDate'
+                $ref: '#/components/responses/experience200/content/application~1json/schema/properties/startDate'
               endDate:
-                $ref: '#/components/responses/experience/content/application~1json/schema/properties/endDate'
+                $ref: '#/components/responses/experience200/content/application~1json/schema/properties/endDate'
               accomplishments:
                 type: array
                 items:
@@ -530,9 +530,9 @@ components:
                     - accomplishment
                   properties:
                     accomplishment:
-                      $ref: '#/components/responses/experience/content/application~1json/schema/properties/accomplishments/items/properties/accomplishment'
+                      $ref: '#/components/responses/experience200/content/application~1json/schema/properties/accomplishments/items/properties/accomplishment'
                     sortOrder:
-                      $ref: '#/components/responses/experience/content/application~1json/schema/properties/accomplishments/items/properties/sortOrder'
+                      $ref: '#/components/responses/experience200/content/application~1json/schema/properties/accomplishments/items/properties/sortOrder'
     updateExperience:
       content:
         application/json:
@@ -541,13 +541,13 @@ components:
             type: object
             properties:
               company:
-                $ref: '#/components/responses/experience/content/application~1json/schema/properties/company'
+                $ref: '#/components/responses/experience200/content/application~1json/schema/properties/company'
               role:
-                $ref: '#/components/responses/experience/content/application~1json/schema/properties/role'
+                $ref: '#/components/responses/experience200/content/application~1json/schema/properties/role'
               startDate:
-                $ref: '#/components/responses/experience/content/application~1json/schema/properties/startDate'
+                $ref: '#/components/responses/experience200/content/application~1json/schema/properties/startDate'
               endDate:
-                $ref: '#/components/responses/experience/content/application~1json/schema/properties/endDate'
+                $ref: '#/components/responses/experience200/content/application~1json/schema/properties/endDate'
               accomplishments:
                 type: array
                 items:
@@ -556,11 +556,11 @@ components:
                     - accomplishment
                   properties:
                     accomplishmentId:
-                      $ref: '#/components/responses/experience/content/application~1json/schema/properties/accomplishments/items/properties/accomplishmentId'
+                      $ref: '#/components/responses/experience200/content/application~1json/schema/properties/accomplishments/items/properties/accomplishmentId'
                     accomplishment:
-                      $ref: '#/components/responses/experience/content/application~1json/schema/properties/accomplishments/items/properties/accomplishment'
+                      $ref: '#/components/responses/experience200/content/application~1json/schema/properties/accomplishments/items/properties/accomplishment'
                     sortOrder:
-                      $ref: '#/components/responses/experience/content/application~1json/schema/properties/accomplishments/items/properties/sortOrder'
+                      $ref: '#/components/responses/experience200/content/application~1json/schema/properties/accomplishments/items/properties/sortOrder'
     createSkill:
       content:
         application/json:
@@ -571,11 +571,11 @@ components:
               - skill
             properties:
               skillType:
-                $ref: '#/components/responses/skill/content/application~1json/schema/properties/skillType'
+                $ref: '#/components/responses/skill200/content/application~1json/schema/properties/skillType'
               skill:
-                $ref: '#/components/responses/skill/content/application~1json/schema/properties/skill'
+                $ref: '#/components/responses/skill200/content/application~1json/schema/properties/skill'
               sortOrder:
-                $ref: '#/components/responses/skill/content/application~1json/schema/properties/sortOrder'
+                $ref: '#/components/responses/skill200/content/application~1json/schema/properties/sortOrder'
     updateSkill:
       content:
         application/json:
@@ -584,11 +584,11 @@ components:
             type: object
             properties:
               skillType:
-                $ref: '#/components/responses/skill/content/application~1json/schema/properties/skillType'
+                $ref: '#/components/responses/skill200/content/application~1json/schema/properties/skillType'
               skill:
-                $ref: '#/components/responses/skill/content/application~1json/schema/properties/skill'
+                $ref: '#/components/responses/skill200/content/application~1json/schema/properties/skill'
               sortOrder:
-                $ref: '#/components/responses/skill/content/application~1json/schema/properties/sortOrder'
+                $ref: '#/components/responses/skill200/content/application~1json/schema/properties/sortOrder'
     createEducation:
       content:
         application/json:
@@ -601,13 +601,13 @@ components:
               - startDate
             properties:
               institution:
-                $ref: '#/components/responses/education/content/application~1json/schema/properties/institution'
+                $ref: '#/components/responses/education200/content/application~1json/schema/properties/institution'
               degree:
-                $ref: '#/components/responses/education/content/application~1json/schema/properties/degree'
+                $ref: '#/components/responses/education200/content/application~1json/schema/properties/degree'
               startDate:
-                $ref: '#/components/responses/education/content/application~1json/schema/properties/startDate'
+                $ref: '#/components/responses/education200/content/application~1json/schema/properties/startDate'
               endDate:
-                $ref: '#/components/responses/education/content/application~1json/schema/properties/endDate'
+                $ref: '#/components/responses/education200/content/application~1json/schema/properties/endDate'
     updateEducation:
       content:
         application/json:
@@ -616,15 +616,15 @@ components:
             type: object
             properties:
               institution:
-                $ref: '#/components/responses/education/content/application~1json/schema/properties/institution'
+                $ref: '#/components/responses/education200/content/application~1json/schema/properties/institution'
               degree:
-                $ref: '#/components/responses/education/content/application~1json/schema/properties/degree'
+                $ref: '#/components/responses/education200/content/application~1json/schema/properties/degree'
               startDate:
-                $ref: '#/components/responses/education/content/application~1json/schema/properties/startDate'
+                $ref: '#/components/responses/education200/content/application~1json/schema/properties/startDate'
               endDate:
-                $ref: '#/components/responses/education/content/application~1json/schema/properties/endDate'
+                $ref: '#/components/responses/education200/content/application~1json/schema/properties/endDate'
   responses:
-    candidate:
+    candidate200:
       description: OK
       content:
         application/json:
@@ -673,19 +673,19 @@ components:
                 format: uri
                 description: The candidate’s GitHub URL.
                 example: 'https://github.com/christianareas'
-    candidateCreated:
+    candidate201:
       description: Created
       content:
         application/json:
           schema:
-            $ref: '#/components/responses/candidate/content/application~1json/schema'
-    candidateInfoMissingIncorrect:
+            $ref: '#/components/responses/candidate200/content/application~1json/schema'
+    candidate400:
       description: Candidate information missing or incorrect
-    candidateNotFound:
+    candidate404:
       description: Candidate not found
-    candidateAlreadyExists:
+    candidate409:
       description: Candidate already exists
-    who:
+    who200:
       description: OK
       content:
         application/json:
@@ -708,19 +708,19 @@ components:
                 format: string
                 description: The candidate’s “who” — usually a few sentences that summarize the candidate.
                 example: 'A writer who loves language and technology. Honest, transparent, and easy to work with. Runs marathons and builds mechanical keyboards during off hours.'
-    whoCreated:
+    who201:
       description: Created
       content:
         application/json:
           schema:
-            $ref: '#/components/responses/who/content/application~1json/schema'
-    whoInfoMissingIncorrect:
+            $ref: '#/components/responses/who200/content/application~1json/schema'
+    who400:
       description: Who information missing or incorrect
-    whoNotFound:
+    who404:
       description: Who not found
-    whoAlreadyExists:
+    who409:
       description: Who already exists
-    experience:
+    experience200:
       description: OK
       content:
         application/json:
@@ -774,19 +774,19 @@ components:
                       type: integer
                       description: 'The accomplishment’s sort order. `0` is first. If omitted, the order defaults to alphabetic.'
                       example: 0
-    experienceCreated:
+    experience201:
       description: Created
       content:
         application/json:
           schema:
-            $ref: '#/components/responses/experience/content/application~1json/schema'
-    experienceInfoMissingIncorrect:
+            $ref: '#/components/responses/experience200/content/application~1json/schema'
+    experience400:
       description: Experience information missing or incorrect
-    experienceNotFound:
+    experience404:
       description: Experience not found
-    experienceAlreadyExists:
+    experience409:
       description: Experience already exists
-    skill:
+    skill200:
       description: OK
       content:
         application/json:
@@ -816,19 +816,19 @@ components:
                 type: integer
                 description: 'The skill’s sort order. `0` is first. If omitted, the order defaults to alphabetic.'
                 example: 0
-    skillCreated:
+    skill201:
       description: Created
       content:
         application/json:
           schema:
-            $ref: '#/components/responses/skill/content/application~1json/schema'
-    skillInfoMissingIncorrect:
+            $ref: '#/components/responses/skill200/content/application~1json/schema'
+    skill400:
       description: Skill information missing or incorrect
-    skillNotFound:
+    skill404:
       description: Skill not found
-    skillAlreadyExists:
+    skill409:
       description: Skill already exists
-    education:
+    education200:
       description: OK
       content:
         application/json:
@@ -862,15 +862,15 @@ components:
                 type: string
                 format: date
                 description: The candidate’s end date.
-    educationCreated:
+    education201:
       description: Created
       content:
         application/json:
           schema:
-            $ref: '#/components/responses/education/content/application~1json/schema'
-    educationInfoMissingIncorrect:
+            $ref: '#/components/responses/education200/content/application~1json/schema'
+    education400:
       description: Education information missing or incorrect
-    educationNotFound:
+    education404:
       description: Education not found
-    educationAlreadyExists:
+    education409:
       description: Education already exists
