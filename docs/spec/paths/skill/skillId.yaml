@@ -7,15 +7,15 @@ get:
   description: |
     Get a candidate’s skill from the system.
   parameters:
-    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
-    - $ref: '../../resume-api.yaml#/components/parameters/skillId'
+    - $ref: '../../resumeapi.yaml#/components/parameters/candidateId'
+    - $ref: '../../resumeapi.yaml#/components/parameters/skillId'
   responses:
     '200':
-      $ref: '../../resume-api.yaml#/components/responses/skill200'
+      $ref: '../../resumeapi.yaml#/components/responses/skill200'
     '400':
-      $ref: '../../resume-api.yaml#/components/responses/skill400'
+      $ref: '../../resumeapi.yaml#/components/responses/skill400'
     '404':
-      $ref: '../../resume-api.yaml#/components/responses/skill404'
+      $ref: '../../resumeapi.yaml#/components/responses/skill404'
 
 # PATCH /candidate/{candidateId}/skill/{skillId} (updateSkill)
 patch:
@@ -26,17 +26,17 @@ patch:
   description: |
     Update a candidate’s skill in the system.
   parameters:
-    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
-    - $ref: '../../resume-api.yaml#/components/parameters/skillId'
+    - $ref: '../../resumeapi.yaml#/components/parameters/candidateId'
+    - $ref: '../../resumeapi.yaml#/components/parameters/skillId'
   requestBody:
-    $ref: '../../resume-api.yaml#/components/requestBodies/updateSkill'
+    $ref: '../../resumeapi.yaml#/components/requestBodies/updateSkill'
   responses:
     '200':
-      $ref: '../../resume-api.yaml#/components/responses/skill200'
+      $ref: '../../resumeapi.yaml#/components/responses/skill200'
     '400':
-      $ref: '../../resume-api.yaml#/components/responses/skill400'
+      $ref: '../../resumeapi.yaml#/components/responses/skill400'
     '404':
-      $ref: '../../resume-api.yaml#/components/responses/skill404'
+      $ref: '../../resumeapi.yaml#/components/responses/skill404'
 
 # DELETE /candidate/{candidateId}/skill/{skillId} (deleteSkill)
 delete:
@@ -47,12 +47,12 @@ delete:
   description: |
     Delete a candidate’s skill from the system.
   parameters:
-    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
-    - $ref: '../../resume-api.yaml#/components/parameters/skillId'
+    - $ref: '../../resumeapi.yaml#/components/parameters/candidateId'
+    - $ref: '../../resumeapi.yaml#/components/parameters/skillId'
   responses:
     '200':
-      $ref: '../../resume-api.yaml#/components/responses/skill200'
+      $ref: '../../resumeapi.yaml#/components/responses/skill200'
     '400':
-      $ref: '../../resume-api.yaml#/components/responses/skill400'
+      $ref: '../../resumeapi.yaml#/components/responses/skill400'
     '404':
-      $ref: '../../resume-api.yaml#/components/responses/skill404'
+      $ref: '../../resumeapi.yaml#/components/responses/skill404'

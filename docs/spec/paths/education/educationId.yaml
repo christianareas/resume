@@ -7,15 +7,15 @@ get:
   description: |
     Get a candidate’s education from the system.
   parameters:
-    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
-    - $ref: '../../resume-api.yaml#/components/parameters/educationId'
+    - $ref: '../../resumeapi.yaml#/components/parameters/candidateId'
+    - $ref: '../../resumeapi.yaml#/components/parameters/educationId'
   responses:
     '200':
-      $ref: '../../resume-api.yaml#/components/responses/education200'
+      $ref: '../../resumeapi.yaml#/components/responses/education200'
     '400':
-      $ref: '../../resume-api.yaml#/components/responses/education400'
+      $ref: '../../resumeapi.yaml#/components/responses/education400'
     '404':
-      $ref: '../../resume-api.yaml#/components/responses/education404'
+      $ref: '../../resumeapi.yaml#/components/responses/education404'
 
 # PATCH /candidate/{candidateId}/education/{educationId} (updateEducation)
 patch:
@@ -26,17 +26,17 @@ patch:
   description: |
     Update a candidate’s education in the system.
   parameters:
-    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
-    - $ref: '../../resume-api.yaml#/components/parameters/educationId'
+    - $ref: '../../resumeapi.yaml#/components/parameters/candidateId'
+    - $ref: '../../resumeapi.yaml#/components/parameters/educationId'
   requestBody:
-    $ref: '../../resume-api.yaml#/components/requestBodies/updateEducation'
+    $ref: '../../resumeapi.yaml#/components/requestBodies/updateEducation'
   responses:
     '200':
-      $ref: '../../resume-api.yaml#/components/responses/education200'
+      $ref: '../../resumeapi.yaml#/components/responses/education200'
     '400':
-      $ref: '../../resume-api.yaml#/components/responses/education400'
+      $ref: '../../resumeapi.yaml#/components/responses/education400'
     '404':
-      $ref: '../../resume-api.yaml#/components/responses/education404'
+      $ref: '../../resumeapi.yaml#/components/responses/education404'
 
 # DELETE /candidate/{candidateId}/education/{educationId} (deleteEducation)
 delete:
@@ -47,12 +47,12 @@ delete:
   description: |
     Delete a candidate’s education from the system.
   parameters:
-    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
-    - $ref: '../../resume-api.yaml#/components/parameters/educationId'
+    - $ref: '../../resumeapi.yaml#/components/parameters/candidateId'
+    - $ref: '../../resumeapi.yaml#/components/parameters/educationId'
   responses:
     '200':
-      $ref: '../../resume-api.yaml#/components/responses/education200'
+      $ref: '../../resumeapi.yaml#/components/responses/education200'
     '400':
-      $ref: '../../resume-api.yaml#/components/responses/education400'
+      $ref: '../../resumeapi.yaml#/components/responses/education400'
     '404':
-      $ref: '../../resume-api.yaml#/components/responses/education404'
+      $ref: '../../resumeapi.yaml#/components/responses/education404'

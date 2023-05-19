@@ -7,13 +7,13 @@ post:
   description: |
     Create a candidate’s who in the system.
   parameters:
-    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
+    - $ref: '../../resumeapi.yaml#/components/parameters/candidateId'
   requestBody:
-    $ref: '../../resume-api.yaml#/components/requestBodies/createWho'
+    $ref: '../../resumeapi.yaml#/components/requestBodies/createWho'
   responses:
     '201':
-      $ref: '../../resume-api.yaml#/components/responses/who201'
+      $ref: '../../resumeapi.yaml#/components/responses/who201'
     '400':
-      $ref: '../../resume-api.yaml#/components/responses/who400'
+      $ref: '../../resumeapi.yaml#/components/responses/who400'
     '409':
-      $ref: '../../resume-api.yaml#/components/responses/who409'
+      $ref: '../../resumeapi.yaml#/components/responses/who409'
