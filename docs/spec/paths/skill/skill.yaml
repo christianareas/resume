@@ -7,13 +7,13 @@ post:
   description: |
     Create a candidate’s skill in the system.
   parameters:
-    - $ref: '../../resumeapi.yaml#/components/parameters/candidateId'
+    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
   requestBody:
-    $ref: '../../resumeapi.yaml#/components/requestBodies/createSkill'
+    $ref: '../../resume-api.yaml#/components/requestBodies/createSkill'
   responses:
     '201':
-      $ref: '../../resumeapi.yaml#/components/responses/skill201'
+      $ref: '../../resume-api.yaml#/components/responses/skill201'
     '400':
-      $ref: '../../resumeapi.yaml#/components/responses/skill400'
+      $ref: '../../resume-api.yaml#/components/responses/skill400'
     '409':
-      $ref: '../../resumeapi.yaml#/components/responses/skill409'
+      $ref: '../../resume-api.yaml#/components/responses/skill409'

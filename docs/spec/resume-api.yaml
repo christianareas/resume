@@ -1,9 +1,9 @@
 openapi: 3.1.0
 
 info:
-  title: ResumeAPI
+  title: Resume API
   description: |
-    The ResumeAPI (pronounced _rez-uhm-ay-pee-eye_) is your resume’s source of truth. Use it to store, update, and retrieve your resume for a variety of use cases. For example, use it to display your resume on your website or make it available as a PDF — all from an always-up-to-date, single source.
+    The Resume API (pronounced _rez-uhm-ay-pee-eye_) is your resume’s source of truth. Use it to store, update, and retrieve your resume for a variety of use cases. For example, use it to display your resume on your website or make it available as a PDF — all from an always-up-to-date, single source.
   contact:
     name: Christian Areas
     email: me@areas.me

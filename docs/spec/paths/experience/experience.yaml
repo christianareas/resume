@@ -7,13 +7,13 @@ post:
   description: |
     Create a candidate’s experience in the system.
   parameters:
-    - $ref: '../../resumeapi.yaml#/components/parameters/candidateId'
+    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
   requestBody:
-    $ref: '../../resumeapi.yaml#/components/requestBodies/createExperience'
+    $ref: '../../resume-api.yaml#/components/requestBodies/createExperience'
   responses:
     '201':
-      $ref: '../../resumeapi.yaml#/components/responses/experience201'
+      $ref: '../../resume-api.yaml#/components/responses/experience201'
     '400':
-      $ref: '../../resumeapi.yaml#/components/responses/experience400'
+      $ref: '../../resume-api.yaml#/components/responses/experience400'
     '409':
-      $ref: '../../resumeapi.yaml#/components/responses/experience409'
+      $ref: '../../resume-api.yaml#/components/responses/experience409'

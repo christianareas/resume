@@ -7,14 +7,14 @@ get:
   description: |
     Get a candidate from the system.
   parameters:
-    - $ref: '../../resumeapi.yaml#/components/parameters/candidateId'
+    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
   responses:
     '200':
-      $ref: '../../resumeapi.yaml#/components/responses/candidate200'
+      $ref: '../../resume-api.yaml#/components/responses/candidate200'
     '400':
-      $ref: '../../resumeapi.yaml#/components/responses/candidate400'
+      $ref: '../../resume-api.yaml#/components/responses/candidate400'
     '404':
-      $ref: '../../resumeapi.yaml#/components/responses/candidate404'
+      $ref: '../../resume-api.yaml#/components/responses/candidate404'
 
 # PATCH /candidate/{candidateId} (updateCandidate)
 patch:
@@ -25,16 +25,16 @@ patch:
   description: |
     Update a candidate in the system.
   parameters:
-    - $ref: '../../resumeapi.yaml#/components/parameters/candidateId'
+    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
   requestBody:
-    $ref: '../../resumeapi.yaml#/components/requestBodies/updateCandidate'
+    $ref: '../../resume-api.yaml#/components/requestBodies/updateCandidate'
   responses:
     '200':
-      $ref: '../../resumeapi.yaml#/components/responses/candidate200'
+      $ref: '../../resume-api.yaml#/components/responses/candidate200'
     '400':
-      $ref: '../../resumeapi.yaml#/components/responses/candidate400'
+      $ref: '../../resume-api.yaml#/components/responses/candidate400'
     '404':
-      $ref: '../../resumeapi.yaml#/components/responses/candidate404'
+      $ref: '../../resume-api.yaml#/components/responses/candidate404'
 
 # DELETE /candidate/{candidateId} (deleteCandidate)
 delete:
@@ -45,11 +45,11 @@ delete:
   description: |
     Delete a candidate from the system.
   parameters:
-    - $ref: '../../resumeapi.yaml#/components/parameters/candidateId'
+    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
   responses:
     '200':
-      $ref: '../../resumeapi.yaml#/components/responses/candidate200'
+      $ref: '../../resume-api.yaml#/components/responses/candidate200'
     '400':
-      $ref: '../../resumeapi.yaml#/components/responses/candidate400'
+      $ref: '../../resume-api.yaml#/components/responses/candidate400'
     '404':
-      $ref: '../../resumeapi.yaml#/components/responses/candidate404'
+      $ref: '../../resume-api.yaml#/components/responses/candidate404'

@@ -7,13 +7,13 @@ post:
   description: |
     Create a candidate’s education in the system.
   parameters:
-    - $ref: '../../resumeapi.yaml#/components/parameters/candidateId'
+    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
   requestBody:
-    $ref: '../../resumeapi.yaml#/components/requestBodies/createEducation'
+    $ref: '../../resume-api.yaml#/components/requestBodies/createEducation'
   responses:
     '201':
-      $ref: '../../resumeapi.yaml#/components/responses/education201'
+      $ref: '../../resume-api.yaml#/components/responses/education201'
     '400':
-      $ref: '../../resumeapi.yaml#/components/responses/education400'
+      $ref: '../../resume-api.yaml#/components/responses/education400'
     '409':
-      $ref: '../../resumeapi.yaml#/components/responses/education409'
+      $ref: '../../resume-api.yaml#/components/responses/education409'
