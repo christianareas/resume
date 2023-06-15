@@ -23,15 +23,3 @@ const openApiInfoLicenseNameData = openApiInfoLicenseData.name
 const openApiInfoLicenseIdentifierData = openApiInfoLicenseData.identifier
 
 const openApiInfoVersionData = openApiInfoData.version
-
-console.log(openApiInfoData) // **
-console.log(openApiInfoTitleData) // **
-console.log(openApiInfoSummaryData) // **
-console.log(openApiInfoDescriptionData) // **
-console.log(openApiInfoContactData) // **
-console.log(openApiInfoContactNameData) // **
-console.log(openApiInfoContactEmailData) // **
-console.log(openApiInfoLicenseData) // **
-console.log(openApiInfoLicenseNameData) // **
-console.log(openApiInfoLicenseIdentifierData) // **
-console.log(openApiInfoVersionData) // **
