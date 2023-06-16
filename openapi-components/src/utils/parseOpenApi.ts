@@ -1,25 +1,29 @@
 // Dependencies.
-const fs = require("fs")
-const yaml = require("js-yaml")
+import { readFileSync } from "fs"
+import { load } from "js-yaml"
 
 // Get the OpenAPI object.
 const pathToOpenApiFile = "../../../docs/spec/_versions/resume-api-0.1.1.yaml"
-const openApiFile = fs.readFileSync(pathToOpenApiFile, "utf8")
-const openApi = yaml.load(openApiFile)
+const openApiFile = readFileSync(pathToOpenApiFile, "utf8")
+const openApiData: any = load(openApiFile) // To-do: Update the object’s type.
 
-// OpenAPI Info object.
-const openApiInfoData = openApi.info
+// OpenAPI Info data object’s type definition.
+type OpenApiInfoData = {
+	title: string
+	summary: string
+	description: string
+	contact: {
+		name: string
+		email: string
+	}
+	license: {
+		name: string
+		identifier: string
+	}
+	version: string
+}
 
-const openApiInfoTitleData = openApiInfoData.title
-const openApiInfoSummaryData = openApiInfoData.summary
-const openApiInfoDescriptionData = openApiInfoData.description
+// OpenAPI Info data object.
+export const openApiInfoData: OpenApiInfoData = openApiData.info
 
-const openApiInfoContactData = openApiInfoData.contact
-const openApiInfoContactNameData = openApiInfoContactData.name
-const openApiInfoContactEmailData = openApiInfoContactData.email
-
-const openApiInfoLicenseData = openApiInfoData.license
-const openApiInfoLicenseNameData = openApiInfoLicenseData.name
-const openApiInfoLicenseIdentifierData = openApiInfoLicenseData.identifier
-
-const openApiInfoVersionData = openApiInfoData.version
+export default openApiData
