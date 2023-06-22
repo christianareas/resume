@@ -12,14 +12,17 @@
     "update-tailwind": "npm i tailwindcss@latest postcss@latest autoprefixer@latest",
     "update-swagger": "npm i swagger-cli@latest",
     "update-all": "npm run update-typescript && npm run update-next && npm run update-tailwind && npm run update-swagger",
-    "bundle-api": "swagger-cli bundle docs/spec/resume-api.yaml -o docs/spec/_versions/resume-api-${npm_package_version}.yaml -t yaml"
+    "bundle-api": "swagger-cli bundle docs/spec/resume-api.yaml -o docs/spec/_versions/resume-api-${npm_package_version}.yaml -t yaml",
+    "instal-openapi-components": "npm link openapi-components",
+    "reinstall-openapi-components": "npm cache clean --force && npm unlink openapi-components && npm link openapi-components",
+    "uninstall-openapi-components": "npm cache clean --force && npm unlink openapi-components"
   },
   "dependencies": {
     "@types/node": "^20.3.1",
-    "@types/react": "^18.2.12",
-    "@types/react-dom": "^18.2.5",
+    "@types/react": "^18.2.13",
+    "@types/react-dom": "^18.2.6",
     "autoprefixer": "^10.4.14",
-    "next": "^13.4.5",
+    "next": "^13.4.6",
     "postcss": "^8.4.24",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -27,8 +30,8 @@
     "typescript": "^5.1.3"
   },
   "devDependencies": {
-    "eslint": "^8.42.0",
-    "eslint-config-next": "^13.4.5",
+    "eslint": "^8.43.0",
+    "eslint-config-next": "^13.4.6",
     "swagger-cli": "^4.0.4"
   }
 }
