@@ -7,11 +7,11 @@ post:
   description: |
     Create a candidate in the system.
   requestBody:
-    $ref: '../../resumeapi.yaml#/components/requestBodies/createCandidate'
+    $ref: '../../resume-api.yaml#/components/requestBodies/createCandidate'
   responses:
     '201':
-      $ref: '../../resumeapi.yaml#/components/responses/candidate201'
+      $ref: '../../resume-api.yaml#/components/responses/candidate201'
     '400':
-      $ref: '../../resumeapi.yaml#/components/responses/candidate400'
+      $ref: '../../resume-api.yaml#/components/responses/candidate400'
     '409':
-      $ref: '../../resumeapi.yaml#/components/responses/candidate409'
+      $ref: '../../resume-api.yaml#/components/responses/candidate409'

@@ -7,15 +7,15 @@ get:
   description: |
     Get a candidate’s who from the system.
   parameters:
-    - $ref: '../../resumeapi.yaml#/components/parameters/candidateId'
-    - $ref: '../../resumeapi.yaml#/components/parameters/whoId'
+    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
+    - $ref: '../../resume-api.yaml#/components/parameters/whoId'
   responses:
     '200':
-      $ref: '../../resumeapi.yaml#/components/responses/who200'
+      $ref: '../../resume-api.yaml#/components/responses/who200'
     '400':
-      $ref: '../../resumeapi.yaml#/components/responses/who400'
+      $ref: '../../resume-api.yaml#/components/responses/who400'
     '404':
-      $ref: '../../resumeapi.yaml#/components/responses/who404'
+      $ref: '../../resume-api.yaml#/components/responses/who404'
 
 # PATCH /candidate/{candidateId}/who/{whoId} (updateWho)
 patch:
@@ -26,17 +26,17 @@ patch:
   description: |
     Update a candidate’s who in the system.
   parameters:
-    - $ref: '../../resumeapi.yaml#/components/parameters/candidateId'
-    - $ref: '../../resumeapi.yaml#/components/parameters/whoId'
+    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
+    - $ref: '../../resume-api.yaml#/components/parameters/whoId'
   requestBody:
-    $ref: '../../resumeapi.yaml#/components/requestBodies/updateWho'
+    $ref: '../../resume-api.yaml#/components/requestBodies/updateWho'
   responses:
     '200':
-      $ref: '../../resumeapi.yaml#/components/responses/who200'
+      $ref: '../../resume-api.yaml#/components/responses/who200'
     '400':
-      $ref: '../../resumeapi.yaml#/components/responses/who400'
+      $ref: '../../resume-api.yaml#/components/responses/who400'
     '404':
-      $ref: '../../resumeapi.yaml#/components/responses/who404'
+      $ref: '../../resume-api.yaml#/components/responses/who404'
 
 # DELETE /candidate/{candidateId}/who/{whoId} (deleteWho)
 delete:
@@ -47,12 +47,12 @@ delete:
   description: |
     Delete a candidate’s who from the system.
   parameters:
-    - $ref: '../../resumeapi.yaml#/components/parameters/candidateId'
-    - $ref: '../../resumeapi.yaml#/components/parameters/whoId'
+    - $ref: '../../resume-api.yaml#/components/parameters/candidateId'
+    - $ref: '../../resume-api.yaml#/components/parameters/whoId'
   responses:
     '200':
-      $ref: '../../resumeapi.yaml#/components/responses/who200'
+      $ref: '../../resume-api.yaml#/components/responses/who200'
     '400':
-      $ref: '../../resumeapi.yaml#/components/responses/who400'
+      $ref: '../../resume-api.yaml#/components/responses/who400'
     '404':
-      $ref: '../../resumeapi.yaml#/components/responses/who404'
+      $ref: '../../resume-api.yaml#/components/responses/who404'
