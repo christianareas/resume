@@ -7,13 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "update-typescript": "npm i typescript@latest @types/node@latest @types/react@latest @types/react-dom@latest",
+    "update-ts": "npm i typescript@latest @types/node@latest @types/react@latest @types/react-dom@latest",
     "update-next": "npm i next@latest react@latest react-dom@latest eslint@latest eslint-config-next@latest",
     "update-tailwind": "npm i tailwindcss@latest postcss@latest autoprefixer@latest",
     "update-swagger": "npm i swagger-cli@latest",
     "update-all": "npm run update-typescript && npm run update-next && npm run update-tailwind && npm run update-swagger",
-    "bundle-api": "swagger-cli bundle docs/spec/resume-api.yaml -o docs/spec/_versions/resume-api-${npm_package_version}.yaml -t yaml",
-    "instal-openapi-components": "npm link openapi-components",
+    "bundle-api": "swagger-cli bundle docs/spec/src/resume-api.yaml -o docs/spec/_versions/resume-api-${npm_package_version}.yaml -t yaml",
+    "install-openapi-components": "npm link openapi-components",
     "reinstall-openapi-components": "npm cache clean --force && npm unlink openapi-components && npm link openapi-components",
     "uninstall-openapi-components": "npm cache clean --force && npm unlink openapi-components"
   },
@@ -22,7 +22,7 @@
     "@types/react": "^18.2.13",
     "@types/react-dom": "^18.2.6",
     "autoprefixer": "^10.4.14",
-    "next": "^13.4.6",
+    "next": "^13.4.7",
     "postcss": "^8.4.24",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "eslint": "^8.43.0",
-    "eslint-config-next": "^13.4.6",
+    "eslint-config-next": "^13.4.7",
     "swagger-cli": "^4.0.4"
   }
 }
