@@ -1,7 +1,7 @@
 "use client"
 
 // Dependencies.
-import { OpenApiDataProvider } from "openapi-components"
+import { OpenApiDataProvider } from "openapi-hook"
 
 // Child components.
 import OpenApiDoc from "./components/OpenApiDoc"
