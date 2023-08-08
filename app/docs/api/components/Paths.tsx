@@ -2,7 +2,7 @@
 import { useOpenApiData, Oas_3_1_0_Type } from "openapi-hook"
 
 // Component.
-export default function Servers() {
+export default function Paths() {
 	// Get the OpenAPI data.
 	const openApiData: Oas_3_1_0_Type | null = useOpenApiData()
 
@@ -12,13 +12,13 @@ export default function Servers() {
 	// TSX.
 	return (
 		<section className="p-2 mt-2 border rounded-lg">
-			<h2 className="text-2xl font-extralight pb-2">Servers</h2>
+			<h2 className="text-2xl font-extralight pb-2">Paths</h2>
 
 			<section className="text-sm font-extralight">
-				{openApiData.servers?.map((server, index) => {
+				{Object.entries(openApiData.paths).map(([path, pathObject]) => {
 					return (
-						<section key={index} className="text-xs font-extralight pb-2">
-							<span className="font-normal">{server.description}:</span> {server.url}
+						<section key={path} className="text-xs font-extralight pb-2">
+							<span className="font-normal">{path}:</span> {pathObject.summary}
 						</section>
 					)
 				})}
