@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Christian’s Resume
+Get to know me professionally!
 
-## Getting Started
+This project aims to showcase how I write developer documentation — mainly API documentation. It also showcases my developer skills, including API design.
 
-First, run the development server:
+To meet these goals, I plan to:
+
+- Design and document a new API: ”Resume API”.
+- Build a custom docs site.
+- Build the API.
+- Use the API to display my resume on the homepage.
+
+
+## API Design and Docs
+To see how far I’ve made it with the API design and documentation phase, see [docs/spec/](./docs/spec/).
+
+I’d like to highlight that I’ve set up the specification as multiple files. This makes it easier to maintain. See [docs/spec/src/](./docs/spec/src/).
+
+I then use the following script to compile the specification into a single file:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+swagger-cli bundle docs/spec/src/resume-api.yaml -o docs/spec/_versions/resume-api-${npm_package_version}.yaml -t yaml
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Not only that, I version it to match the version in [package.json](./package.json). Versions get stored in [docs/spec/_versions/](./docs/spec/_versions/).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
+## Docs Site
+This is a work in progress. I’m using the latest version of Next.js (app router).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+I actually ended up taking a detour and building [`openapi-hook`](https://github.com/christianareas/openapi-hook). This hook makes it possible to build a OpenAPI documentation site to my exact specifications. I plan to publish it to NPM!
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## API
+The rest (no pun intended) is in the queue.
