@@ -13,21 +13,18 @@ export default function Info() {
 	// Destructure the OpenAPI data.
 	const {
 		title,
+		version,
 		summary,
 		description,
 		contact,
 		license,
-		version
 	} = openApiData.info
-
-	// Parse and render the description.
-	const renderedDescription = description ? parseAndRenderMarkdown(description) : null
 
 	// Return the component.
 	return (
 		<section>
 			<h1 className="text-3xl">
-				{title}
+				{title} <span className="text-xs font-extralight pb-2">({version})</span>
 			</h1>
 			
 			<h2 className="text-base italic pb-2">
@@ -35,7 +32,7 @@ export default function Info() {
 			</h2>
 
 			<section className="text-sm font-extralight pb-3 mb-3 border-b border-gray-400">
-				{renderedDescription}
+				{description ? parseAndRenderMarkdown(description) : null}
 			</section>
 
 			<section className="text-xs font-extralight pb-2">
@@ -45,10 +42,6 @@ export default function Info() {
 			<section className="text-xs font-extralight pb-2">
 				<span className="font-normal">License:</span> {license?.name} ({license?.identifier})
 			</section>
-
-			<p className="text-xs font-extralight pb-2">
-				<span className="font-normal">Version:</span> <span className="text-xs font-extralight pb-2">{version}</span>
-			</p>
 		</section>
 	)
 }
