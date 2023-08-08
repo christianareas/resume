@@ -1,7 +1,5 @@
 # Christian’s Resume
-Get to know me professionally!
-
-This project aims to showcase how I write developer documentation — mainly API documentation. It also showcases my developer skills, including API design.
+Get to know me professionally. This project aims to showcase how I write developer documentation — mainly API documentation. It also showcases my developer skills — including API design.
 
 To meet these goals, I plan to:
 
