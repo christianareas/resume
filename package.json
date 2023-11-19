@@ -1,16 +1,16 @@
 {
   "name": "resume-api",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "update-typescript": "npm i typescript@latest @types/node@latest @types/react@latest @types/react-dom@latest",
+    "update-typescript": "npm i typescript@latest @types/node@latest @types/react@latest @types/react-dom@latest @types/commonmark @types/commonmark-react-renderer",
     "update-next": "npm i next@latest react@latest react-dom@latest eslint@latest eslint-config-next@latest",
     "update-tailwind": "npm i tailwindcss@latest postcss@latest autoprefixer@latest",
-    "update-commonmark": "npm i commonmark@latest commonmark-react-renderer@latest",
+    "update-commonmark": "npm i commonmark@0.27.x commonmark-react-renderer@latest",
     "update-swagger": "npm i swagger-cli@latest",
     "update-all": "npm run update-typescript && npm run update-next && npm run update-tailwind && npm run update-commonmark && npm run update-swagger",
     "bundle-api": "swagger-cli bundle docs/spec/src/resume-api.yaml -o docs/spec/_versions/resume-api-${npm_package_version}.yaml -t yaml",
@@ -22,24 +22,24 @@
     "uninstall-openapi-components": "npm cache clean --force && npm unlink openapi-components"
   },
   "dependencies": {
-    "@types/commonmark": "^0.27.6",
-    "@types/commonmark-react-renderer": "^4.3.1",
-    "@types/node": "^20.4.8",
-    "@types/react": "^18.2.18",
-    "@types/react-dom": "^18.2.7",
-    "autoprefixer": "^10.4.14",
+    "@types/commonmark": "^0.27.9",
+    "@types/commonmark-react-renderer": "^4.3.4",
+    "@types/node": "^20.9.2",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "autoprefixer": "^10.4.16",
     "commonmark": "^0.27.0",
     "commonmark-react-renderer": "^4.3.5",
-    "next": "^13.4.13",
-    "postcss": "^8.4.27",
+    "next": "^14.0.3",
+    "postcss": "^8.4.31",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tailwindcss": "^3.3.3",
-    "typescript": "^5.1.6"
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.2.2"
   },
   "devDependencies": {
-    "eslint": "^8.46.0",
-    "eslint-config-next": "^13.4.13",
+    "eslint": "^8.54.0",
+    "eslint-config-next": "^14.0.3",
     "swagger-cli": "^4.0.4"
   }
 }
