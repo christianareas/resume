@@ -24,22 +24,22 @@
   "dependencies": {
     "@types/commonmark": "^0.27.9",
     "@types/commonmark-react-renderer": "^4.3.4",
-    "@types/node": "^20.9.2",
-    "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
-    "autoprefixer": "^10.4.16",
+    "@types/node": "^20.11.20",
+    "@types/react": "^18.2.58",
+    "@types/react-dom": "^18.2.19",
+    "autoprefixer": "^10.4.17",
     "commonmark": "^0.27.0",
     "commonmark-react-renderer": "^4.3.5",
-    "next": "^14.0.3",
-    "postcss": "^8.4.31",
+    "next": "^14.1.0",
+    "postcss": "^8.4.35",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tailwindcss": "^3.3.5",
-    "typescript": "^5.2.2"
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "eslint": "^8.54.0",
-    "eslint-config-next": "^14.0.3",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.1.0",
     "swagger-cli": "^4.0.4"
   }
 }
