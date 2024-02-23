@@ -1,8 +1,8 @@
 // Dependencies.
-import { Who } from "./Who"
-import { Experience } from "./Experience"
-import { Skills } from "./Skills"
-import { Education } from "./Education"
+import { Who } from "./resume/Who"
+import { Experience } from "./resume/Experience"
+import { Skills } from "./resume/Skills"
+import { Education } from "./resume/Education"
 
 // Resume component.
 export const Resume = () => {

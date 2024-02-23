@@ -1,0 +1,15 @@
+{
+  "candidateId": "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+  "experienceId": "637f9a15-ea20-4597-990b-d67bd20db1c1",
+  "company": "Apple",
+  "role": "Senior Technical Writer, Apple Pay",
+  "startDate": "2015-07-27",
+  "endDate": "2022-04-29",
+  "accomplishments": [
+    {
+      "accomplishmentId": "7f4d6d8b-56c4-40a7-9c75-9d48f34a5161",
+      "accomplishment": "Functioned as the sole technical writer for Apple Pay server engineering.",
+      "sortOrder": 0
+    }
+  ]
+}
