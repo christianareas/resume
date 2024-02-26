@@ -1,0 +1,19 @@
+{
+  "candidateId": "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+  "experienceId": "637f9a15-ea20-4597-990b-d67bd20db1c1",
+  "company": "Apple",
+  "role": "Senior Technical Writer, Special Projects (Contract)",
+  "startDate": "2023-09",
+  "accomplishments": [
+    {
+      "accomplishmentId": "7f4d6d8b-56c4-40a7-9c75-9d48f34a5161",
+      "accomplishment": "Designed a comprehensive Confluence workflow that manages the team’s documentation lifecycle. The workflow includes a two-step review process and an automated method to flag outdated content.",
+      "sortOrder": 0
+    },
+    {
+      "accomplishmentId": "f3e3e3e3-3e3e-3e3e-3e3e-3e3e3e3e3e3e",
+      "accomplishment": "Worked with cross-function partners to write how-to’s for users who collect data and test in-development products for Apple’s research and development organization.",
+      "sortOrder": 1
+    }
+  ]
+}
