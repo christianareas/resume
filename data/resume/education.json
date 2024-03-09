@@ -1,8 +1,29 @@
 {
   "candidateId": "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-  "educationId": "f61e2435-caf4-4ec8-901f-2b0760de9d2c",
-  "institution": "University of California, Berkeley",
-  "degree": "Bachelor of Arts, English and Premed",
-  "startDate": "2024-02-23",
-  "endDate": "2024-02-23"
+  "education": [
+    {
+      "educationId": "2872c959-3208-498a-91b4-9841bc047e02",
+      "institution": "University of Michigan (Coursera)",
+      "achievement": "Specialization Certificate, Python for Everyone",
+      "sortOrder": 0
+    },
+    {
+      "educationId": "1235ad90-d9d2-44ff-9ca4-de35d1390c6d",
+      "institution": "UC Berkeley Extension",
+      "achievement": "Certificate of Completion, Full-Stack JavaScript Developer",
+      "sortOrder": 1
+    },
+    {
+      "educationId": "cc5b2cb6-aba8-4a7c-bb10-33df79b0934d",
+      "institution": "Emory University",
+      "achievement": "MPH, Epidemiology (Coursework Complete)",
+      "sortOrder": 2
+    },
+    {
+      "educationId": "f61e2435-caf4-4ec8-901f-2b0760de9d2c",
+      "institution": "University of California, Berkeley",
+      "achievement": "Bachelor of Arts, English and Premed",
+      "sortOrder": 3
+    }
+  ]
 }
