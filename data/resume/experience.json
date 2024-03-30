@@ -1,20 +1,133 @@
 {
   "candidateId": "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-  "experienceId": "637f9a15-ea20-4597-990b-d67bd20db1c1",
-  "company": "Apple",
-  "role": "Senior Technical Writer, Special Projects (Contract)",
-  "startDate": "2023-09",
-  "endDate": "2024-03",
-  "accomplishments": [
+  "experience": [
     {
-      "accomplishmentId": "7f4d6d8b-56c4-40a7-9c75-9d48f34a5161",
-      "accomplishment": "Designed a comprehensive Confluence workflow that manages the team’s documentation lifecycle. The workflow includes a two-step review process and an automated method to flag outdated content.",
-      "sortOrder": 0
+      "experienceId": "aed19a79-05e5-4cd2-ba24-79d675a3e17b",
+      "company": "Apple",
+      "role": "Senior Technical Writer, Special Projects (Contract)",
+      "startDate": "2023-09",
+      "endDate": "present",
+      "accomplishments": [
+        {
+          "accomplishmentId": "aefe1d38-da82-4be1-879f-c34521900d2a",
+          "accomplishment": "Designed a comprehensive Confluence workflow that manages the team’s documentation lifecycle. The workflow includes a two-step review process and an automated method to flag outdated content.",
+          "sortOrder": 0
+        },
+        {
+          "accomplishmentId": "00edfc2e-c509-4ba1-bb8f-86c74ec82576",
+          "accomplishment": "Worked with cross-function partners to write how-to’s for users who collect data and test in-development products for Apple’s research and development organization.",
+          "sortOrder": 1
+        }
+      ]
     },
     {
-      "accomplishmentId": "f3e3e3e3-3e3e-3e3e-3e3e-3e3e3e3e3e3e",
-      "accomplishment": "Worked with cross-function partners to write how-to’s for users who collect data and test in-development products for Apple’s research and development organization.",
-      "sortOrder": 1
+      "experienceId": "523cd0f9-83ba-48e3-99c6-df5302070030",
+      "company": "Educational Sabbatical",
+      "role": "",
+      "startDate": "2022",
+      "endDate": "2023",
+      "accomplishments": [
+        {
+          "accomplishmentId": "f64e62f4-e227-4898-b1ed-9ab56cf7aa96",
+          "accomplishment": "Completed a 24-week, full-stack JavaScript developer boot camp. Lead all team projects — and in one case made over 90% of the contributions to the codebase. Learned TypeScript shortly thereafter.",
+          "sortOrder": 0
+        },
+        {
+          "accomplishmentId": "96cc75ff-589d-4f8c-a773-e0656aca0868",
+          "accomplishment": "Finished a 5-course, self-paced Python specialization.",
+          "sortOrder": 1
+        }
+      ]
+    },
+    {
+      "experienceId": "2afdb09a-b81f-4f11-85a1-de68f006861d",
+      "company": "Apple",
+      "role": "Senior Technical Writer, Apple Pay",
+      "startDate": "2019",
+      "endDate": "2022",
+      "accomplishments": [
+        {
+          "accomplishmentId": "641a858f-41a7-47fa-8039-d6deeb0ec0bd",
+          "accomplishment": "Functioned as Apple Pay server engineering’s sole technical writer. Wrote several documents from scratch, including one that explains the system behind Apple Pay Later.",
+          "sortOrder": 0
+        },
+        {
+          "accomplishmentId": "7ff4bb27-eb5c-40ff-8785-1846f4ce6c97",
+          "accomplishment": "Worked with engineering managers and engineers across Apple Pay to gather requirements for a new docs-as-code solution to centralize Apple Pay’s API specifications. Designed the docs-as-code solution. It sources Markdown and OpenAPI files from multiple GitHub repos, and uses web hooks and a CI/CD service to publish the latest updates to teams across Apple. The solution supports fine-grained permissions, and gives users an easy way to create text-based message sequence diagrams. Interviewed nearly 50 candidates to hire Apple Pay server engineering’s second technical writer.",
+          "sortOrder": 1
+        }
+      ]
+    },
+    {
+      "experienceId": "9947177b-5edc-49a9-a19b-7354a0efc837",
+      "company": "Apple",
+      "role": "Senior Technical Writer, Employee Productivity",
+      "startDate": "2015",
+      "endDate": "2019",
+      "accomplishments": [
+        {
+          "accomplishmentId": "49489061-e262-4b1b-be7e-ac93ca8cdc1d",
+          "accomplishment": "Wrote in the Apple voice for Apple employees — guides and how-to’s for everyday users, new employees, managers, and other audiences. Referenced the Apple Style Guide, Human Interface Guidelines (HIG), Chicago Manual of Style, and other resources to maintain consistency across content. Managed and mentored writers.",
+          "sortOrder": 0
+        },
+        {
+          "accomplishmentId": "0a22e0f2-8217-4e3f-b96f-99233cb9b90e",
+          "accomplishment": "Lead major, cross-functional projects, such as the complete overhaul of one of Apple’s main, internal sites. Subsequently iterated to improve the user experience. Wrote SQL queries to generate reports. Used the data to answer questions and drive decisions.",
+          "sortOrder": 1
+        }
+      ]
+    },
+    {
+      "experienceId": "b865797e-db99-42d9-b4df-cc261ab123bc",
+      "company": "MGT",
+      "role": "Product Manager, Compliance and Documentation",
+      "startDate": "2013",
+      "endDate": "2015",
+      "accomplishments": [
+        {
+          "accomplishmentId": "3b635e03-9f98-43f5-827f-ecd8a5c9be13",
+          "accomplishment": "Authored key documents from scratch to support the startup, including a 150+ page Internal Control System (ICS), information security policies, anti-money laundering (AML) and countering the financing of terrorism (CFT) polices, and more. Wrote functional specifications for user registration, know your customer (KYC), and deposit and withdrawal flows.",
+          "sortOrder": 0
+        },
+        {
+          "accomplishmentId": "e40229d2-39c1-483f-acf7-61af0d7de252",
+          "accomplishment": "Developed 20+ SQL queries to output all financial and operational data — registrations, logins, deposits and withdrawals, gaming activity, liabilities, and other metrics.",
+          "sortOrder": 1
+        }
+      ]
+    },
+    {
+      "experienceId": "44a87b01-a78f-4b63-b31c-bda00a8b98e2",
+      "company": "Ultimate Gaming",
+      "role": "Product Manager, Admin Portal",
+      "startDate": "2012",
+      "endDate": "2013",
+      "accomplishments": [
+        {
+          "accomplishmentId": "8aad30f3-f40c-43fd-b09d-8cf9ad179ad9",
+          "accomplishment": "Helped launch the first legal online poker operation in the United States. Reviewed state regulations to define requirements for admin UIs and 30+ reports.",
+          "sortOrder": 0
+        },
+        {
+          "accomplishmentId": "5c1d4adf-28ed-45f0-80c2-8529c43b28c0",
+          "accomplishment": "Defined and oversaw implementation of 20+ finance, gaming, customer service, and fraud and collusion reports.",
+          "sortOrder": 1
+        }
+      ]
+    },
+    {
+      "experienceId": "ea45730c-4847-4b07-8142-0911bf5a2ba2",
+      "company": "Ultimate Gaming",
+      "role": "Technical Writer",
+      "startDate": "2009",
+      "endDate": "2012",
+      "accomplishments": [
+        {
+          "accomplishmentId": "a7ab44b2-0696-463f-b671-148782874b33",
+          "accomplishment": "Maintained a 300+ page guide for installing proprietary, Linux-based software. Migrated database and API references to the internal wiki, and subsequently maintained each.",
+          "sortOrder": 0
+        }
+      ]
     }
   ]
 }
