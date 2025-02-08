@@ -1,8 +1,0 @@
-name: skillId
-in: path
-description: The skill’s unique identifier.
-required: true
-schema:
-  type: string
-  format: uuid
-  example: 97d3165d-e1dd-4955-972c-95ebf04dd091
