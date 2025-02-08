@@ -1,17 +1,14 @@
 // Dependencies.
-import { NextResponse } from "next/server"
+import { type NextRequest, NextResponse } from "next/server"
 import { resume } from "@/data/resume"
-
-// Types.
-import type { NextRequest } from "next/server"
 
 // GET request.
 export async function GET(
 	request: NextRequest,
-	{ params }: { params: { candidateId: string } },
+	{ params }: { params: Promise<{ candidateId: string }> },
 ) {
 	// Candidate ID.
-	const { candidateId } = params
+	const candidateId = (await params).candidateId
 
 	// If there's no candidateId match, return a 404 error.
 	if (resume.candidate.candidateId !== candidateId) {
