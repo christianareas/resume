@@ -105,10 +105,130 @@ export const resume = {
 		},
 
 		// Apple (Apple Pay)
+		{
+			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+			experienceId: "0e6bdabb-10b6-495a-985d-26526faedfa0",
+			company: "Apple",
+			role: "Senior Technical Writer, Apple Pay",
+			startDate: "2019-08",
+			endDate: "2022-04",
+			accomplishments: [
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					accomplishmentId: "2107ad23-c1ae-4a8e-be58-38dd5c2eb612",
+					accomplishment:
+						"Functioned as Apple Pay server engineering’s sole technical writer.",
+					sortOrder: 0,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					accomplishmentId: "98b24a62-861c-43f9-ad29-c10d307ad933",
+					accomplishment:
+						"Wrote several documents from scratch, including one that explains the system behind Apple Pay Later.",
+					sortOrder: 1,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					accomplishmentId: "4ffd34d2-9d96-4f5f-a847-b4a1d3e8460c",
+					accomplishment:
+						"Worked with engineering managers and engineers across Apple Pay to gather requirements for a new docs-as-code solution to centralize Apple Pay’s API specifications.",
+					sortOrder: 2,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					accomplishmentId: "7c3e616e-de93-4eaa-a701-dd142148f69c",
+					accomplishment:
+						"Designed the docs-as-code solution. It sources Markdown and OpenAPI files from multiple GitHub repos, and uses web hooks and a CI/CD pipeline to publish the latest updates to teams across Apple. The solution supports fine-grained permissions, and gives users an easy way to create text-based message sequence diagrams.",
+					sortOrder: 3,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					accomplishmentId: "2b4bc481-c06e-40b6-8c5f-56bac31e6ca0",
+					accomplishment:
+						"Interviewed nearly 50 candidates to hire Apple Pay server engineering’s second technical writer.",
+					sortOrder: 4,
+				},
+			],
+		},
 
 		// Apple (Employee Productivity)
+		{
+			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+			experienceId: "b985c1d0-0f7f-46d6-a39d-ebbd0a8db7aa",
+			company: "Apple",
+			role: "Senior Technical Writer, Employee Productivity",
+			startDate: "2015-07",
+			endDate: "2019-08",
+			accomplishments: [
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					accomplishmentId: "55008b01-eafa-4308-98bb-d1fcda84a0a7",
+					accomplishment:
+						"Wrote in the Apple voice for Apple employees — guides and how-tos for everyday users, new employees, managers, and other audiences.",
+					sortOrder: 0,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					accomplishmentId: "546660bd-1062-4966-bc08-15690742973d",
+					accomplishment:
+						"Referenced the Apple Style Guide, Human Interface Guidelines (HIG), Chicago Manual of Style, and other resources to maintain consistency across content.",
+					sortOrder: 1,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					accomplishmentId: "124deb74-8b4b-4acf-a094-dcaa47eee508",
+					accomplishment: "Managed and mentored writers.",
+					sortOrder: 2,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					accomplishmentId: "5331572b-e99f-4c63-8a01-4d7ac5b24318",
+					accomplishment:
+						"Led major, cross-functional projects — such as the complete overhaul of one of Apple’s main internal sites — and subsequently iterated to improve the user experience.",
+					sortOrder: 3,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					accomplishmentId: "6c7f62ee-3f84-4aa9-a84a-cbd3d90e1ac0",
+					accomplishment:
+						"Wrote SQL queries to generate reports. Used the data to answer questions and drive decisions.",
+					sortOrder: 4,
+				},
+			],
+		},
 
 		// MGT
+		{
+			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+			experienceId: "637f9a15-ea20-4597-990b-d67bd20db1c1",
+			company: "MGT",
+			role: "Documentation Manager",
+			startDate: "2013-10",
+			endDate: "2015-7",
+			accomplishments: [
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					accomplishmentId: "1a2c1ea7-97ae-4058-a1e4-7d7d797064ef",
+					accomplishment:
+						"Authored key documents from scratch to support the startup, including a 150+ page internal control system (ICS), information security policies, anti-money laundering (AML) and countering the financing of terrorism (CFT) policies, and more.",
+					sortOrder: 0,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					accomplishmentId: "0579a5bd-6abf-47dd-b64c-34badb306016",
+					accomplishment:
+						"Wrote functional specifications for user registration, know your customer (KYC), and deposit and withdrawal flows.",
+					sortOrder: 1,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					accomplishmentId: "e8bf3337-33a7-412a-90d1-4ddcc3078396",
+					accomplishment:
+						"Developed 20+ SQL queries to output all financial and operational data — registrations, logins, deposits and withdrawals, gaming activity, liabilities, and other metrics.",
+					sortOrder: 2,
+				},
+			],
+		},
 	],
 
 	//
