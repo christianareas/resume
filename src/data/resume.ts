@@ -7,7 +7,7 @@ export const resume = {
 		email: "me@areas.me",
 		phoneCountryCode: "1",
 		phoneNumber: "4088029811",
-		website: "areas.me",
+		website: "https://www.areas.me/",
 		linkedIn: "https://www.linkedin.com/in/christianareas/",
 		gitHub: "https://github.com/christianareas",
 	},
