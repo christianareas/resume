@@ -1,3 +1,4 @@
+// Resume
 export const resume = {
 	//
 	// Candidate
@@ -7,6 +8,7 @@ export const resume = {
 		firstName: "Christian",
 		middleName: "",
 		lastName: "Areas",
+		who: "A writer who uses their technical skills and appetite for growth to create an incredible developer experience",
 		email: "me@areas.me",
 		phoneCountryCode: "1",
 		phoneNumber: "4088029811",
@@ -473,7 +475,7 @@ export const resume = {
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 			educationId: "c560a09f-e1c0-438b-bdee-40b08193aa71",
 			institution: "University of Michigan (Coursera)",
-			degree: "Specialization Certificate, Python for Everyone",
+			credential: "Specialization Certificate, Python for Everyone",
 			startDate: "",
 			endDate: "",
 		},
@@ -481,7 +483,7 @@ export const resume = {
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 			educationId: "6d2a04b3-3aae-48fe-a96a-95bbc0072d0f",
 			institution: "UC Berkeley Extension",
-			degree: "Certificate of Completion, Full-Stack JavaScript Developer",
+			credential: "Certificate of Completion, Full-Stack JavaScript Developer",
 			startDate: "",
 			endDate: "",
 		},
@@ -489,7 +491,7 @@ export const resume = {
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 			educationId: "424c3311-d868-4dae-94be-178bf12602d6",
 			institution: "Emory University",
-			degree: "MPH, Epidemiology (Coursework Complete)",
+			credential: "MPH, Epidemiology (Coursework Complete)",
 			startDate: "",
 			endDate: "",
 		},
@@ -497,7 +499,7 @@ export const resume = {
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 			educationId: "96375c83-3995-48b7-a118-131572b154f3",
 			institution: "UC Berkeley",
-			degree: "BA, English and Premed",
+			credential: "BA, English and Premed",
 			startDate: "",
 			endDate: "",
 		},
