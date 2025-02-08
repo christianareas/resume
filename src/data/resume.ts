@@ -24,7 +24,7 @@ export const resume = {
 		// Postman
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			experienceId: "637f9a15-ea20-4597-990b-d67bd20db1c1",
+			roleId: "637f9a15-ea20-4597-990b-d67bd20db1c1",
 			company: "Postman",
 			role: "Senior Technical Writer",
 			startDate: "2024-03-18",
@@ -57,7 +57,7 @@ export const resume = {
 		// Apple (Special Projects)
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			experienceId: "7b329cf8-5a11-4de8-bdc7-65696dbc1e2c",
+			roleId: "7b329cf8-5a11-4de8-bdc7-65696dbc1e2c",
 			company: "Apple",
 			role: "Senior Technical Writer, Special Projects",
 			startDate: "2023-09",
@@ -83,7 +83,7 @@ export const resume = {
 		// Sabbatical
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			experienceId: "3d7d7353-35ef-4be8-b32d-ee8151a13709",
+			roleId: "3d7d7353-35ef-4be8-b32d-ee8151a13709",
 			company: "Sabbatical",
 			role: "",
 			startDate: "2022-04",
@@ -109,7 +109,7 @@ export const resume = {
 		// Apple (Apple Pay)
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			experienceId: "0e6bdabb-10b6-495a-985d-26526faedfa0",
+			roleId: "0e6bdabb-10b6-495a-985d-26526faedfa0",
 			company: "Apple",
 			role: "Senior Technical Writer, Apple Pay",
 			startDate: "2019-08",
@@ -156,7 +156,7 @@ export const resume = {
 		// Apple (Employee Productivity)
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			experienceId: "b985c1d0-0f7f-46d6-a39d-ebbd0a8db7aa",
+			roleId: "b985c1d0-0f7f-46d6-a39d-ebbd0a8db7aa",
 			company: "Apple",
 			role: "Senior Technical Writer, Employee Productivity",
 			startDate: "2015-07",
@@ -202,7 +202,7 @@ export const resume = {
 		// MGT
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			experienceId: "637f9a15-ea20-4597-990b-d67bd20db1c1",
+			roleId: "637f9a15-ea20-4597-990b-d67bd20db1c1",
 			company: "MGT",
 			role: "Documentation Manager",
 			startDate: "2013-10",
@@ -473,7 +473,7 @@ export const resume = {
 	education: [
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			educationId: "c560a09f-e1c0-438b-bdee-40b08193aa71",
+			credentialId: "c560a09f-e1c0-438b-bdee-40b08193aa71",
 			institution: "University of Michigan (Coursera)",
 			credential: "Specialization Certificate, Python for Everyone",
 			startDate: "",
@@ -481,7 +481,7 @@ export const resume = {
 		},
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			educationId: "6d2a04b3-3aae-48fe-a96a-95bbc0072d0f",
+			credentialId: "6d2a04b3-3aae-48fe-a96a-95bbc0072d0f",
 			institution: "UC Berkeley Extension",
 			credential: "Certificate of Completion, Full-Stack JavaScript Developer",
 			startDate: "",
@@ -489,7 +489,7 @@ export const resume = {
 		},
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			educationId: "424c3311-d868-4dae-94be-178bf12602d6",
+			credentialId: "424c3311-d868-4dae-94be-178bf12602d6",
 			institution: "Emory University",
 			credential: "MPH, Epidemiology (Coursework Complete)",
 			startDate: "",
@@ -497,7 +497,7 @@ export const resume = {
 		},
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			educationId: "96375c83-3995-48b7-a118-131572b154f3",
+			credentialId: "96375c83-3995-48b7-a118-131572b154f3",
 			institution: "UC Berkeley",
 			credential: "BA, English and Premed",
 			startDate: "",
