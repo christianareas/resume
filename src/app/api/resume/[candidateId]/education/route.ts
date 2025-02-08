@@ -8,10 +8,7 @@ export async function GET(
 	{ params }: { params: Promise<{ candidateId: string }> },
 ) {
 	// Candidate ID.
-	const candidateId = (await params).candidateId
-
-	// Candidate.
-	const candidate = resume.candidate
+	const { candidateId } = await params
 
 	// If there's no candidateId match, return a 404 error.
 	if (resume.candidate.candidateId !== candidateId) {
@@ -23,5 +20,18 @@ export async function GET(
 		)
 	}
 
-	return NextResponse.json({ candidate }, { status: 200 })
+	// Education.
+	const education = resume.education
+
+	// If there's no education, return a 404 error.
+	if (!education) {
+		return NextResponse.json(
+			{
+				error: "Couldn’t find the education.",
+			},
+			{ status: 404 },
+		)
+	}
+
+	return NextResponse.json({ education }, { status: 200 })
 }

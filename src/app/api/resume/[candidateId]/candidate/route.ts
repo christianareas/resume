@@ -8,10 +8,10 @@ export async function GET(
 	{ params }: { params: Promise<{ candidateId: string }> },
 ) {
 	// Candidate ID.
-	const candidateId = (await params).candidateId
+	const { candidateId } = await params
 
-	// Skills.
-	const skills = resume.skills
+	// Candidate.
+	const candidate = resume.candidate
 
 	// If there's no candidateId match, return a 404 error.
 	if (resume.candidate.candidateId !== candidateId) {
@@ -23,5 +23,5 @@ export async function GET(
 		)
 	}
 
-	return NextResponse.json({ skills }, { status: 200 })
+	return NextResponse.json({ candidate }, { status: 200 })
 }

@@ -8,7 +8,7 @@ export async function GET(
 	{ params }: { params: Promise<{ candidateId: string }> },
 ) {
 	// Candidate ID.
-	const candidateId = (await params).candidateId
+	const { candidateId } = await params
 
 	// If there's no candidateId match, return a 404 error.
 	if (resume.candidate.candidateId !== candidateId) {
