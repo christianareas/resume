@@ -6,23 +6,29 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "reinstall": "rm -rf node_modules && rm -rf .next && rm package-lock.json && npm i",
+    "update:ts": "npm i -D typescript@latest @types/node@latest @types/react@latest @types/react-dom@latest",
+    "update:next": "npm i next@latest react@latest react-dom@latest",
+    "update:tailwind": "npm i -D tailwindcss@latest @tailwindcss/postcss@latest",
+    "update:eslint": "npm i -D eslint@latest eslint-config-next@latest",
+    "update:biome": "npm i -D @biomejs/biome@latest",
+    "update:all-dependencies": "npm run update:ts && npm run update:next && npm run update:tailwind && npm run update:eslint && npm run update:biome && npm ls && npm outdated"
   },
   "dependencies": {
-    "next": "15.1.6",
+    "next": "^15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4.0.0",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.6",
-    "postcss": "^8",
-    "tailwindcss": "^4.0.0",
-    "typescript": "^5"
+    "@biomejs/biome": "^1.9.4",
+    "@tailwindcss/postcss": "^4.0.4",
+    "@types/node": "^22.13.1",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "eslint": "^9.20.0",
+    "eslint-config-next": "^15.1.6",
+    "tailwindcss": "^4.0.4",
+    "typescript": "^5.7.3"
   }
 }
