@@ -1,8 +1,0 @@
-name: candidateId
-in: path
-description: The candidate’s unique identifier.
-required: true
-schema:
-  type: string
-  format: uuid
-  example: d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5
