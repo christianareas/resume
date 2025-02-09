@@ -13,8 +13,8 @@ export type Candidate = {
 	lastName: string
 	who: string
 	email: string
-	phoneCountryCode: string
-	phoneNumber: string
+	phoneCountryCode: number
+	phoneNumber: number
 	website: string
 	linkedIn: string
 	gitHub: string
@@ -64,10 +64,10 @@ export const resume: Resume = {
 		firstName: "Christian",
 		middleName: "",
 		lastName: "Areas",
-		who: "A writer who uses their technical skills and appetite for growth to create an incredible developer experience",
+		who: "A writer who uses his technical skills and appetite for growth to create an incredible developer experience",
 		email: "me@areas.me",
-		phoneCountryCode: "1",
-		phoneNumber: "4088029811",
+		phoneCountryCode: 1,
+		phoneNumber: 4088029811,
 		website: "https://www.areas.me/",
 		linkedIn: "https://www.linkedin.com/in/christianareas/",
 		gitHub: "https://github.com/christianareas",
@@ -258,7 +258,7 @@ export const resume: Resume = {
 		// MGT.
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			roleId: "637f9a15-ea20-4597-990b-d67bd20db1c1",
+			roleId: "c92724f9-41fe-417e-8f26-e75ef1005ab0",
 			company: "MGT",
 			role: "Documentation Manager",
 			startDate: "2013-10",
