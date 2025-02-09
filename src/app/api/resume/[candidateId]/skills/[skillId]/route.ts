@@ -1,10 +1,7 @@
 // Dependencies.
 import { type NextRequest, NextResponse } from "next/server"
 import { resume } from "@/data/resume"
-import {
-	validateCandidateId,
-	validateRoleSkillOrCredential,
-} from "@/lib/api/resume"
+import { validateCandidateId, validateResumeItem } from "@/lib/api/resume"
 
 // GET request.
 export async function GET(
@@ -22,12 +19,7 @@ export async function GET(
 	const skill = resume.skills?.find((skill) => skill.skillId === skillId)
 
 	// Validate skill.
-	const skillError = validateRoleSkillOrCredential(
-		skill,
-		"skill",
-		skillId,
-		"skillId",
-	)
+	const skillError = validateResumeItem(skill, "skill", skillId, "skillId")
 	if (skillError) return skillError
 
 	return NextResponse.json({ skill }, { status: 200 })

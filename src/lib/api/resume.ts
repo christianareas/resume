@@ -4,6 +4,7 @@ import {
 	resume,
 	type Candidate,
 	type Role,
+	type Accomplishment,
 	type Skill,
 	type Credential,
 } from "@/data/resume"
@@ -25,7 +26,7 @@ export function validateCandidateId(candidateId: string): NextResponse | null {
 }
 
 // Validate the candidate, experience, skills, or education section.
-export function validateCandidateExperienceSkillsOrEducation(
+export function validateResumeSection(
 	resumeSection: Candidate | Role[] | Skill[] | Credential[] | undefined,
 	resumeSectionName: "candidate" | "experience" | "skills" | "education",
 ): NextResponse | null {
@@ -43,12 +44,12 @@ export function validateCandidateExperienceSkillsOrEducation(
 	return null
 }
 
-// Validate the role, skill, or credential.
-export function validateRoleSkillOrCredential(
-	resumeItem: Role | Skill | Credential | undefined,
-	resumeItemName: "role" | "skill" | "credential",
+// Validate the role, skill, credential, or accomplishment.
+export function validateResumeItem(
+	resumeItem: Role | Skill | Credential | Accomplishment | undefined,
+	resumeItemName: "role" | "skill" | "credential" | "accomplishment",
 	resumeItemId: string | undefined,
-	resumeItemIdName: "roleId" | "skillId" | "credentialId",
+	resumeItemIdName: "roleId" | "skillId" | "credentialId" | "accomplishmentId",
 ): NextResponse | null {
 	// If there's no roleId match, return a 404 error.
 	if (!resumeItem) {

@@ -1,10 +1,7 @@
 // Dependencies.
 import { type NextRequest, NextResponse } from "next/server"
 import { resume } from "@/data/resume"
-import {
-	validateCandidateId,
-	validateCandidateExperienceSkillsOrEducation,
-} from "@/lib/api/resume"
+import { validateCandidateId, validateResumeSection } from "@/lib/api/resume"
 
 // GET request.
 export async function GET(
@@ -22,10 +19,7 @@ export async function GET(
 	const experience = resume.experience
 
 	// Validate experience.
-	const experienceError = validateCandidateExperienceSkillsOrEducation(
-		experience,
-		"experience",
-	)
+	const experienceError = validateResumeSection(experience, "experience")
 	if (experienceError) return experienceError
 
 	return NextResponse.json({ experience }, { status: 200 })

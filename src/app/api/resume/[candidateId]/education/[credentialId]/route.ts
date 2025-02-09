@@ -1,10 +1,7 @@
 // Dependencies.
 import { type NextRequest, NextResponse } from "next/server"
 import { resume } from "@/data/resume"
-import {
-	validateCandidateId,
-	validateRoleSkillOrCredential,
-} from "@/lib/api/resume"
+import { validateCandidateId, validateResumeItem } from "@/lib/api/resume"
 
 // GET request.
 export async function GET(
@@ -26,7 +23,7 @@ export async function GET(
 	)
 
 	// Validate credential.
-	const credentialError = validateRoleSkillOrCredential(
+	const credentialError = validateResumeItem(
 		credential,
 		"credential",
 		credentialId,

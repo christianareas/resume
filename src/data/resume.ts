@@ -27,7 +27,7 @@ export type Role = {
 	role: string
 	startDate: string
 	endDate: string
-	accomplishments: Accomplishment[]
+	accomplishments?: Accomplishment[]
 }
 
 export type Accomplishment = {
