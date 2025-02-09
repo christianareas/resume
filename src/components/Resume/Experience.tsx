@@ -9,7 +9,8 @@ export default function Experience() {
 	// Render.
 	return (
 		<section className="text-center">
-			<h3 className="font-bold text-xl uppercase">Experience</h3>
+			<h3 className="pb-2 font-bold text-xl uppercase">Experience</h3>
+
 			<section className="space-y-5">
 				{experience?.map((role) => (
 					<section key={role.roleId}>
