@@ -5,6 +5,7 @@ import { resume } from "@/data/resume"
 export default function Education() {
 	// Education.
 	const education = resume.education
+	console.log(education) // **
 
 	// Render.
 	return (

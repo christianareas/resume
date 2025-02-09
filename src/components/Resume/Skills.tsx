@@ -5,6 +5,7 @@ import { resume } from "@/data/resume"
 export default function Skills() {
 	// Skills.
 	const skills = resume.skills
+	console.log(skills) // **
 
 	// Render.
 	return (

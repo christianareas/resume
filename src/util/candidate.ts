@@ -26,6 +26,7 @@ export function formatUrl(url: string) {
 
 		return hostname + pathname
 	} catch (error) {
+		console.error(error)
 		return url
 	}
 }
