@@ -1,7 +1,63 @@
-// Resume
-export const resume = {
+// Types.
+export type Resume = {
+	candidate?: Candidate
+	experience?: Role[]
+	skills?: Skill[]
+	education?: Credential[]
+}
+
+export type Candidate = {
+	candidateId: string
+	firstName: string
+	middleName: string
+	lastName: string
+	who: string
+	email: string
+	phoneCountryCode: string
+	phoneNumber: string
+	website: string
+	linkedIn: string
+	gitHub: string
+}
+
+export type Role = {
+	candidateId: string
+	roleId: string
+	company: string
+	role: string
+	startDate: string
+	endDate: string
+	accomplishments: Accomplishment[]
+}
+
+export type Accomplishment = {
+	candidateId: string
+	accomplishmentId: string
+	accomplishment: string
+	sortOrder: number
+}
+
+export type Skill = {
+	candidateId: string
+	skillId: string
+	skillType: string
+	skill: string
+	sortOrder: number
+}
+
+export type Credential = {
+	candidateId: string
+	credentialId: string
+	institution: string
+	credential: string
+	startDate: string
+	endDate: string
+}
+
+// Resume.
+export const resume: Resume = {
 	//
-	// Candidate
+	// Candidate.
 	//
 	candidate: {
 		candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
@@ -18,10 +74,10 @@ export const resume = {
 	},
 
 	//
-	// Experience
+	// Experience.
 	//
 	experience: [
-		// Postman
+		// Postman.
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 			roleId: "637f9a15-ea20-4597-990b-d67bd20db1c1",
@@ -54,7 +110,7 @@ export const resume = {
 			],
 		},
 
-		// Apple (Special Projects)
+		// Apple (Special Projects).
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 			roleId: "7b329cf8-5a11-4de8-bdc7-65696dbc1e2c",
@@ -80,7 +136,7 @@ export const resume = {
 			],
 		},
 
-		// Sabbatical
+		// Sabbatical.
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 			roleId: "3d7d7353-35ef-4be8-b32d-ee8151a13709",
@@ -106,7 +162,7 @@ export const resume = {
 			],
 		},
 
-		// Apple (Apple Pay)
+		// Apple (Apple Pay).
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 			roleId: "0e6bdabb-10b6-495a-985d-26526faedfa0",
@@ -153,7 +209,7 @@ export const resume = {
 			],
 		},
 
-		// Apple (Employee Productivity)
+		// Apple (Employee Productivity).
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 			roleId: "b985c1d0-0f7f-46d6-a39d-ebbd0a8db7aa",
@@ -199,7 +255,7 @@ export const resume = {
 			],
 		},
 
-		// MGT
+		// MGT.
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 			roleId: "637f9a15-ea20-4597-990b-d67bd20db1c1",
@@ -234,10 +290,10 @@ export const resume = {
 	],
 
 	//
-	// Skills
+	// Skills.
 	//
 	skills: [
-		// Languages
+		// Languages.
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 			skillId: "6d07e824-66d5-4337-9398-628f284e610f",
@@ -295,7 +351,7 @@ export const resume = {
 			sortOrder: 7,
 		},
 
-		// Specifications
+		// Specifications.
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 			skillId: "4044c487-dafa-46d3-b292-7ed31f0773b2",
@@ -325,7 +381,7 @@ export const resume = {
 			sortOrder: 3,
 		},
 
-		// Command-line tools
+		// Command-line tools.
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 			skillId: "1c38c32c-e181-42ec-b970-c6ad688d167e",
@@ -362,7 +418,7 @@ export const resume = {
 			sortOrder: 4,
 		},
 
-		// Databases
+		// Databases.
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 			skillId: "104bfb81-52d0-4686-9b58-f249ce78e368",
@@ -399,7 +455,7 @@ export const resume = {
 			sortOrder: 4,
 		},
 
-		// Frameworks
+		// Frameworks.
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 			skillId: "da20674f-b931-48ee-91e8-b9c436cb5d57",
@@ -422,7 +478,7 @@ export const resume = {
 			sortOrder: 2,
 		},
 
-		// Apps
+		// Apps.
 		{
 			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 			skillId: "3d506368-077d-4b4c-8ade-d34912ae59ea",
@@ -468,7 +524,7 @@ export const resume = {
 	],
 
 	//
-	// Education
+	// Education.
 	//
 	education: [
 		{

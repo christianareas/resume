@@ -1,6 +1,10 @@
 // Dependencies.
 import { type NextRequest, NextResponse } from "next/server"
 import { resume } from "@/data/resume"
+import {
+	validateCandidateId,
+	validateCandidateExperienceSkillsOrEducation,
+} from "@/lib/api/resume"
 
 // GET request.
 export async function GET(
@@ -10,28 +14,19 @@ export async function GET(
 	// Candidate ID.
 	const { candidateId } = await params
 
-	// If there's no candidateId match, return a 404 error.
-	if (resume.candidate.candidateId !== candidateId) {
-		return NextResponse.json(
-			{
-				error: `Couldn’t find the candidate by the candidateId (${candidateId}).`,
-			},
-			{ status: 404 },
-		)
-	}
+	// Validate candidate ID.
+	const candidateIdError = validateCandidateId(candidateId)
+	if (candidateIdError) return candidateIdError
 
 	// Education.
 	const education = resume.education
 
-	// If there's no education, return a 404 error.
-	if (!education) {
-		return NextResponse.json(
-			{
-				error: "Couldn’t find the education.",
-			},
-			{ status: 404 },
-		)
-	}
+	// Validate education.
+	const educationError = validateCandidateExperienceSkillsOrEducation(
+		education,
+		"education",
+	)
+	if (educationError) return educationError
 
 	return NextResponse.json({ education }, { status: 200 })
 }

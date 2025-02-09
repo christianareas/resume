@@ -1,6 +1,7 @@
 // Dependencies.
 import { type NextRequest, NextResponse } from "next/server"
 import { resume } from "@/data/resume"
+import { validateCandidateId } from "@/lib/api/resume"
 
 // GET request.
 export async function GET(
@@ -10,15 +11,9 @@ export async function GET(
 	// Candidate ID.
 	const { candidateId } = await params
 
-	// If there's no candidateId match, return a 404 error.
-	if (resume.candidate.candidateId !== candidateId) {
-		return NextResponse.json(
-			{
-				error: `Couldn’t find the candidate’s resume by the candidateId (${candidateId}).`,
-			},
-			{ status: 404 },
-		)
-	}
+	// Validate candidate ID.
+	const candidateIdError = validateCandidateId(candidateId)
+	if (candidateIdError) return candidateIdError
 
 	return NextResponse.json({ resume }, { status: 200 })
 }

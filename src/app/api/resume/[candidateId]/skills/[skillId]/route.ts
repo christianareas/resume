@@ -1,6 +1,10 @@
 // Dependencies.
 import { type NextRequest, NextResponse } from "next/server"
 import { resume } from "@/data/resume"
+import {
+	validateCandidateId,
+	validateRoleSkillOrCredential,
+} from "@/lib/api/resume"
 
 // GET request.
 export async function GET(
@@ -10,28 +14,21 @@ export async function GET(
 	// Candidate and skill IDs.
 	const { candidateId, skillId } = await params
 
-	// If there's no candidateId match, return a 404 error.
-	if (resume.candidate.candidateId !== candidateId) {
-		return NextResponse.json(
-			{
-				error: `Couldn’t find the candidate by the candidateId (${candidateId}).`,
-			},
-			{ status: 404 },
-		)
-	}
+	// Validate candidate ID.
+	const candidateIdError = validateCandidateId(candidateId)
+	if (candidateIdError) return candidateIdError
 
 	// Skill.
-	const skill = resume.skills.find((skill) => skill.skillId === skillId)
+	const skill = resume.skills?.find((skill) => skill.skillId === skillId)
 
-	// If there's no skillId match, return a 404 error.
-	if (!skill) {
-		return NextResponse.json(
-			{
-				error: `Couldn’t find the skill by the skillId (${skillId}).`,
-			},
-			{ status: 404 },
-		)
-	}
+	// Validate skill.
+	const skillError = validateRoleSkillOrCredential(
+		skill,
+		"skill",
+		skillId,
+		"skillId",
+	)
+	if (skillError) return skillError
 
 	return NextResponse.json({ skill }, { status: 200 })
 }
