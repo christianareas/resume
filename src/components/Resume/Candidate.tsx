@@ -1,6 +1,6 @@
 // Dependencies.
-import { resume } from "@/data/resume"
 import Link from "next/link"
+import { resume } from "@/data/resume"
 import { formatPhoneNumber, formatUrl } from "@/util/candidate"
 
 // Component.

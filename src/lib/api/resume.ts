@@ -1,12 +1,12 @@
 // Dependencies.
 import { NextResponse } from "next/server"
 import {
-	resume,
-	type Candidate,
-	type Role,
 	type Accomplishment,
-	type Skill,
+	type Candidate,
 	type Credential,
+	type Role,
+	resume,
+	type Skill,
 } from "@/data/resume"
 
 // Validate the candidate ID.

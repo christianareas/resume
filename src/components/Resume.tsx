@@ -1,8 +1,8 @@
 // Dependencies.
 import Candidate from "@/components/Resume/Candidate"
+import Education from "@/components/Resume/Education"
 import Experience from "@/components/Resume/Experience"
 import Skills from "@/components/Resume/Skills"
-import Education from "@/components/Resume/Education"
 
 // Component.
 export default function Resume() {
