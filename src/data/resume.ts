@@ -2,7 +2,7 @@
 export type Resume = {
 	candidate?: Candidate
 	experience?: Role[]
-	skills?: Skill[]
+	skillSets?: SkillSet[]
 	education?: Credential[]
 }
 
@@ -37,10 +37,22 @@ export type Accomplishment = {
 	sortOrder: number
 }
 
+export type SkillSet = {
+	skillSetId: string
+	skillSetType:
+		| "apps"
+		| "command-line-tools"
+		| "databases"
+		| "frameworks"
+		| "languages"
+		| "specifications"
+	sortOrder: number
+	skills: Skill[]
+}
+
 export type Skill = {
 	candidateId: string
 	skillId: string
-	skillType: string
 	skill: string
 	sortOrder: number
 }
@@ -290,236 +302,247 @@ export const resume: Resume = {
 	],
 
 	//
-	// Skills.
+	// Skill sets.
 	//
-	skills: [
+	skillSets: [
 		// Languages.
 		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "6d07e824-66d5-4337-9398-628f284e610f",
-			skillType: "languages",
-			skill: "Bash",
+			skillSetId: "823ffbaa-5939-47d9-87ba-424c6d967731",
+			skillSetType: "languages",
 			sortOrder: 0,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "aa5ac7c3-82d0-4c64-9f84-eb4315c70558",
-			skillType: "languages",
-			skill: "JavaScript and TypeScript",
-			sortOrder: 1,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "54453dab-4401-4f1a-bc51-45bb92164e40",
-			skillType: "languages",
-			skill: "JSON",
-			sortOrder: 2,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "7cead30f-24ac-4b67-9d2c-283f6f26bd97",
-			skillType: "languages",
-			skill: "Markdown",
-			sortOrder: 3,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "314df7bb-fa03-4a93-8802-29cca9db0989",
-			skillType: "languages",
-			skill: "Python",
-			sortOrder: 4,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "e02050b4-9920-466f-a85c-4bd09409f36f",
-			skillType: "languages",
-			skill: "Regex",
-			sortOrder: 5,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "3fb48ca5-c5b7-4eff-86aa-fe35649c9365",
-			skillType: "languages",
-			skill: "SQL",
-			sortOrder: 6,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "e1a28074-7f04-4ded-acf1-d26bcff75376",
-			skillType: "languages",
-			skill: "YAML",
-			sortOrder: 7,
+			skills: [
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "6d07e824-66d5-4337-9398-628f284e610f",
+					skill: "Bash",
+					sortOrder: 0,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "aa5ac7c3-82d0-4c64-9f84-eb4315c70558",
+					skill: "JavaScript and TypeScript",
+					sortOrder: 1,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "54453dab-4401-4f1a-bc51-45bb92164e40",
+					skill: "JSON",
+					sortOrder: 2,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "7cead30f-24ac-4b67-9d2c-283f6f26bd97",
+					skill: "Markdown",
+					sortOrder: 3,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "314df7bb-fa03-4a93-8802-29cca9db0989",
+					skill: "Python",
+					sortOrder: 4,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "e02050b4-9920-466f-a85c-4bd09409f36f",
+					skill: "Regex",
+					sortOrder: 5,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "3fb48ca5-c5b7-4eff-86aa-fe35649c9365",
+					skill: "SQL",
+					sortOrder: 6,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "e1a28074-7f04-4ded-acf1-d26bcff75376",
+					skill: "YAML",
+					sortOrder: 7,
+				},
+			],
 		},
 
 		// Specifications.
 		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "4044c487-dafa-46d3-b292-7ed31f0773b2",
-			skillType: "specifications",
-			skill: "GraphQL",
-			sortOrder: 0,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "0f0e15de-f24d-4eb4-ae3b-e3d9aba3dae7",
-			skillType: "specifications",
-			skill: "gRPC",
+			skillSetId: "c02facb0-8d4d-4247-b6e3-e25dd98f3bba",
+			skillSetType: "specifications",
 			sortOrder: 1,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "8146b1b7-7bef-48f8-9cee-9dfacea111ad",
-			skillType: "specifications",
-			skill: "JWT",
-			sortOrder: 2,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "942f9e68-d2c4-409b-aacc-eebace3b5c27",
-			skillType: "specifications",
-			skill: "OpenAPI",
-			sortOrder: 3,
+			skills: [
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "4044c487-dafa-46d3-b292-7ed31f0773b2",
+					skill: "GraphQL",
+					sortOrder: 0,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "0f0e15de-f24d-4eb4-ae3b-e3d9aba3dae7",
+					skill: "gRPC",
+					sortOrder: 1,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "8146b1b7-7bef-48f8-9cee-9dfacea111ad",
+					skill: "JWT",
+					sortOrder: 2,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "942f9e68-d2c4-409b-aacc-eebace3b5c27",
+					skill: "OpenAPI",
+					sortOrder: 3,
+				},
+			],
 		},
 
 		// Command-line tools.
 		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "1c38c32c-e181-42ec-b970-c6ad688d167e",
-			skillType: "command-line-tools",
-			skill: "Git",
-			sortOrder: 0,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "84af94e8-f87d-49fc-bcaa-74e47a873c4f",
-			skillType: "command-line-tools",
-			skill: "GitHub CLI",
-			sortOrder: 1,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "fa98f117-d48d-4dee-b029-a1862e2ad83d",
-			skillType: "command-line-tools",
-			skill: "brew",
+			skillSetId: "c599ffcc-cd4a-480e-b391-43b30df2f5e9",
+			skillSetType: "command-line-tools",
 			sortOrder: 2,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "09d303b9-e689-4eb6-9eba-f2e2c03cf08f",
-			skillType: "command-line-tools",
-			skill: "npm",
-			sortOrder: 3,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "70fe1fab-a1b0-4c68-9544-df3d049c0faf",
-			skillType: "command-line-tools",
-			skill: "Vale",
-			sortOrder: 4,
+			skills: [
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "1c38c32c-e181-42ec-b970-c6ad688d167e",
+					skill: "Git",
+					sortOrder: 0,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "84af94e8-f87d-49fc-bcaa-74e47a873c4f",
+					skill: "GitHub CLI",
+					sortOrder: 1,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "fa98f117-d48d-4dee-b029-a1862e2ad83d",
+					skill: "brew",
+					sortOrder: 2,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "09d303b9-e689-4eb6-9eba-f2e2c03cf08f",
+					skill: "NPM",
+					sortOrder: 3,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "70fe1fab-a1b0-4c68-9544-df3d049c0faf",
+					skill: "Vale",
+					sortOrder: 4,
+				},
+			],
 		},
 
 		// Databases.
 		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "104bfb81-52d0-4686-9b58-f249ce78e368",
-			skillType: "databases",
-			skill: "MongoDB",
-			sortOrder: 0,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "05269164-8278-4b46-982f-a74e3cdeaf0b",
-			skillType: "databases",
-			skill: "MariaDB",
-			sortOrder: 1,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "b1f04267-b7ee-4f84-b515-ea30589171ed",
-			skillType: "databases",
-			skill: "MySQL",
-			sortOrder: 2,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "f97804cf-dc51-4d7c-8b32-7b0f10d94e49",
-			skillType: "databases",
-			skill: "PostgreSQL",
+			skillSetId: "e5cfedf3-ed23-461a-a5a7-7cc6962fbada",
+			skillSetType: "databases",
 			sortOrder: 3,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "a228ead0-9e6c-488b-88cb-9ef43bd9c343",
-			skillType: "databases",
-			skill: "SQLite",
-			sortOrder: 4,
+			skills: [
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "104bfb81-52d0-4686-9b58-f249ce78e368",
+					skill: "MongoDB",
+					sortOrder: 0,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "05269164-8278-4b46-982f-a74e3cdeaf0b",
+					skill: "MariaDB",
+					sortOrder: 1,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "b1f04267-b7ee-4f84-b515-ea30589171ed",
+					skill: "MySQL",
+					sortOrder: 2,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "f97804cf-dc51-4d7c-8b32-7b0f10d94e49",
+					skill: "PostgreSQL",
+					sortOrder: 3,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "a228ead0-9e6c-488b-88cb-9ef43bd9c343",
+					skill: "SQLite",
+					sortOrder: 4,
+				},
+			],
 		},
 
 		// Frameworks.
 		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "da20674f-b931-48ee-91e8-b9c436cb5d57",
-			skillType: "frameworks",
-			skill: "Next.js",
-			sortOrder: 0,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "55aa0f18-bf13-4a06-8927-cc956988e85d",
-			skillType: "frameworks",
-			skill: "Node.js",
-			sortOrder: 1,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "0bde359b-0237-4c24-93de-8fe315f0ba8e",
-			skillType: "frameworks",
-			skill: "React.js",
-			sortOrder: 2,
+			skillSetId: "de66231e-5585-46da-9246-757e541d47de",
+			skillSetType: "frameworks",
+			sortOrder: 4,
+			skills: [
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "da20674f-b931-48ee-91e8-b9c436cb5d57",
+					skill: "Next.js",
+					sortOrder: 0,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "55aa0f18-bf13-4a06-8927-cc956988e85d",
+					skill: "Node.js",
+					sortOrder: 1,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "0bde359b-0237-4c24-93de-8fe315f0ba8e",
+					skill: "React.js",
+					sortOrder: 2,
+				},
+			],
 		},
 
 		// Apps.
 		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "3d506368-077d-4b4c-8ade-d34912ae59ea",
-			skillType: "apps",
-			skill: "Confluence and Jira",
-			sortOrder: 0,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "0177a77f-344b-47fe-b56d-7735a997e610",
-			skillType: "apps",
-			skill: "Figma",
-			sortOrder: 1,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "74769530-845b-45c4-9b26-e19700ccc33a",
-			skillType: "apps",
-			skill: "Postman",
-			sortOrder: 2,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "3531aad4-0f41-423a-9bee-46611808e611",
-			skillType: "apps",
-			skill: "Terminal and Warp",
-			sortOrder: 3,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "545b7551-1ec3-471a-8bc9-d27e56637f4a",
-			skillType: "apps",
-			skill: "Visual Studio Code",
-			sortOrder: 4,
-		},
-		{
-			candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
-			skillId: "5e30bba5-c37b-4375-a15c-2a48e2fafa9c",
-			skillType: "apps",
-			skill: "Xcode",
+			skillSetId: "1477a047-4eee-40b3-a11b-6a870ec1a4b1",
+			skillSetType: "apps",
 			sortOrder: 5,
+			skills: [
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "3d506368-077d-4b4c-8ade-d34912ae59ea",
+					skill: "Confluence and Jira",
+					sortOrder: 0,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "0177a77f-344b-47fe-b56d-7735a997e610",
+					skill: "Figma",
+					sortOrder: 1,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "74769530-845b-45c4-9b26-e19700ccc33a",
+					skill: "Postman",
+					sortOrder: 2,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "3531aad4-0f41-423a-9bee-46611808e611",
+					skill: "Terminal and Warp",
+					sortOrder: 3,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "545b7551-1ec3-471a-8bc9-d27e56637f4a",
+					skill: "Visual Studio Code",
+					sortOrder: 4,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "5e30bba5-c37b-4375-a15c-2a48e2fafa9c",
+					skill: "Xcode",
+					sortOrder: 5,
+				},
+			],
 		},
 	],
 

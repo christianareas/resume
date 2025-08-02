@@ -5,7 +5,6 @@ import { resume } from "@/data/resume"
 export default function Education() {
 	// Education.
 	const education = resume.education
-	console.log(education) // **
 
 	// Render.
 	return (
@@ -15,7 +14,7 @@ export default function Education() {
 			<section className="space-y-3">
 				{education?.map((credential) => (
 					<ul key={credential.credentialId}>
-						<li className="text-xs">
+						<li className="text-sm">
 							{credential.credential} | {credential.institution}
 						</li>
 					</ul>
