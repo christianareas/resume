@@ -102,22 +102,29 @@ export const resume: Resume = {
 					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 					accomplishmentId: "7f4d6d8b-56c4-40a7-9c75-9d48f34a5161",
 					accomplishment:
-						"Started to overhaul the Postman Flows docs. Flows lets you build API-first apps on a drag-and-drop canvas.",
+						"Wrote most of Postman’s AI developer docs — including many of the Model Context Protocol (MCP) docs — and delivered them on tight deadlines. Continue to maintain them as the team adds features and enhancements.",
 					sortOrder: 0,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					accomplishmentId: "508b3571-95ab-49de-8a9e-ef30806a389f",
+					accomplishment:
+						"Overhauled the Postman API Network docs to help API publishers get their API consumers to their first 200 OK response in the fewest steps possible.",
+					sortOrder: 2,
 				},
 				{
 					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 					accomplishmentId: "5ac5331b-7549-45de-b0a3-64cfbeb46cb8",
 					accomplishment:
-						"Built an icon library Next.js site that lists all of Postman’s icons. The Postman Docs team uses the icons to add visual cues to the docs to improve the user experience.",
-					sortOrder: 1,
+						"Built a Next.js site that lists all of Postman’s icons. The Postman Docs team uses the icons to add visual cues to the docs to improve the user experience.",
+					sortOrder: 3,
 				},
 				{
 					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 					accomplishmentId: "af61fff1-a32e-43f4-a548-cea6b4181ebc",
 					accomplishment:
-						"Published an npm package that’s a Vale-compatible implementation of the Postman Style Guide. The team uses Vale to lint the docs locally and in GitHub with GitHub Actions — and ultimately ensures the docs adhere to Postman’s style.",
-					sortOrder: 2,
+						"Published an NPM package that’s a Vale-compatible implementation of the Postman Style Guide. The team uses Vale to lint the docs locally and in GitHub with GitHub Actions — and ultimately ensures the docs adhere to Postman’s style.",
+					sortOrder: 4,
 				},
 			],
 		},
