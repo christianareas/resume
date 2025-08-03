@@ -14,10 +14,14 @@ export default function Experience() {
 			<h3 className="font-bold text-xl uppercase">Experience</h3>
 
 			<section className="space-y-5">
-				{experience.map((role) => {
+				{experience.map((role, index) => {
 					const accomplishments = (role.accomplishments ?? [])
 						.slice()
 						.sort((a, b) => a.sortOrder - b.sortOrder)
+
+					const previousRole = index > 0 ? experience[index - 1] : null
+					const displayCompany =
+						!previousRole || previousRole.company !== role.company
 
 					return (
 						<section key={role.roleId}>
@@ -26,7 +30,9 @@ export default function Experience() {
 								Company
 								********
 							*/}
-							<h4 className="font-bold text-xl">{role.company}</h4>
+							{displayCompany && (
+								<h4 className="font-bold text-xl">{role.company}</h4>
+							)}
 
 							{/*
 								****
