@@ -4,23 +4,63 @@ import { resume } from "@/data/resume"
 // Component.
 export default function Experience() {
 	// Experience.
-	const experience = resume.experience
+	const experience = (resume.experience ?? [])
+		.slice()
+		.sort((a, b) => b.startDate.localeCompare(a.startDate))
 
 	// Render.
 	return (
 		<section className="text-center">
-			<h3 className="pb-2 font-bold text-xl uppercase">Experience</h3>
+			<h3 className="font-bold text-xl uppercase">Experience</h3>
 
 			<section className="space-y-5">
-				{experience?.map((role) => (
-					<section key={role.roleId}>
-						<h4 className="font-bold text-xl">{role.company}</h4>
-						<h5 className="font-medium">{role.role}</h5>
-						<h6 className="text-sm italic">
-							{role.startDate} – {role.endDate ? role.endDate : "Present"}
-						</h6>
-					</section>
-				))}
+				{experience.map((role) => {
+					const accomplishments = (role.accomplishments ?? [])
+						.slice()
+						.sort((a, b) => a.sortOrder - b.sortOrder)
+
+					return (
+						<section key={role.roleId}>
+							{/*
+								********
+								Company
+								********
+							*/}
+							<h4 className="font-bold text-xl">{role.company}</h4>
+
+							{/*
+								****
+								Role
+								****
+							*/}
+							{role.role && (
+								<h5 className="font-semibold text-base">{role.role}</h5>
+							)}
+
+							{/*
+								*****
+								Dates
+								*****
+							*/}
+							<h6 className="font-medium text-sm italic">
+								{role.startDate} – {role.endDate || "Present"}
+							</h6>
+
+							{/*
+								***************
+								Accomplishments
+								***************
+							*/}
+							{accomplishments.length > 0 && (
+								<ul className="list-disc space-y-2 text-left font-thin text-sm">
+									{accomplishments.map((ac) => (
+										<li key={ac.accomplishmentId}>{ac.accomplishment}</li>
+									))}
+								</ul>
+							)}
+						</section>
+					)
+				})}
 			</section>
 		</section>
 	)

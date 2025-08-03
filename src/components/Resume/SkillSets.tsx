@@ -27,17 +27,21 @@ export default function SkillSets() {
 		<section className="text-center">
 			<h3 className="font-bold text-xl uppercase">Skills</h3>
 
-			<ul className="list-none space-y-3 text-sm">
-				{skillSets.map(({ skillSetId, skillSetType, skills }) => (
-					<li key={skillSetId}>
-						<span className="font-normal">
-							{skillSetLabels[skillSetType] ?? skillSetType}
-							{": "}
-						</span>
-						{skills.map((skill) => skill.skill).join(" / ")}
-					</li>
-				))}
-			</ul>
+			<section className="space-y-2 text-sm">
+				<ul className="list-disc text-left">
+					{skillSets.map(({ skillSetId, skillSetType, skills }) => (
+						<li key={skillSetId}>
+							<span className="font-normal">
+								{skillSetLabels[skillSetType] ?? skillSetType}
+								{": "}
+							</span>
+							<span className="font-thin text-sm">
+								{skills.map((skill) => skill.skill).join(" / ")}
+							</span>
+						</li>
+					))}
+				</ul>
+			</section>
 		</section>
 	)
 }
