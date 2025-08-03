@@ -123,7 +123,7 @@ export const resume: Resume = {
 					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 					accomplishmentId: "af61fff1-a32e-43f4-a548-cea6b4181ebc",
 					accomplishment:
-						"Published an npm package that’s a Vale-compatible implementation of the Postman Style Guide. The team uses Vale to lint the docs locally and in GitHub with GitHub Actions — and ultimately ensures the docs adhere to Postman’s style.",
+						"Published an NPM package that’s a Vale-compatible implementation of the Postman Style Guide. The team uses Vale to lint the docs locally and in GitHub with GitHub Actions — and ultimately ensures the docs adhere to Postman’s style.",
 					sortOrder: 4,
 				},
 			],
