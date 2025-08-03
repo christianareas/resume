@@ -11,7 +11,7 @@ export default function Candidate() {
 
 	// Render.
 	return (
-		<section className="mx-auto flex max-w-5xl flex-col justify-center space-y-5 lg:flex-row lg:items-center lg:justify-between lg:space-x-20 lg:space-y-0">
+		<section className="mx-auto flex max-w-5xl flex-col justify-center space-y-3 lg:flex-row lg:items-start lg:justify-between lg:space-x-0 lg:space-y-0">
 			<section className="text-center lg:text-left">
 				{/*
 					*******************
@@ -30,20 +30,20 @@ export default function Candidate() {
 				<h2 className="font-extralight text-sm italic">{candidate?.who}</h2>
 			</section>
 
-			<section className="text-center text-sm lg:text-right">
-				<ul className="space-y-1">
+			<section className="text-center text-sm lg:min-w-[200px] lg:text-right">
+				<ul className="space-y-1.5">
 					{/*
 						*****
 						Email
 						*****
 					*/}
 					{candidate?.email && (
-						<li className="text-blue-400">
+						<li className="text-blue-400 text-xs">
 							<Link
-								className="flex justify-center gap-2 lg:justify-end"
+								className="flex justify-center gap-1.5 lg:justify-end"
 								href={`mailto:${candidate.email}`}
 							>
-								<LuMail size={16} className="mt-0.5" strokeWidth={1.5} />
+								<LuMail size={12} className="mt-0.5" strokeWidth={1.5} />
 								{candidate.email}
 							</Link>
 						</li>
@@ -55,12 +55,12 @@ export default function Candidate() {
 						********
 					*/}
 					{candidate?.linkedIn && (
-						<li className="text-blue-400">
+						<li className="text-blue-400 text-xs">
 							<Link
-								className="flex justify-center gap-2 lg:justify-end"
+								className="flex justify-center gap-1.5 lg:justify-end"
 								href={candidate.linkedIn}
 							>
-								<LuLinkedin size={16} className="mt-0.5" strokeWidth={1.5} />
+								<LuLinkedin size={12} className="mt-0.5" strokeWidth={1.5} />
 								{formatUrl(candidate.linkedIn)}
 							</Link>
 						</li>
@@ -72,12 +72,12 @@ export default function Candidate() {
 						******
 					*/}
 					{candidate?.gitHub && (
-						<li className="text-blue-400">
+						<li className="text-blue-400 text-xs">
 							<Link
-								className="flex justify-center gap-2 lg:justify-end"
+								className="flex justify-center gap-1.5 lg:justify-end"
 								href={candidate.gitHub}
 							>
-								<LuGithub size={16} className="mt-0.5" strokeWidth={1.5} />
+								<LuGithub size={12} className="mt-0.5" strokeWidth={1.5} />
 								{formatUrl(candidate.gitHub)}
 							</Link>
 						</li>
