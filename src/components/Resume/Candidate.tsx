@@ -17,7 +17,7 @@ export default function Candidate() {
 					First and last name
 					*******************
 				*/}
-				<h1 className="font-medium text-5xl uppercase">
+				<h1 className="font-lexend-zetta font-medium text-5xl uppercase">
 					{candidate?.firstName} {candidate?.lastName}
 				</h1>
 

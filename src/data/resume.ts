@@ -422,7 +422,7 @@ export const resume: Resume = {
 				{
 					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 					skillId: "fa98f117-d48d-4dee-b029-a1862e2ad83d",
-					skill: "brew",
+					skill: "Brew",
 					sortOrder: 2,
 				},
 				{

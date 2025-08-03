@@ -24,18 +24,18 @@ export default function SkillSets() {
 
 	// Render.
 	return (
-		<section className="text-center">
+		<section className="mx-auto flex max-w-4xl flex-col justify-center text-center">
 			<h3 className="font-bold text-xl uppercase">Skills</h3>
 
-			<section className="space-y-2 text-sm">
-				<ul className="list-disc text-left">
+			<section className="text-sm">
+				<ul className="list-disc space-y-2 text-left">
 					{skillSets.map(({ skillSetId, skillSetType, skills }) => (
 						<li key={skillSetId}>
-							<span className="font-normal">
+							<span className="font-light">
 								{skillSetLabels[skillSetType] ?? skillSetType}
 								{": "}
 							</span>
-							<span className="font-thin text-sm">
+							<span className="font-extralight text-sm">
 								{skills.map((skill) => skill.skill).join(" / ")}
 							</span>
 						</li>

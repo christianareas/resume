@@ -8,13 +8,13 @@ export default function Education() {
 
 	// Render.
 	return (
-		<section className="text-center">
+		<section className="mx-auto flex max-w-4xl flex-col justify-center text-center">
 			<h3 className="font-bold text-xl uppercase">Education</h3>
 
 			<section className="space-y-2 text-sm">
 				{education?.map((credential) => (
-					<ul key={credential.credentialId}>
-						<li className="font-thin text-sm">
+					<ul className="list-disc text-left" key={credential.credentialId}>
+						<li className="font-extralight text-sm">
 							{credential.credential} | {credential.institution}
 						</li>
 					</ul>

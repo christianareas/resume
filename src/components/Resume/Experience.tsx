@@ -10,7 +10,7 @@ export default function Experience() {
 
 	// Render.
 	return (
-		<section className="text-center">
+		<section className="mx-auto flex max-w-4xl flex-col justify-center text-center">
 			<h3 className="font-bold text-xl uppercase">Experience</h3>
 
 			<section className="space-y-5">
@@ -42,7 +42,7 @@ export default function Experience() {
 								Dates
 								*****
 							*/}
-							<h6 className="font-medium text-sm italic">
+							<h6 className="font-light text-sm italic">
 								{role.startDate} – {role.endDate || "Present"}
 							</h6>
 
@@ -52,7 +52,7 @@ export default function Experience() {
 								***************
 							*/}
 							{accomplishments.length > 0 && (
-								<ul className="list-disc space-y-2 text-left font-thin text-sm">
+								<ul className="list-disc space-y-2 text-left font-extralight text-sm">
 									{accomplishments.map((ac) => (
 										<li key={ac.accomplishmentId}>{ac.accomplishment}</li>
 									))}
