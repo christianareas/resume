@@ -10,10 +10,12 @@ export default function Experience() {
 
 	// Render.
 	return (
-		<section className="mx-auto flex max-w-4xl flex-col justify-center text-center">
-			<h3 className="font-bold text-xl uppercase">Experience</h3>
+		<section className="mx-auto flex max-w-5xl flex-col justify-center space-y-5 text-center">
+			<h3 className="text-center font-bold text-xl uppercase lg:text-left">
+				Experience
+			</h3>
 
-			<section className="space-y-5">
+			<section className="space-y-10">
 				{experience.map((role, index) => {
 					const accomplishments = (role.accomplishments ?? [])
 						.slice()
@@ -24,46 +26,53 @@ export default function Experience() {
 						!previousRole || previousRole.company !== role.company
 
 					return (
-						<section key={role.roleId}>
-							{/*
-								********
-								Company
-								********
-							*/}
-							{displayCompany && (
-								<h4 className="font-bold text-xl">{role.company}</h4>
-							)}
+						<section
+							className="flex flex-col space-y-3 lg:flex-row lg:justify-start lg:space-x-20 lg:space-y-0"
+							key={role.roleId}
+						>
+							<section className="lg:w-1/6 lg:text-left">
+								{/*
+									********
+									Company
+									********
+								*/}
+								{displayCompany && (
+									<h4 className="font-bold text-xl">{role.company}</h4>
+								)}
 
-							{/*
-								****
-								Role
-								****
-							*/}
-							{role.role && (
-								<h5 className="font-semibold text-base">{role.role}</h5>
-							)}
+								{/*
+									****
+									Role
+									****
+								*/}
+								{role.role && (
+									<h5 className="font-light text-base">{role.role}</h5>
+								)}
 
-							{/*
-								*****
-								Dates
-								*****
-							*/}
-							<h6 className="font-light text-sm italic">
-								{role.startDate} – {role.endDate || "Present"}
-							</h6>
+								{/*
+									*****
+									Dates
+									*****
+								*/}
+								<h6 className="font-extralight text-sm italic">
+									{role.startDate} – {role.endDate || "Present"}
+								</h6>
+							</section>
 
-							{/*
-								***************
-								Accomplishments
-								***************
-							*/}
-							{accomplishments.length > 0 && (
-								<ul className="list-disc space-y-2 text-left font-extralight text-sm">
-									{accomplishments.map((ac) => (
-										<li key={ac.accomplishmentId}>{ac.accomplishment}</li>
-									))}
-								</ul>
-							)}
+							<section className="lg:w-5/6">
+								{/*
+									***************
+									Accomplishments
+									***************
+								*/}
+								{accomplishments.length > 0 && (
+									<ul className="list-disc space-y-2 pl-3 text-justify font-extralight text-sm">
+										{accomplishments.map((ac) => (
+											<li key={ac.accomplishmentId}>{ac.accomplishment}</li>
+										))}
+									</ul>
+								)}
+							</section>
 						</section>
 					)
 				})}

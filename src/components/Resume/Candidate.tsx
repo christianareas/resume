@@ -1,7 +1,8 @@
 // Dependencies.
 import Link from "next/link"
+import { LuGithub, LuLinkedin, LuMail } from "react-icons/lu"
 import { resume } from "@/data/resume"
-import { formatPhoneNumber, formatUrl } from "@/util/candidate"
+import { formatUrl } from "@/util/candidate"
 
 // Component.
 export default function Candidate() {
@@ -10,14 +11,14 @@ export default function Candidate() {
 
 	// Render.
 	return (
-		<section className="flex flex-col justify-center space-y-5 lg:flex-row lg:items-center lg:space-x-20 lg:space-y-0">
+		<section className="mx-auto flex max-w-5xl flex-col justify-center space-y-5 lg:flex-row lg:items-center lg:justify-between lg:space-x-20 lg:space-y-0">
 			<section className="text-center lg:text-left">
 				{/*
 					*******************
 					First and last name
 					*******************
 				*/}
-				<h1 className="font-lexend-zetta font-medium text-4xl uppercase">
+				<h1 className="font-lexend-zetta font-medium text-4xl uppercase lg:text-5xl">
 					{candidate?.firstName} {candidate?.lastName}
 				</h1>
 
@@ -30,7 +31,7 @@ export default function Candidate() {
 			</section>
 
 			<section className="text-center text-sm lg:text-right">
-				<ul>
+				<ul className="space-y-1">
 					{/*
 						*****
 						Email
@@ -38,21 +39,13 @@ export default function Candidate() {
 					*/}
 					{candidate?.email && (
 						<li className="text-blue-400">
-							<Link href={`mailto:${candidate.email}`}>{candidate.email}</Link>
-						</li>
-					)}
-
-					{/*
-						************
-						Phone number
-						************
-					*/}
-					{candidate?.phoneNumber && (
-						<li>
-							{formatPhoneNumber(
-								candidate.phoneCountryCode,
-								candidate.phoneNumber,
-							)}
+							<Link
+								className="flex justify-center gap-2 lg:justify-end"
+								href={`mailto:${candidate.email}`}
+							>
+								<LuMail size={16} className="mt-0.5" strokeWidth={1.5} />
+								{candidate.email}
+							</Link>
 						</li>
 					)}
 
@@ -63,7 +56,11 @@ export default function Candidate() {
 					*/}
 					{candidate?.linkedIn && (
 						<li className="text-blue-400">
-							<Link href={candidate.linkedIn}>
+							<Link
+								className="flex justify-center gap-2 lg:justify-end"
+								href={candidate.linkedIn}
+							>
+								<LuLinkedin size={16} className="mt-0.5" strokeWidth={1.5} />
 								{formatUrl(candidate.linkedIn)}
 							</Link>
 						</li>
@@ -76,7 +73,13 @@ export default function Candidate() {
 					*/}
 					{candidate?.gitHub && (
 						<li className="text-blue-400">
-							<Link href={candidate.gitHub}>{formatUrl(candidate.gitHub)}</Link>
+							<Link
+								className="flex justify-center gap-2 lg:justify-end"
+								href={candidate.gitHub}
+							>
+								<LuGithub size={16} className="mt-0.5" strokeWidth={1.5} />
+								{formatUrl(candidate.gitHub)}
+							</Link>
 						</li>
 					)}
 				</ul>
