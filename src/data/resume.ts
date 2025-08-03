@@ -388,9 +388,15 @@ export const resume: Resume = {
 				},
 				{
 					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
+					skillId: "6d150ec7-5415-4d31-92a7-ebc812ae22e8",
+					skill: "MCP",
+					sortOrder: 3,
+				},
+				{
+					candidateId: "d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5",
 					skillId: "942f9e68-d2c4-409b-aacc-eebace3b5c27",
 					skill: "OpenAPI",
-					sortOrder: 3,
+					sortOrder: 4,
 				},
 			],
 		},
