@@ -6,17 +6,39 @@ import { validateCandidateId, validateResumeItem } from "@/lib/api/resume"
 // GET request.
 export async function GET(
 	request: NextRequest,
-	{ params }: { params: Promise<{ candidateId: string; skillId: string }> },
+	{
+		params,
+	}: {
+		params: Promise<{
+			candidateId: string
+			skillSetId: string
+			skillId: string
+		}>
+	},
 ) {
-	// Candidate and skill IDs.
-	const { candidateId, skillId } = await params
+	// Candidate, skill set, skill IDs.
+	const { candidateId, skillSetId, skillId } = await params
 
 	// Validate candidate ID.
 	const candidateIdError = validateCandidateId(candidateId)
 	if (candidateIdError) return candidateIdError
 
+	// Skill set.
+	const skillSet = resume.skillSets?.find(
+		(skillSet) => skillSet.skillSetId === skillSetId,
+	)
+
+	// Validate skill set.
+	const skillSetError = validateResumeItem(
+		skillSet,
+		"skillSet",
+		skillSetId,
+		"skillSetId",
+	)
+	if (skillSetError) return skillSetError
+
 	// Skill.
-	const skill = resume.skills?.find((skill) => skill.skillId === skillId)
+	const skill = skillSet?.skills?.find((skill) => skill.skillId === skillId)
 
 	// Validate skill.
 	const skillError = validateResumeItem(skill, "skill", skillId, "skillId")

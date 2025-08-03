@@ -7,6 +7,7 @@ import {
 	type Role,
 	resume,
 	type Skill,
+	type SkillSet,
 } from "@/data/resume"
 
 // Validate the candidate ID.
@@ -25,10 +26,10 @@ export function validateCandidateId(candidateId: string): NextResponse | null {
 	return null
 }
 
-// Validate the candidate, experience, skills, or education section.
+// Validate the candidate, experience, skill sets, or education section.
 export function validateResumeSection(
-	resumeSection: Candidate | Role[] | Skill[] | Credential[] | undefined,
-	resumeSectionName: "candidate" | "experience" | "skills" | "education",
+	resumeSection: Candidate | Role[] | SkillSet[] | Credential[] | undefined,
+	resumeSectionName: "candidate" | "experience" | "skillSets" | "education",
 ): NextResponse | null {
 	// If there's no resume section, return a 404 error.
 	if (!resumeSection) {
@@ -44,14 +45,24 @@ export function validateResumeSection(
 	return null
 }
 
-// Validate the role, skill, credential, or accomplishment.
+// Validate the role, accomplishment, skill set, skill, or credential.
 export function validateResumeItem(
-	resumeItem: Role | Skill | Credential | Accomplishment | undefined,
-	resumeItemName: "role" | "skill" | "credential" | "accomplishment",
+	resumeItem: Role | Accomplishment | SkillSet | Skill | Credential | undefined,
+	resumeItemName:
+		| "role"
+		| "accomplishment"
+		| "skillSet"
+		| "skill"
+		| "credential",
 	resumeItemId: string | undefined,
-	resumeItemIdName: "roleId" | "skillId" | "credentialId" | "accomplishmentId",
+	resumeItemIdName:
+		| "roleId"
+		| "accomplishmentId"
+		| "skillSetId"
+		| "skillId"
+		| "credentialId",
 ): NextResponse | null {
-	// If there's no roleId match, return a 404 error.
+	// If there's no resume item match, return a 404 error.
 	if (!resumeItem) {
 		return NextResponse.json(
 			{

@@ -16,11 +16,11 @@ export async function GET(
 	if (candidateIdError) return candidateIdError
 
 	// Skills.
-	const skills = resume.skills
+	const skillSets = resume.skillSets
 
 	// Validate skills.
-	const skillsError = validateResumeSection(skills, "skills")
+	const skillsError = validateResumeSection(skillSets, "skillSets")
 	if (skillsError) return skillsError
 
-	return NextResponse.json({ skills }, { status: 200 })
+	return NextResponse.json({ skillSets }, { status: 200 })
 }
