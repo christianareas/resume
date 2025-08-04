@@ -12,14 +12,14 @@
     "update:next": "npm i next@latest react@latest react-dom@latest",
     "update:tailwind": "npm i -D tailwindcss@latest @tailwindcss/postcss@latest",
     "update:icons": "npm i react-icons@latest",
-    "update:playwright": "npm i playwright-chromium@latest",
+    "update:pdf": "npm i puppeteer@latest",
     "update:eslint": "npm i -D eslint@latest eslint-config-next@latest",
     "update:biome": "npm i -D @biomejs/biome@latest",
-    "update:all-dependencies": "npm run update:ts && npm run update:next && npm run update:tailwind && npm run update:icons && npm run update:playwright && npm run update:eslint && npm run update:biome && npm ls && npm outdated"
+    "update:all-dependencies": "npm run update:ts && npm run update:next && npm run update:tailwind && npm run update:icons && npm run update:pdf && npm run update:eslint && npm run update:biome && npm ls && npm outdated"
   },
   "dependencies": {
     "next": "^15.4.5",
-    "playwright-chromium": "^1.54.2",
+    "puppeteer": "^24.15.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-icons": "^5.5.0"
