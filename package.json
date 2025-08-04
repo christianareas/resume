@@ -1,6 +1,6 @@
 {
   "name": "resume",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,9 +12,10 @@
     "update:next": "npm i next@latest react@latest react-dom@latest",
     "update:tailwind": "npm i -D tailwindcss@latest @tailwindcss/postcss@latest",
     "update:react-icons": "npm i react-icons@latest",
+    "update:playwright": "npm i -D playwright-chromium@latest",
     "update:eslint": "npm i -D eslint@latest eslint-config-next@latest",
     "update:biome": "npm i -D @biomejs/biome@latest",
-    "update:all-dependencies": "npm run update:ts && npm run update:next && npm run update:tailwind && npm run update:eslint && npm run update:biome && npm ls && npm outdated"
+    "update:all-dependencies": "npm run update:ts && npm run update:next && npm run update:tailwind && npm run update:playwright && npm run update:eslint && npm run update:biome && npm ls && npm outdated"
   },
   "dependencies": {
     "next": "^15.4.5",
@@ -30,6 +31,7 @@
     "@types/react-dom": "^19.1.7",
     "eslint": "^9.32.0",
     "eslint-config-next": "^15.4.5",
+    "playwright-chromium": "^1.54.2",
     "tailwindcss": "^4.1.11",
     "typescript": "^5.9.2"
   }
