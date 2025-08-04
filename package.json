@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "postinstall": "npx playwright install",
     "reinstall": "rm -rf node_modules && rm -rf .next && rm package-lock.json && npm i",
     "update:ts": "npm i -D typescript@latest @types/node@latest @types/react@latest @types/react-dom@latest",
     "update:next": "npm i next@latest react@latest react-dom@latest",
