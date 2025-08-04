@@ -23,7 +23,7 @@ export async function GET(request: NextRequest) {
 	await resumePage.goto(resumeUrl, { waitUntil: "networkidle" })
 
 	// Render to PDF.
-	const pdf = await resumePage.pdf({
+	const pdfBuffer = await resumePage.pdf({
 		format: "A3",
 		margin: {
 			top: "0",
@@ -34,6 +34,7 @@ export async function GET(request: NextRequest) {
 		scale: 0.9,
 		printBackground: true,
 	})
+	const pdf = new Uint8Array(pdfBuffer)
 
 	// Close the browser.
 	await browser.close()
