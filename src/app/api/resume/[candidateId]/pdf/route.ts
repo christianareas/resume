@@ -21,6 +21,10 @@ export async function GET(request: NextRequest) {
 	await resumePage.emulateMedia({ media: "screen" })
 	const resumeUrl = new URL("/", request.url).toString()
 	await resumePage.goto(resumeUrl, { waitUntil: "networkidle" })
+	await resumePage.evaluate(() => {
+		const downloadButton = document.getElementById("download-button")
+		if (downloadButton) downloadButton.remove()
+	})
 
 	// Render to PDF.
 	const pdfBuffer = await resumePage.pdf({
