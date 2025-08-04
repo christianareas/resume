@@ -1,5 +1,6 @@
 // Dependencies.
 import Candidate from "@/components/Resume/Candidate"
+import Download from "@/components/Resume/Download"
 import Education from "@/components/Resume/Education"
 import Experience from "@/components/Resume/Experience"
 import SkillSets from "@/components/Resume/SkillSets"
@@ -13,6 +14,7 @@ export default function Resume() {
 			<Experience />
 			<SkillSets />
 			<Education />
+			<Download />
 		</main>
 	)
 }
