@@ -43,6 +43,8 @@ export async function GET(request: NextRequest) {
 	// Close the browser.
 	await browser.close()
 
+	// Todo: Save the PDF to the public/resume/Christian Areas.pdf.
+
 	// Return the PDF.
 	return new NextResponse(pdf, {
 		headers: {
