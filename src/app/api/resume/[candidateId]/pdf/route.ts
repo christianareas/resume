@@ -28,7 +28,7 @@ export async function GET(request: NextRequest) {
 		if (downloadButton) downloadButton.remove()
 	})
 
-	// Render to PDF.
+	// Generate the PDF.
 	const pdfBuffer = await resumePage.pdf({
 		format: "A3",
 		margin: {
