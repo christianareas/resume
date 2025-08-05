@@ -1,4 +1,6 @@
 // Dependencies.
+import fs from "node:fs/promises"
+import path from "node:path"
 import { type NextRequest, NextResponse } from "next/server"
 import { chromium } from "playwright-chromium"
 
@@ -7,7 +9,7 @@ export const runtime = "nodejs"
 
 // GET request.
 export async function GET(request: NextRequest) {
-	// Create a headless Chromium browser.
+	// Create a headless browser.
 	const browser = await chromium.launch({
 		headless: true,
 		args: ["--no-sandbox", "--disable-setuid-sandbox"],
@@ -43,7 +45,15 @@ export async function GET(request: NextRequest) {
 	// Close the browser.
 	await browser.close()
 
-	// Todo: Save the PDF to the public/resume/Christian Areas.pdf.
+	// Save the PDF to public/resume/.
+	const publicPath = path.join(
+		process.cwd(),
+		"public",
+		"resume",
+		"Christian Areas.pdf",
+	)
+	await fs.mkdir(path.dirname(publicPath), { recursive: true })
+	await fs.writeFile(publicPath, pdf)
 
 	// Return the PDF.
 	return new NextResponse(pdf, {
