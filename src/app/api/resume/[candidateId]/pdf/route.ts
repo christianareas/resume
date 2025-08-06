@@ -3,17 +3,10 @@ import fs from "node:fs/promises"
 import path from "node:path"
 import { type NextRequest, NextResponse } from "next/server"
 import { chromium } from "playwright-chromium"
-
-// Runtime.
-export const runtime = "nodejs"
+import isVercel from "@/util/environment"
 
 // GET request.
 export async function GET(request: NextRequest) {
-	// Vercel environment.
-	const vercelEnvironment = process.env.VERCEL_ENV
-	console.log("NODE_ENV:", process.env.NODE_ENV) // **
-	console.log("VERCEL_ENV:", process.env.VERCEL_ENV) // **
-
 	// PDF name and location.
 	const pdfName = "Christian Areas.pdf"
 	const pathToPublicDirectory = path.join(
@@ -24,7 +17,7 @@ export async function GET(request: NextRequest) {
 	)
 
 	// If not in a Vercel environment, generate the PDF.
-	if (vercelEnvironment === undefined || vercelEnvironment === "development") {
+	if (isVercel() === false) {
 		// Create a headless browser.
 		const browser = await chromium.launch({
 			headless: true,
