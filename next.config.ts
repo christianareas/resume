@@ -1,9 +1,7 @@
 import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-	env: {
-		VERCEL_ENV: process.env.VERCEL_ENV,
-	},
+	/* config options here */
 }
 
 export default nextConfig
