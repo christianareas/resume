@@ -72,7 +72,11 @@ export async function GET(request: NextRequest) {
 
 		// Otherwise, get the PDF from public/resume/.
 	} else {
-		const pdf = await fs.readFile(pathToPublicDirectory)
+		// Get the PDF.
+		const pdfBuffer = await fs.readFile(pathToPublicDirectory)
+		const pdf = new Uint8Array(pdfBuffer)
+
+		// Return the PDF.
 		return new NextResponse(pdf, {
 			headers: {
 				"Content-Type": "application/pdf",
