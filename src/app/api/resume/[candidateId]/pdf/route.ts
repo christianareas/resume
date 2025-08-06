@@ -4,6 +4,9 @@ import path from "node:path"
 import { type NextRequest, NextResponse } from "next/server"
 import { chromium } from "playwright-chromium"
 
+// Runtime.
+export const runtime = "nodejs"
+
 // GET request.
 export async function GET(request: NextRequest) {
 	// Vercel environment.
