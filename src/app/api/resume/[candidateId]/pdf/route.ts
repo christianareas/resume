@@ -6,9 +6,8 @@ import { chromium } from "playwright-chromium"
 
 // GET request.
 export async function GET(request: NextRequest) {
-	// Host.
-	const host = request.headers.get("host") || ""
-	const local = host.startsWith("localhost")
+	// Node environment.
+	const nodeEnvironment = process.env.NODE_ENV
 
 	// PDF name and location.
 	const pdfName = "Christian Areas.pdf"
@@ -19,8 +18,8 @@ export async function GET(request: NextRequest) {
 		pdfName,
 	)
 
-	// If local, generate the PDF.
-	if (local) {
+	// If in a development environment, generate the PDF.
+	if (nodeEnvironment === "development") {
 		// Create a headless browser.
 		const browser = await chromium.launch({
 			headless: true,
@@ -36,8 +35,8 @@ export async function GET(request: NextRequest) {
 		const resumeUrl = new URL("/", request.url).toString()
 		await resumePage.goto(resumeUrl, { waitUntil: "networkidle" })
 		await resumePage.evaluate(() => {
-			const downloadButton = document.getElementById("download-button")
-			if (downloadButton) downloadButton.remove()
+			document.getElementById("download-button")?.remove()
+			document.querySelector("[data-nextjs-dev-overlay]")?.remove()
 		})
 
 		// Generate the PDF.
