@@ -3,20 +3,33 @@ import fs from "node:fs/promises"
 import path from "node:path"
 import { type NextRequest, NextResponse } from "next/server"
 import { chromium } from "playwright-chromium"
+import { resume } from "@/data/resume"
 
 // GET request.
-export async function GET(request: NextRequest) {
-	// Node environment.
-	const nodeEnvironment = process.env.NODE_ENV
+export async function GET(
+	request: NextRequest,
+	{ params }: { params: Promise<{ candidateId: string }> },
+) {
+	// Candidate ID and name.
+	const { candidateId } = await params
+	const { firstName, lastName } = resume.candidate ?? {}
 
 	// PDF name and location.
-	const pdfName = "Christian Areas.pdf"
+	const pdfName = `${firstName} ${lastName}.pdf`
 	const pathToPublicDirectory = path.join(
 		process.cwd(),
 		"public",
 		"resume",
 		pdfName,
 	)
+
+	// If there's no candidate ID, return not found.
+	if (resume.candidate?.candidateId !== candidateId) {
+		return NextResponse.json({ error: "Not Found" }, { status: 404 })
+	}
+
+	// Node environment.
+	const nodeEnvironment = process.env.NODE_ENV
 
 	// If in a development environment, generate the PDF.
 	if (nodeEnvironment === "development") {
@@ -29,7 +42,7 @@ export async function GET(request: NextRequest) {
 			viewport: { width: 1280, height: 900 },
 		})
 
-		// Open the resume page.
+		// Prepare the PDF.
 		const resumePage = await browserContext.newPage()
 		await resumePage.emulateMedia({ media: "screen" })
 		const resumeUrl = new URL("/", request.url).toString()
@@ -53,11 +66,11 @@ export async function GET(request: NextRequest) {
 		})
 		const pdf = new Uint8Array(pdfBuffer)
 
-		// Close the browser.
-		await browser.close()
-
 		// Save the PDF to public/resume/.
 		await fs.writeFile(pathToPublicDirectory, pdf)
+
+		// Close the browser.
+		await browser.close()
 
 		// Return the PDF.
 		return new NextResponse(pdf, {
@@ -69,16 +82,21 @@ export async function GET(request: NextRequest) {
 
 		// Otherwise, get the PDF from public/resume/.
 	} else {
-		// Get the PDF.
-		const pdfBuffer = await fs.readFile(pathToPublicDirectory)
-		const pdf = new Uint8Array(pdfBuffer)
+		try {
+			// Get the PDF.
+			const pdfBuffer = await fs.readFile(pathToPublicDirectory)
+			const pdf = new Uint8Array(pdfBuffer)
 
-		// Return the PDF.
-		return new NextResponse(pdf, {
-			headers: {
-				"Content-Type": "application/pdf",
-				"Content-Disposition": `attachment; filename="${pdfName}"`,
-			},
-		})
+			// Return the PDF.
+			return new NextResponse(pdf, {
+				headers: {
+					"Content-Type": "application/pdf",
+					"Content-Disposition": `attachment; filename="${pdfName}"`,
+				},
+			})
+		} catch {
+			// Return not found.
+			return NextResponse.json({ error: "Not Found" }, { status: 404 })
+		}
 	}
 }
