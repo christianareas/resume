@@ -2,21 +2,38 @@
 
 // Dependencies.
 import { LuCloudDownload } from "react-icons/lu"
+import { resume } from "@/data/resume"
 
 // Component.
 export default function Download() {
-	// PDF.
-	const pdf = "/resume/Christian%20Areas.pdf"
+	// Candidate.
+	const { candidateId, firstName, lastName } = resume.candidate ?? {}
+
+	// API route.
+	const href = candidateId
+		? `/api/resume/${encodeURIComponent(candidateId)}/pdf`
+		: undefined
+
+	// PDF name.
+	const pdfName = `${firstName} ${lastName}.pdf`
 
 	// Render.
 	return (
 		<section id="download-button" className="flex justify-center">
-			<a href={pdf} download="Christian Areas.pdf">
+			<a
+				href={href}
+				download={pdfName}
+				aria-disabled={!candidateId}
+				onClick={(event) => {
+					if (!candidateId) event.preventDefault()
+				}}
+			>
 				<button
 					type="button"
-					className="flex justify-center gap-2 rounded border-1 border-neutral-500 bg-neutral-200 px-4 py-2 text-neutral-950 transition hover:bg-neutral-50 disabled:opacity-50 dark:border-neutral-200 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-950"
+					disabled={!candidateId}
+					className="flex items-center gap-2 rounded border border-neutral-500 bg-neutral-200 px-4 py-2 text-neutral-950 transition hover:bg-neutral-50 disabled:opacity-50 dark:border-neutral-300 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-950"
 				>
-					<LuCloudDownload size={16} className="mt-1" strokeWidth={2} />
+					<LuCloudDownload size={16} strokeWidth={2} />
 					Download
 				</button>
 			</a>
