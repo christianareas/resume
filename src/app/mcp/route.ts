@@ -8,7 +8,7 @@ const candidate = resume.candidate ?? {}
 // MCP server.
 const mcp = createMcpHandler((server) => {
 	// Resource.
-	server.registerResource(
+	server.resource(
 		"candidate",
 		"resume://candidate",
 		{

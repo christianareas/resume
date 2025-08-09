@@ -1,9 +1,5 @@
 import type { NextConfig } from "next"
 
-const nextConfig: NextConfig = {
-	async rewrites() {
-		return [{ source: "/mcp", destination: "/api/mcp" }]
-	},
-}
+const nextConfig: NextConfig = {}
 
 export default nextConfig
