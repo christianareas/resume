@@ -8,7 +8,6 @@ const mcpServer = createMcpHandler(
 		// Candidate, experience, skill sets, and education.
 		const { candidate, experience, skillSets, education } = resume
 
-		//
 		const resourcesAndTools = [
 			// Resume.
 			{
@@ -82,10 +81,10 @@ const mcpServer = createMcpHandler(
 			// Tools.
 			server.tool(
 				resourceAndTool.name,
-				resourceAndTool.description,
 				{},
 				{
 					title: resourceAndTool.title,
+					description: resourceAndTool.description,
 					idempotentHint: true,
 				},
 				async () => ({
