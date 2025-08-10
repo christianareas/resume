@@ -60,6 +60,24 @@ const mcpServer = createMcpHandler(
 					],
 				}),
 			)
+
+			// Prompts.
+			server.prompt(
+				"anthropic_fit",
+				"Ask if Christian’s a good fit for Anthropic’s “Technical Documentation & Content Engineer, Model Context Protocol” role.",
+				{},
+				() => ({
+					messages: [
+						{
+							role: "user",
+							content: {
+								type: "text",
+								text: `Is Christian a good fit for Anthropic’s “Technical Documentation & Content Engineer, Model Context Protocol” role (https://job-boards.greenhouse.io/anthropic/jobs/4829365008)?`,
+							},
+						},
+					],
+				}),
+			)
 		}
 	},
 	{},
