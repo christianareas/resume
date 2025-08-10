@@ -5,7 +5,7 @@ import { resume } from "@/data/resume"
 // MCP server.
 const mcpServer = createMcpHandler(
 	(server) => {
-		// Candidate, experience, skill sets, and education.
+		// Candidate.
 		const { candidate } = resume
 
 		const resourcesAndTools = [
@@ -20,6 +20,7 @@ const mcpServer = createMcpHandler(
 			},
 		]
 
+		// Resources and tools.
 		for (const resourceAndTool of resourcesAndTools) {
 			// Resources.
 			server.resource(
