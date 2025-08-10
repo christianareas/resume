@@ -17,8 +17,6 @@ You can also introduce your AI model to Christian’s resume.
 
 To add [Christian’s Resume MCP Server](https://www.postman.com/areas-team/workspace/christians-resume-api/collection/689571741e32ba2fc7dd6e13) to Claude Desktop, copy and paste the following configuration to your `claude_desktop_config.json` file.
 
-To learn more, see [Connect to Local MCP Servers](https://modelcontextprotocol.io/quickstart/user).
-
 ``` json
 {
 	"mcpServers": {
@@ -33,3 +31,5 @@ To learn more, see [Connect to Local MCP Servers](https://modelcontextprotocol.i
 	}
 }
 ```
+
+To learn more, see [Connect to Local MCP Servers](https://modelcontextprotocol.io/quickstart/user).
