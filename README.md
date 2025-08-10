@@ -8,11 +8,9 @@ To programmatically interact with Christian’s resume, see [Christian’s Resum
 
 ### MCP Server
 
-...
+You can also introduce your AI model to Christian’s resume.
 
 #### Claude Desktop
-
-...
 
 ``` json
 {
