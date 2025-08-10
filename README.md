@@ -13,3 +13,22 @@ To programmatically interact with Christian’s resume, see [Christian’s Resum
 ### Christian’s Resume MCP Server
 
 ...
+
+#### Claude Desktop
+
+...
+
+``` json
+{
+	"mcpServers": {
+		"christian-areas-resume": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"mcp-remote",
+				"https://www.areas.me/api/resume/mcp"
+			]
+		}
+	}
+}
+```
