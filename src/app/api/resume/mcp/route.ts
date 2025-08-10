@@ -5,8 +5,8 @@ import { resume } from "@/data/resume"
 // MCP server.
 const mcpServer = createMcpHandler(
 	(server) => {
-		// Candidate, experience, skill sets, and education.
-		const { candidate, experience, skillSets, education } = resume
+		// Candidate.
+		const { candidate } = resume
 
 		const resourcesAndTools = [
 			// Resume.
@@ -18,45 +18,9 @@ const mcpServer = createMcpHandler(
 				uri: `resume://${candidate?.candidateId}`,
 				get: () => resume,
 			},
-
-			// Candidate.
-			{
-				title: "Candidate",
-				name: "candidate",
-				description:
-					"The candidate’s details, including first and last name, email, phone number, LinkedIn, and GitHub.",
-				uri: `resume://${candidate?.candidateId}/candidate`,
-				get: () => candidate,
-			},
-
-			// Experience.
-			{
-				title: "Experience",
-				name: "experience",
-				description: "The candidate’s experience, including....",
-				uri: `resume://${candidate?.candidateId}/experience`,
-				get: () => experience,
-			},
-
-			// Skill Sets.
-			{
-				title: "Skill Sets",
-				name: "skillSets",
-				description: "The candidate’s skill sets, including....",
-				uri: `resume://${candidate?.candidateId}/skillSets`,
-				get: () => skillSets,
-			},
-
-			// Education.
-			{
-				title: "Education",
-				name: "education",
-				description: "The candidate’s education, including....",
-				uri: `resume://${candidate?.candidateId}/education`,
-				get: () => education,
-			},
 		]
 
+		// Resources and tools.
 		for (const resourceAndTool of resourcesAndTools) {
 			// Resources.
 			server.resource(
