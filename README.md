@@ -1,9 +1,15 @@
-## Welcome to Christian’s Portfolio Site
+## Welcome to areas.me
 
-What you’ll find here:
+...
 
-- [Resume](https://www.areas.me)
-- [Resume API](https://www.postman.com/areas-team/workspace/christians-resume-api)
-- Resume MCP Server (In Development)
+### Christian’s Resume
 
-More details to come!
+To learn more about Christian, see [Christian’s resume](https://www.areas.me). Or [download it](https://www.areas.me/api/resume/d5a5e5dc-f2dd-4f5a-8745-0e835d9f26a5/pdf).
+
+### Christian’s Resume API
+
+To programmatically interact with Christian’s resume, see [Christian’s Resume API](https://www.postman.com/areas-team/workspace/christians-resume-api).
+
+### Christian’s Resume MCP Server
+
+...
