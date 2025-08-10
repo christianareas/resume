@@ -4,13 +4,22 @@ To learn more about Christian’s professional background, see [Christian’s re
 
 ### REST API
 
-To programmatically interact with Christian’s resume, see [Christian’s Resume API](https://www.postman.com/areas-team/workspace/christians-resume-api).
+To programmatically interact with Christian’s resume, see:
+
+- [👉 Get Started with Christian’s Resume API](https://www.postman.com/areas-team/workspace/christians-resume-api/collection/19201670-6cc61b76-a3b5-4c18-9683-26498d04541c)
+- [📖 Christian’s Resume API Reference](https://www.postman.com/areas-team/workspace/christians-resume-api/collection/19201670-7e1c4ea0-c638-4920-86bc-6ffaacf43629)
 
 ### MCP Server
 
 You can also introduce your AI model to Christian’s resume.
 
+To learn more, see [🤖 Christian’s Resume MCP Server](https://www.postman.com/areas-team/workspace/christians-resume-api/collection/689571741e32ba2fc7dd6e13).
+
 #### Claude Desktop
+
+To add **Christian’s Resume MCP Server** to Claude Desktop, copy and paste the following configuration to your `claude_desktop_config.json` file.
+
+To learn more, see [Connect to Local MCP Servers](https://modelcontextprotocol.io/quickstart/user).
 
 ``` json
 {
