@@ -60,6 +60,8 @@ const mcpServer = createMcpHandler(
 					],
 				}),
 			)
+
+			// Prompts.
 		}
 	},
 	{},

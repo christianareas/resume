@@ -15,7 +15,7 @@ You can also introduce your AI model to Christian’s resume.
 
 #### Claude Desktop
 
-To add [Christian’s Resume MCP Server](https://www.postman.com/areas-team/workspace/christians-resume-api/collection/689571741e32ba2fc7dd6e13) to Claude Desktop, copy and paste the following configuration to your `claude_desktop_config.json` file.
+To add [🤖 Christian’s Resume MCP Server](https://www.postman.com/areas-team/workspace/christians-resume-api/collection/689571741e32ba2fc7dd6e13) to Claude Desktop, copy and paste the following configuration to your `claude_desktop_config.json` file:
 
 ``` json
 {
